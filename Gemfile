@@ -16,6 +16,7 @@ gem 'bower-rails',          '>= 0.9.2'
 gem 'devise',				        '>= 3.0'
 gem 'tinymce-rails'
 gem 'sdoc',                 '0.4.0', group: :doc
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
