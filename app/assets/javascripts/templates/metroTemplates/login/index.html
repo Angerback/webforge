@@ -1,0 +1,67 @@
+<div id="login-container">
+	<div class="centered-box login">
+		
+		<h1 class="metro-h1 gray">
+				Iniciar sesión
+		</h1>
+
+		<div style="height:20px"></div>
+		<div flash-message="10000" ></div>
+
+		<div>
+			<form name="loginForm" 
+			  ng-controller="login#index" 
+			  ng-submit="loginForm.$valid && login( credentials )" 
+			  novalidate>
+
+				<div ng-show="loginForm.$submitted">
+					<div ng-show="loginForm.rut.$error.rut" class="error">
+						El rut ingresado no es válido
+					</div>
+					
+					<div ng-show="loginForm.rut.$error.required" class="error">
+						Escribe tu Rut
+					</div>
+				</div>
+
+				<div class="metro-regular-text">
+					Cuenta Bancaria
+				</div>
+
+				<div>	
+					<input name="rut" 
+					       type="text"
+					       class="form-control square" 
+					       ng-model="credentials.rut" 
+					       mask="99?.999.999-w" 
+					       limit = "true" 
+					       placeholder="12.345.678-9" 
+					       rut 
+					       required>
+				</div>
+				
+				<div ng-show="loginForm.$submitted">
+					<div ng-show="loginForm.password.$error.required" class="error">
+						Escribe la constraseña de tu cuenta bancaria
+					</div>
+				</div>
+				<div class="input-group">
+				<input name="password" 
+					   type="password" 
+					   ng-model="credentials.password"
+					   class="form-control square" 
+					   placeholder="Contraseña" 
+					   required>		
+			
+				<span class="input-group-btn">
+					<button id="login" type="submit" class="btn btn-primary m-square">  
+						<span class="glyphicon glyphicon-arrow-right" 
+							  aria-hidden="true" 
+							  title="Iniciar sesión">
+					</button>
+				</span>
+				</div>
+			</form>
+		</div>	
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<% provide(:title, "Evaluaciones") %>
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><%= link_to "Inicio", root_path %></li>
+		  	<li class="active">Evaluaciones</li>
+		</ol>
+
+		<h1 class="question-instructions">Evaluaciones</h1>
+		<div>
+			<% @evaluations.each do |evaluation| %>
+				<div class="panel panel-default">
+					<div class="row">
+						<div class="panel-body">
+							<div class="col-xs-2 img-container">
+								<%= image_tag evaluation.image, alt: "Evaluation " + evaluation.id.to_s %>
+							</div>
+							<div class="col-xs-10">
+								<h2 class="ms-h2"><%= evaluation.name %></h2>
+								<p><%= evaluation.description %></p>
+								<div>
+									<div class="btns">
+										<%= button_to "Comenzar evaluación", { action: "begin", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square", id: "test" + evaluation.id.to_s %>
+									</div>
+									<% if current_user %>
+										<% if @continue[evaluation.id] %>
+											<div class="btns">
+												<%= button_to "Continuar última evaluación", { action: "continue", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square" %>
+											</div>
+										<% end %>
+
+										<% if @last_grade[evaluation.id] %>
+											<div class="last-grade">
+												<%= image_tag "evaluations/results/grade.png", size: "42x42", alt: "grade", class: "mini-grade" %>
+												<strong class="results-titles">Calificación en el último intento: <span class="results-grade"><%= number_with_precision(@last_grade[evaluation.id].grade, :precision => 1 )%></span></strong>
+											</div>
+										<% end %>
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+			<% end %>
+		</div>	
+	</div>
+</div>
+
+

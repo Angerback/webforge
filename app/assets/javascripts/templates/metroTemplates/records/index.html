@@ -1,0 +1,28 @@
+<div id="lock-container">
+	<div class="centered-box history">
+		<div class="row">
+			<div class="col-xs-2">
+				<button class="btn square back" ui-sref="app.accounts-show">
+					<span class="glyphicon glyphicon-download" 
+						  aria-hidden="true"
+						  title="Volver">
+					</span> 
+				</button>
+			</div>
+			
+			<div class="col-xs-9">
+				<h1 class="metro-h1"> 
+					Últimos movimientos 
+				</h1>
+
+				<ul>
+					<li ng-repeat="record in metroRecords" 
+						class="metro-regular-text">
+						{{record}}
+					</li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+</div>
+  

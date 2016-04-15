@@ -1,0 +1,25 @@
+<h1> Bienvenido {{userSession.name}} </h1>
+<h3> Su saldo es de: ${{userAccount.balance}} CLP </h3>
+
+<div>
+	¿Qué desea hacer?
+	<button ui-sref="app.accounts-edit-deposit({ id: userAccount.id })">
+		Depositar efectivo
+	</button>
+	
+	<button ui-sref="app.accounts-edit-withdrawal({ id: userAccount.id })">
+		Retirar efectivo
+	</button>
+	
+	<button ui-sref="app.accounts-edit-transfer({ id: userAccount.id })">
+		Transferir fondos
+	</button>
+	
+	<button ui-sref="app.records-index({ id: userSession.id })">
+		Consultar últimos movimientos
+	</button>
+</div>
+
+<button ui-sref="app.accounts-edit-lock({ id: userAccount.id })">
+		Control de cuenta
+</button>

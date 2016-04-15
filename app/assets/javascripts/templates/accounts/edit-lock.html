@@ -1,0 +1,16 @@
+<h1> Bienvenido {{userSession.name}} </h1>
+
+<div ng-controller="account#edit-lock">
+	<div ng-show="!enabled" class="ng-hide">
+		Su cuenta está bloqueada
+		<button ng-click="updateLock()">Activar cuenta</button>
+	</div>
+
+	<div ng-show="enabled" class="ng-hide">
+		Su cuenta esta activada
+		<button ng-click="updateLock()">Bloquear cuenta</button>
+	</div>
+</div>
+
+<button ui-sref="app.accounts-show">Realizar otra operación</button>
+	 	

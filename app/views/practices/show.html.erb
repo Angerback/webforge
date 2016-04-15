@@ -1,0 +1,145 @@
+<% provide(:title, "Práctica " + params[:id].to_s) %>
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><%= link_to "Inicio", root_path %></li>
+		  	<li><%= link_to "Prácticas", practices_path %></li>
+		  	<li class="active">Práctica <%= @practice.id %>: <%= @practice.name %></li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">
+			Práctica <%= @practice.id %>: <%= @practice.name %>
+		</h1>
+		<% if @exercise %>
+			<% if @exercise.embed %>	
+				<div>
+					<%= @exercise.embed.html_safe %>	
+				</div>
+			<% end %>
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<p>Cambiar URL del trabajo</p>
+							<%= form_tag({ :action => "update", 
+			          		   			   :controller => "exercises", 
+			          		               :id => params[:id]}) do  %>
+			          		    
+			          		    <div class="field">
+						          	<%= label :plunk, 'URL Plunk' %><br />
+						          	<%= text_field_tag :plunk %>
+						        </div>
+						        					
+								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square"  %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<p>Agregar previsualización</p>
+							<%= form_tag({ :action => "update", 
+			          		   			   :controller => "exercises", 
+			          		               :id => params[:id]}) do  %>
+			          		    
+			          		    <div class="field">
+						          	<%= label :embed, 'Código embedido' %><br />
+						          	<%= text_field_tag :embed %>
+						        </div>
+						        					
+								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square" %>
+							<% end %>
+						</div>
+					</div>	
+				</div>
+				<div class="col-xs-4">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div>
+								<%= link_to "Mensaje al ayudante", {controller: "messages", action: "new", id: @chat.id}, class: "btn btn-primary square" %>
+							</div>
+							<br/>
+							<div>
+								<%= link_to "Continuar en Plunker", @exercise.plunk, :target => "_blank", class: "btn btn-primary square"  %>
+							</div>
+							<br/>
+							<div>
+								<%= link_to "Volver", practices_path, class: "btn btn-primary square"  %>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+			</div>
+		<% else %>
+
+			<%= form_tag({ :action => "create", 
+	  		   			   :controller => "exercises", 
+	  		               :id => params[:id]}) do  %>
+			    <fieldset id="step1" class="step">
+			    	<div class="panel panel-default">
+			    		<div class="panel-body">
+					        <div class="row">
+					        	<div class="col-xs-7">
+					        		<%= image_tag "practices/step1.png", alt: "Fork", class: "" %>
+					        	</div>
+					        	<div class="col-xs-5">
+					        		<h2 class="ms-h2">Paso 1</h2>
+					        		<p>Para comenzar tu práctica necesitas crear una copia del Plunk original presionando el botón "Fork"</p>
+							        <ul>
+							        	<li>
+							        		Crear una copia del Plunk <%= link_to @practice.name, @practice.plunk, :target => "_blank" %>
+							        	</li>
+							        </ul>
+							        <div class="btns">
+					            		<%= link_to "Siguiente", "#step2", class: "next btn btn-primary square" %></li>
+					        		</div>
+					        	</div>
+					        </div>     
+				        </div>
+				    </div>
+			    </fieldset>
+
+			    <fieldset id="step2" class="step">
+			    	<div class="panel panel-default">
+			    		<div class="panel-body">
+			    			<div class="row">
+			    				<div class="col-xs-3">
+			    					<h2 class="ms-h2"> URL de tu Plunk </h2>
+			    					<div class="exercise-form">
+			    						<div class="field">
+			          						
+			          						<%= text_field_tag :plunk %>
+			        					</div>
+			        					<div>
+			        						<%= submit_tag "Registrar trabajo", data: { disable_with: "Registrando tu trabajo..." }, class: "btn btn-primary square" %>
+			        					</div>	
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-9">
+			    					<h2 class="ms-h2">Paso 2</h2>
+			        
+			        				<p>Para registrar tu trabajo copia la URL desde Plunker y pégala en el campo de la izquierda</p>
+
+			        				<div class="btns">
+										<%= link_to "Volver", "#step1", class: "prev btn btn-primary square" %></li>
+			        				</div>
+			    				</div>
+			    			</div>
+			    		</div>
+			    	</div>
+			    </fieldset>
+
+			    <div class="intro">
+			    	<% flash.each do |message_type, message| %>
+  						<div class=""><%= message %></div>
+					<% end %>
+			        <p>A continuación te guiaremos a través de los pasos necesarios para iniciar tu práctica.</p>
+			        <%= link_to "Comenzar!", "#step1", class: "btn btn-primary square" %>
+			    </div>
+			<% end %>
+
+		<% end %>
+	</div>	
+</div>

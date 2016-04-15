@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  balance: 1
+  user_id: 1
+  enabled: false
+
+two:
+  balance: 1
+  user_id: 1
+  enabled: false

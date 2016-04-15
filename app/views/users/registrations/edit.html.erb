@@ -1,0 +1,60 @@
+<% provide(:title, "Editar perfil") %>
+<div class="container">
+  <h1 class="question-instructions">Editar Perfil</h1>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2 class="ms-h2">Información personal</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    
+        <%= devise_error_messages! %>
+
+          <div class="field">
+            <%= f.label :name, "Nombre" %><br />
+            <%= f.text_field :name, autofocus: true, class: "form-control ms-input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email, "Correo electrónico" %><br />
+            <%= f.email_field :email, autofocus: true, class: "form-control ms-input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :rut, "Rut" %><br />
+            <%= f.text_field :rut, class: "form-control ms-input" %>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :password, "Contraseña" %> <i>(Ignora este campo si no quieres cambiarla)</i><br />
+            <%= f.password_field :password, autocomplete: "off", class: "form-control ms-input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation, "Confirmación de contraseña" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control ms-input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :current_password, "Contraseña actual" %> <i>(Necesitamos tu contraseña actual para confirmar los cambios)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control ms-input" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Actualizar", class: "btn btn-primary square" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <h2 class="ms-h2">Cerrar mi cuenta</h2>
+
+        <p>Descontento? <%= button_to "Cerrar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete, class: "btn btn-primary square" %></p>
+      </div>
+    </div>
+  <%= link_to "Volver", :back, class: "btn btn-primary square" %>
+</div>

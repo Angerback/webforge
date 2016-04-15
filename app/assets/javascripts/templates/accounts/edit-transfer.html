@@ -1,0 +1,20 @@
+<h1> Bienvenido {{userSession.name}} </h1>
+<h3> Su saldo es de: ${{userAccount.balance}} CLP </h3>
+
+Ingrese la información necesaria para la transferencia:
+
+<form name="updateForm" ng-controller="account#edit-transfer"
+    	  ng-submit="updateTransfer( transferData )">
+		
+		<label for="rut">Rut del destinatario:
+			<input type="text" id="receiverRut" ng-model="transferData.rut" required>
+		</label>
+		
+		<label for="amount">Monto:
+			<input type="number" min="1" id="transferAmount" ng-model="transferData.amount" required>
+		</label>
+		
+		<button type="submit">Transferir fondos</button>
+</form>
+
+<button ui-sref="app.accounts-show">Realizar otra operación</button>

@@ -1,0 +1,15 @@
+<h1> Bienvenido {{userSession.name}} </h1>
+<h3> Su saldo es de: ${{userAccount.balance}} CLP </h3>
+
+Ingrese el monto que desea retirar:
+	
+<form name="updateForm" ng-controller="account#edit-withdrawal"
+    	  ng-submit="updateWithdrawal( amount )">
+		<label for="amount">Monto:
+			<input type="number" min="1" id="withdrawalAmount" ng-model="amount" required>
+		</label>
+		
+		<button type="submit">Retirar</button>
+</form>
+
+<button ui-sref="app.accounts-show">Realizar otra operación</button>

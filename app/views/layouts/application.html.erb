@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> <%= yield(:title) %> | WebForge </title>
+  <link href="/favicon.ico" rel="shortcut icon">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+
+  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'registrations') %>
+    <%= render 'layouts/header2' %>
+  <% end %>
+
+  <%= yield %>
+  
+  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'home') && (controller.controller_name != 'registrations') && (controller.controller_name != 'metro')%>
+    <%= render 'layouts/footer' %>
+  <% end %>  
+</body>
+</html>

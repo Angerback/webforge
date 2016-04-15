@@ -1,0 +1,299 @@
+<% provide(:title, "Evaluación Heurística") %>
+<div class="container">
+	<ol class="breadcrumb ms">
+	  	<li><%= link_to "Inicio", root_path %></li>
+	  	<li><%= link_to "Heurísticas", heuristics_path %></li>
+	  	<li class="active"> Evaluación Heurística </li>
+	</ol>
+
+	<h1 class="topic-title">Evaluación Heurística</h1>
+
+	<div class="side-bar">
+		<h2 class="ms-h2">En este artículo</h2>
+		<ul>
+			<li><%= link_to "Evaluación de usabilidad" , {:action => "index", :controller => "heuristic_evaluations", :anchor => "usability_evaluation" } %></li>
+			<li><%= link_to "Evaluación heurística" , {:action => "index", :controller => "heuristic_evaluations", :anchor => "heuristic_evaluation" } %></li>
+			<li><%= link_to "Estrategias de aplicación" , {:action => "index", :controller => "heuristic_evaluations", :anchor => "strategies" } %></li>
+			<li><%= link_to "Ejemplo" , {:action => "index", :controller => "heuristic_evaluations", :anchor => "example" } %></li>
+			<li><%= link_to "Recursos relacionados" , {:action => "index", :controller => "heuristic_evaluations", :anchor => "references" } %></li>
+		</ul>
+	</div>
+	
+	<span id="usability_evaluation" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">¿Qué es una Evaluación de Usabilidad?</h2>
+		<div>
+			<p>Corresponde al conjunto de metodologías y técnicas que analizan la usabilidad
+			de un sistema interactivo en diferentes etapas de su ciclo de vida.</p>
+		</div>
+	</div>
+
+	<span id="heuristic_evaluation" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">¿Qué es la Evaluación Heurística?</h2>
+		<div>
+			<p>Como se ha mencionado, la Evaluación Heurística es una metodología desarrollada por Jacob Nielsen, consiste en analizar la conformidad de la interfaz con los principios reconocidos de usabilidad, las diez heurísticas, mediante la inspección de varios evaluadores expertos.</p>
+		</div>
+	</div>
+
+	<span id="strategies" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Estrategias de Evaluación</h2>
+		<div>
+			<p>Existen esencialmente dos enfoques o estrategias de aplicación de revisión de la usabilidad. Uno que es más holístico, llamado enfoque sistémico y el otro de carácter analítico.</p>
+		</div>
+		
+		<span id="systemic_approach" class="anchor"></span>
+		<div>
+			<p>
+				<strong>Enfoque Sistémico</strong>
+			</p>
+			<div>
+				<p>El enfoque Sistémico apunta a la revisión de las distintas tareas de usuario que componen el sistema, cada tarea es puntuada con respecto a cada heurística en una escala a elección del inspector. Los problemas identificados deben registrarse indicando su severidad para finalmente proponer las correcciones pertinentes, por ejemplo, a través de una maqueta.</p>
+				
+				<p>Cabe destacar que el evaluador no necesita ser un experto en usabilidad lo que hace de esta estrategia la idónea para apoyar la revisión de pruebas de aceptación con de participación usuarios finales o stakeholders.</p>
+				
+				<p>Finalmente la suma de todos los resultados parciales representa el estado de la usabilidad en el sistema.</p>
+				
+				<p>La siguiente imagen ilustra el proceso a través de cuatro tareas de usuario, en esta mecánica se utiliza la escala Likert para evaluar cada una.</p>
+
+				<%= image_tag "heuristic_evaluation.png", alt: "Heuristic Evaluation" %>
+			</div>
+		</div>
+
+		<span id="analytical_approach" class="anchor"></span>
+		<div>
+			<p>
+				<strong>Enfoque Analítico</strong>
+			</p>
+			<div>
+				<p>En su origen la metodología de Evaluación Heurística plantea que solo se requiere de una noción de usabilidad por parte de los evaluadores, más tarde esta proposición es rectificado indicando que la experticia del inspector favorece la eficacia de la metodología, es en este punto en que se basa el enfoque analítico.</p>
+				
+				<p>En esta estrategia la interfaz de usuario es dividida en métodos y atributos de interacción, a través de una lista de comprobación el inspector evalúa si cada elemento cumple con los puntos definidos en la lista. El análisis es minucioso y las listas frecuentemente son largas demandando un tiempo importante para el proceso.</p>
+			</div>
+		</div>
+	</div>
+
+	<span id="example" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Ejemplo</h2>
+    <p>
+      <strong>Enfoque Sistémico</strong>
+    </p>
+		<div>
+			<p>En este ejemplo se aplica el Enfoque Sistémico, la tarea de usuario a evaluar corresponde a <strong> navegar a través de la pantalla de personalización </strong>de una aplicación, se utilizará la escala Likert para la medicición y las heurísticas 1, 5, 9 y 10 se omitirán para focalizarnos en un grupo particular de problemas.</p>
+			<%= image_tag "heuristic evaluation/example-before.png", alt: "Example" %>
+		</div>
+	</div>
+	<p>
+		<strong>Evaluación</strong>
+	</p>
+	<table class="table">
+      <thead>
+        <tr>
+          <th>Tareas</th>
+          <th>H1</th>
+          <th>H2</th>
+          <th>H3</th>
+          <th>H4</th>
+          <th>H5</th>
+          <th>H6</th>
+          <th>H7</th>
+          <th>H8</th>
+          <th>H9</th>
+          <th>H10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Tarea 1: Navegación a través de la pantalla de personalización</th>
+          <td>-</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>-</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+	
+	<p>
+		<strong>Problemas identificados</strong>
+	</p>
+	<table class="table">
+      <thead>
+        <tr>
+          <th>Problema</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">P1</th>
+          <td>Las categorías no se presentan en un orden consistente ni reconocible por el usuario (H2)</td>
+        </tr>
+        <tr>
+          <th scope="row">P2</th>
+          <td>La selección de una categoría altera el orden de las demás, dificultando la navegación, ni siquiera es evidente el sistema de pestañas anidadas (H3)</td>
+        </tr>
+        <tr>
+          <th scope="row">P3</th>
+          <td>La navegación mediante pestañas es mal empleada y no se utilizan estándares alternativos que permitan organizar mejor la información y el acceso a ventanas (H4)</td>
+        </tr>
+        <tr>
+          <th scope="row">P4</th>
+          <td>La gran cantidad de íconos no facilita el reconocimiento de cada categoría por parte del usuario (H6)</td>
+        </tr>
+        <tr>
+          <th scope="row">P5</th>
+          <td>No existen atajos que faciliten la navegación (H7)</td>
+        </tr>
+        <tr>
+          <th scope="row">P6</th>
+          <td>El exceso de información resulta tedioso y confuso para el usuario contrariando cualquier práctica minimalista (H8)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Incidencia: </strong>El problema es que resulta dificil navegar a través de las pestañas, demasiada información y la carencia de un orden natural no facilitan la tarea.</p>
+
+    <p>
+		<strong>Severidad y esfuerzo necesario para reparación</strong>
+	</p>
+	<table class="table">
+      <thead>
+        <tr>
+          <th>Problema</th>
+          <th>Severidad</th>
+          <th>Esfuerzo necesario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">P1</th>
+          <td>Media</td>
+          <td>Bajo</td>
+        </tr>
+        <tr>
+          <th scope="row">P2</th>
+          <td>Baja</td>
+          <td>Medio</td>
+        </tr>
+        <tr>
+          <th scope="row">P3</th>
+          <td>Catastrófica</td>
+          <td>Alto</td>
+        </tr>
+        <tr>
+          <th scope="row">P4</th>
+          <td>Baja</td>
+          <td>Bajo</td>
+        </tr>
+        <tr>
+          <th scope="row">P5</th>
+          <td>Media</td>
+          <td>Medio</td>
+        </tr>
+        <tr>
+          <th scope="row">P6</th>
+          <td>Catastrófica</td>
+          <td>Alto</td>
+        </tr>
+      </tbody>
+    </table>
+
+	<p>
+		<strong>Priorización de los problemas</strong>
+	</p>
+	<p>Algunos inspectores prefieren no profundizar demasiado priorizando las incidencia de usabilidad con la fórmula ÍNDICE = Severidad * Esfuerzo y establecen y orden de menor a mayor ese valor, pero muchas veces es mejor hacer un estudio más acabado considerando otras variables como la disponibilidad de programadores y temas cualitativos. A continuación aparece un esquema que usa esta última aproximación.</p>
+	<table class="table">
+      <thead>
+        <tr>
+          <th>Problema</th>
+          <th>Prioridad</th>
+          <th>Justificación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">P3</th>
+          <td>1</td>
+          <td>Pese al elevado esfuerzo necesario, la utilización de un estándar adecuado, como un menú lateral, impacta positivamente solucionando muchos de los demás problemas identificados</td>
+        </tr>
+        <tr>
+          <th scope="row">P6</th>
+          <td>2</td>
+          <td>Es muy importante reducir la cantidad de información para evitar saturar al usuario</td>
+        </tr>
+        <tr>
+          <th scope="row">P4</th>
+          <td>3</td>
+          <td>La solución al sexto problema implica la reducción del ruido generado por el exceso de elementos, por ejemplo, los íconos</td>
+        </tr>
+        <tr>
+          <th scope="row">P2</th>
+          <td>4</td>
+          <td>Pese a que su rectificación implica un esfuerzo menor, es completamente eliminado con la aplicación de otro método de organización</td>
+        </tr>
+        <tr>
+          <th scope="row">P3</th>
+          <td>5</td>
+          <td>Igual situación a P2</td>
+        </tr>
+        <tr>
+          <th scope="row">P5</th>
+          <td>6</td>
+          <td>No es un problema crítico</td>
+        </tr>
+      </tbody>
+    </table>
+
+	<p>
+		<strong>Propuesta de solución</strong>
+	</p>
+	<div class="row">
+		<div class="col-xs-5">
+			<%= image_tag "heuristic evaluation/example-before.png", alt: "Before" %>
+		</div>
+    <div class="col-xs-2">
+      <div class="arrow-container">
+          <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+        </div>
+    </div>
+		<div class="col-xs-5">
+			<%= image_tag "heuristic evaluation/example-after.png", alt: "After" %>
+		</div>
+	</div>
+  <p>Un estándar utilizado para organizar varias pantallas y alternativo a las pestañas es el uso de menús, otro estándar útil para presentar elementos es ordenarlos alfabéticamente; aplicación de ambos soluciona los problemas presentados y ofrece las siguientes ventajas:</p>
+  <ul>
+    <li>Las categorías son presentadas de manera consistente.</li>
+    <li>La selección de una categoría no afecta el orden de las otras.</li>
+    <li>Es posible generar atajos de teclado para facilitar la navegación, por ejemplo las teclas “arriba” y “abajo” o la letra inicial de cada categoría.</li>
+    <li>La utilización de colores, íconos y pestañas anidadas que saturan la pantalla ha sido eliminada.</li>
+  </ul>
+
+  <p>
+    <strong>Enfoque Analítico</strong>
+  </p>
+  <p>El enfoque analítico es rigurso y las listas diseñadas para su aplicación son amplias, por ello, en lugar de desarrollar un ejemplo se proporciona el siguiente documento: <%= link_to "Lista de comprobación de ítems de D. Pierotti (ESP, PDF)",
+    "http://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf", :target => "_blank" %></p>		
+
+  <div>
+    <%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => 10 }) do %>
+      <span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+    <% end %>
+  </div>
+
+	<span id="references" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Recursos relacionados</h2>
+		<ul>
+			<li><%= link_to "Memoria que habla acerca de la Evaluación Heurística (ESP, PDF)", "http://www.issi.uned.es/CalidadSoftware/Noticias/PFC_2.pdf", :target => "_blank" %></li>
+      <li><%= link_to "Evaluación Heurística y Lista de comprobación de ítems de D. Pierotti (ESP, PDF)", "http://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf", :target => "_blank" %> </li>
+		</ul>	
+	</div>
+</div>

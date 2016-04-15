@@ -1,0 +1,75 @@
+<div id="show-container">
+	<div class="centered-box show">
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="subtitle">
+					Operaciones
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="subtitle">
+					Saldo
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 raw" style="width:300px">
+				<div class="col-xs-6" style="padding:0px">
+					<button ui-sref="app.accounts-edit-deposit({ id: userAccount.id })" 
+					        class="btn btn-danger btn-xxxlg">
+						<span class="glyphicon glyphicon-piggy-bank" 
+									  aria-hidden="true">
+						</span>
+						<span class="btn-text">
+							Depósito
+						</span>
+					</button>
+				</div>
+				<div class="col-xs-6" style="padding:0px">
+					<button ui-sref="app.accounts-edit-withdrawal({ id: userAccount.id })"
+							class="btn btn-primary btn-xxxlg">
+						<span class="glyphicon glyphicon-usd" 
+									  aria-hidden="true">
+						</span>
+						<span class="btn-text">
+							Retiro
+						</span>
+					</button>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="balance-box">
+					<div class="balance-text">
+						{{userAccount.balance | customCurrency:"$":",":".":0}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 raw" style="width:300px">
+				<div class="col-xs-6" style="padding:0px">
+					<button ui-sref="app.accounts-edit-transfer({ id: userAccount.id })"
+							class="btn btn-success btn-xxxlg">
+						<span class="glyphicon glyphicon-transfer" 
+							  aria-hidden="true">
+						</span>
+						<span class="btn-text">
+							Transferencia
+						</span>
+					</button>
+				</div>
+				<div class="col-xs-6" style="padding:0px">
+					<button ui-sref="app.records-index({ id: userSession.id })"
+							class="btn btn-warning btn-xxxlg btn-menu">
+						<span class="glyphicon glyphicon-list-alt" 
+									  aria-hidden="true">
+						</span>
+						<span class="btn-text">
+							Historial
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

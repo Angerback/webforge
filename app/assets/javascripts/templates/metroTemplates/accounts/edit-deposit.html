@@ -1,0 +1,74 @@
+<div id="deposit-container">
+	<div class="centered-box deposit">
+		<div class="row">
+			<div class="col-xs-2">
+				<button class="btn square back" ui-sref="app.accounts-show">
+					<span class="glyphicon glyphicon-download" 
+						  aria-hidden="true"
+						  title="Volver">
+					</span> 
+				</button>
+			</div>
+			
+			<div class="col-xs-9">
+				<h1 class="metro-h1">
+					Depositar 
+				</h1>
+
+				<h3 class="metro-h3">
+					Saldo disponible
+				</h3>			
+
+				<div class="metro-regular-text">
+					{{userAccount.balance | customCurrency:"$":",":".":0}} en su cuenta
+				</div>
+
+				<div style="height:5px"></div>
+				<div flash-message="10000" ></div>
+
+				<div>
+					<form name="depositForm" 
+						  ng-controller="account#edit-deposit" 
+						  ng-submit="depositForm.$valid && updateDeposit( amount )" 
+						  novalidate>
+
+						<div ng-show="depositForm.$submitted">
+							<div ng-show="depositForm.amount.$error.required" class="error">
+								Escribe el monto a depositar
+							</div>
+							
+							<div ng-show="depositForm.amount.$error.positive" class="error">
+								Escribe un monto mayor a 0
+							</div>
+
+							<div ng-show="depositForm.amount.$error.maxlength" class="error">
+								Escribe un monto menor a 1.000.000.000
+							</div>
+						</div>
+
+						<div class="metro-regular-text">
+							Monto a depositar
+						</div>	
+
+						<div>
+							<input name="amount" 
+								   type="text"
+								   class="form-control square" 
+								   ng-model="amount"
+								   placeholder ="1"
+								   ng-maxlength ="11"
+								   ng-latam-int
+								   positive  
+								   required>
+						</div>
+						
+						<button type="submit" class="btn btn-primary square form-btn">
+							Depositar
+						</button>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

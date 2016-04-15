@@ -1,0 +1,87 @@
+<% provide(:title, 'Módulo de Práctica') %>
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><%= link_to "Inicio", root_path %></li>
+		  	<li class="active">Prácticas</li>
+		</ol>
+	</div>	
+	<div>
+		<h1 class="question-instructions">Módulo de Práctica</h1>
+		<p>En esta sección se muestra una terminal bancaria en la que no se ha cuidado la usabilidad, el objetivo de cada práctica es identificar y corregir los problemas de cada módulo que compone la terminal</p>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="panel panel-default">
+					<div <div class="panel-body">
+						<div class="row">
+							<div class="col-xs-4">
+								<%= link_to(bank_terminals_path) do %>				
+									<%= image_tag "practices/vanilla.png", alt: "Interfaz dañada", class: "" %>
+								<% end %>
+							</div>
+							<div class="col-xs-8">
+								<h2 class="ms-h2">Interfaz dañada</h2>
+								<p>Pinchando la imagen podrás acceder a la terminal bancaria libre de cualquier estilo o estándar, tal y como la encontrarás en tus pŕacticas</p>
+							</div>							
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div <div class="panel panel-default">
+					<div <div class="panel-body">
+						<div class="row">
+							<div class="col-xs-4">
+								<%= link_to(metro_path) do %>				
+									<%= image_tag "practices/metro.png", alt: "Interfaz reparada", class: "" %>
+								<% end %>		
+							</div>
+							<div class="col-xs-8">
+								<h2 class="ms-h2">Interfaz reparada</h2>
+								<p>Haciendo clic en la imagen accederás a la interfaz de la terminal bancaria reparada usando el estilo <%= link_to "Modern UI de Microsoft", "https://www.microsoft.com/en-us/stories/design/", :target => "_blank" %> y aprecias sus efectos</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<% @practices.each do |practice| %>
+				<div class="panel panel-default">
+					<div class="row">
+						<div class="panel-body">
+							<div class="col-xs-6">
+								<div> <%= practice.embed.html_safe %></div>
+							</div>
+
+							<div class="col-xs-6">
+								<h2 class="ms-h2"> <%= practice.name %> </h2>
+								<p><%= practice.description %></p>
+								<div>
+									<% if current_user %>
+										<% if @exercises[practice.id] %>
+											<div class="btns">
+												<%= link_to @actions[practice.id], @exercises[practice.id].plunk, :target => "_blank", class: "btn btn-primary square" %>
+												<%= link_to "Ver práctica", { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+												
+											</div>
+										<% else %>
+											<div class="btns">
+												<%= link_to @actions[practice.id], { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+											</div>
+										<% end %>
+									<% else %>
+										<div class="btns">
+											<%= link_to "Comenzar práctica", { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+										</div>
+									<% end %>
+								</div>		
+							</div>		
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

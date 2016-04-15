@@ -1,0 +1,49 @@
+<div id="lock-container">
+	<div class="centered-box lock">
+		<div class="row">
+			<div class="col-xs-2">
+				<button id="metro-back" class="btn square back" ui-sref="app.accounts-show">
+					<span class="glyphicon glyphicon-download" 
+						  aria-hidden="true"
+						  title="Volver">
+					</span> 
+				</button>
+			</div>
+
+			<div class="col-xs-9">
+				<h1 class="metro-h1">
+					Opciones de cuenta
+				</h1>
+
+				<h3 class="metro-h3">
+					Control de acceso
+				</h3>
+
+				<div flash-message="10000" ></div>	
+				
+				<div ng-controller="account#edit-lock">
+					<div ng-show="!enabled" class="ng-hide">
+						
+						<div class="metro-regular-text">
+							Su cuenta está bloqueada
+						</div>
+						<button ng-click="updateLock()" 
+								class="btn btn-primary square form-btn">
+							Activar cuenta
+						</button>
+					</div>
+
+					<div ng-show="enabled" class="ng-hide">
+						<div class="metro-regular-text">   
+							Su cuenta esta activada
+						</div>
+						<button ng-click="updateLock()" 
+								class="btn btn-primary square form-btn">
+							Bloquear cuenta
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

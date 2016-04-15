@@ -1,0 +1,62 @@
+<div id="withdrawal-container">
+	<div class="centered-box withdrawal">
+		<div class="row">
+			<div class="col-xs-2">
+				<button class="btn square back" ui-sref="app.accounts-show">
+					<span class="glyphicon glyphicon-download" 
+						  aria-hidden="true"
+						  title="Volver">
+					</span> 
+				</button>
+			</div>
+
+			<div class="col-xs-9">
+				<h1 class="metro-h1">
+					Retirar 
+				</h1>
+
+				<h3 class="metro-h3">
+					Saldo disponible
+				</h3>			
+
+				<div class="metro-regular-text">
+					{{userAccount.balance | customCurrency:"$":",":".":0}} en su cuenta
+				</div>
+
+				<div style="height:5px"></div>
+				<div flash-message="10000" ></div>
+
+				<form name="withdrawalForm" 
+				      ng-controller="account#edit-withdrawal"
+				      ng-submit="withdrawalForm.$valid && updateWithdrawal( amount )"
+				      novalidate>
+
+				    <div ng-show="withdrawalForm.$submitted">
+						<div ng-show="withdrawalForm.amount.$error.required" class="error">
+							Escribe el monto a retirar
+						</div>
+						
+						<div ng-show="withdrawalForm.amount.$error.positive" class="error">
+							Escribe un monto mayor a 0
+						</div>
+					</div>	
+						
+					<label>Monto:
+						<input name="amount" 
+						       type="text"
+						       class="form-control square" 
+						       ng-model="amount"
+						       placeholder ="1" 
+						       ng-latam-int 
+						       positive
+						       required>
+					</label>
+						
+					<button type="submit" class="btn btn-primary square form-btn">
+						Retirar
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

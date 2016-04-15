@@ -1,0 +1,102 @@
+<% provide(:title, "H" + @heuristic.id.to_s + ": " +@heuristic.name) %>
+<div class="container">
+	<ol class="breadcrumb ms">
+	  	<li><%= link_to "Inicio", root_path %></li>
+	  	<li><%= link_to "Heurísticas", heuristics_path %></li>
+	  	<li class="active">H<%= @heuristic.id %>: <%= @heuristic.name %></li>
+	</ol>
+	
+	<h1 class="topic-title">H<%= @heuristic.id %>: <%= @heuristic.name %></h1>
+
+	<div>
+		<div>
+			<p><%= @heuristic.description %></p>
+		</div>
+
+		<div class="side-bar">
+			<h2 class="ms-h2">En este artículo</h2>
+			<ul>
+				<li><%= link_to "Qué hacer" , {:action => "show", :controller => "heuristics", :anchor => "do" } %></li>
+				<%if (!@donts.empty?) %>
+					<li><%= link_to "Qué no hacer" , {:action => "show", :controller => "heuristics", :anchor => "dont" } %></li>
+				<% end %>
+				<li><%= link_to "Ejemplos" , {:action => "show", :controller => "heuristics", :anchor => "example" } %></li>
+				<li><%= link_to "Recursos relacionados" , {:action => "show", :controller => "heuristics", :anchor => "references" } %></li>
+			</ul>
+		</div>
+	</div>
+	
+	<span id="do" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Qué hacer</h2>
+		<ul>
+			<% (0..@dos.length-1).each do |i| %>
+				<li><%= @dos[i].description %></li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<span id="dont" class="anchor"></span>
+	<div>
+		<%if (!@donts.empty?) %>
+			<h2 class="ms-h2">Qué no hacer</h2>
+				<ul>
+					<% (0..@donts.length-1).each do |i| %>
+						<li><%= @donts[i].description %></li>
+					<% end %>
+				</ul>
+		<% end -%>
+	</div>
+	
+	<span id="example" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Ejemplos</h2>
+			<div>
+				<% (0..@examples.length-1).each do |i| %>
+					<%= image_tag @examples[i].image %>
+					<p> <%= @examples[i].description %></p>
+				<% end %>
+		</div>
+	</div>
+
+	<div>
+		<%if @heuristic.id > 1%>
+			<div class="back-box">
+				<%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => @heuristic.id-1 }) do %>
+					<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+				<% end %>
+			</div> 
+		<% else %>
+			<div class="back-box">
+				<%= link_to({:action => "index", :controller => "heuristics"}) do %>
+					<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+				<% end %>
+			</div>
+		<% end %>
+		
+		<%if @heuristic.id < 10%>
+			<div class="next-box">
+				<%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => @heuristic.id+1 }, id: "next") do %>
+					<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+				<% end %>
+			</div>
+		<% else %>
+			<div class="next-box">
+				<%= link_to(heuristic_evaluation_path, id: "next") do %>
+					<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	
+	<span id="references" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Recursos relacionados</h2>
+			<% (0..@references.length-1).each do |i| %>
+				<div>
+					<%= link_to @references[i].description,
+								@references[i].link %>
+				</div>
+			<% end %>
+	</div>
+</div>

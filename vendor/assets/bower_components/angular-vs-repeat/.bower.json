@@ -1,0 +1,39 @@
+{
+  "name": "angular-vs-repeat",
+  "version": "1.0.0-rc7",
+  "description": "Virtual Scroll for AngularJS ngRepeat directive",
+  "homepage": "http://kamilkp.github.io/angular-vs-repeat",
+  "main": "src/angular-vs-repeat.js",
+  "keywords": [
+    "angularjs",
+    "javascript",
+    "performance",
+    "virtualization"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "README.md",
+    "CHANGELOG.md",
+    "bower.json",
+    "package.json",
+    "lib",
+    "node_modules",
+    "test",
+    ".git"
+  ],
+  "authors": [
+    "Kamil Pękala <kamilkp@gmail.com>"
+  ],
+  "_release": "1.0.0-rc7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0-rc7",
+    "commit": "624b9984c7570b0df3ac1ff6a42dfaa85c3ae6d4"
+  },
+  "_source": "git://github.com/kamilkp/angular-vs-repeat.git",
+  "_target": "1.0.0-rc7",
+  "_originalSource": "angular-vs-repeat"
+}

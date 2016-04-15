@@ -1,0 +1,23 @@
+<% provide(:title, "Nuevo mensaje") %>
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><%= link_to "Inicio", root_path %></li>
+		  	<li><%= link_to "Conversaciones", chats_path %></li>
+		  	<li><%= link_to @chat.title + " de " + @owner.name, {action: "show", controller: "chats", id: params[:id]} %></li>
+		  	<li class="active"> Nuevo mensaje </li>
+		</ol>
+	</div>
+	
+	<h1 class="question-instructions">Nuevo mensaje</h1>
+	 
+	<%= form_tag({ :action => "create", 
+          		   :controller => "messages", 
+          		   :id => params[:id]}) do  %>
+        <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 30 %>
+	 	<%= tinymce %>
+		
+		<%= submit_tag "Publicar mensaje", data: { disable_with: "Guardando mensaje..." }, class: "btn btn-primary square" %>
+		<%= link_to 'Cancelar', {action: "show", controller: "chats", id: params[:id]}, class: "btn btn-primary square" %>
+	<% end %>
+</div>

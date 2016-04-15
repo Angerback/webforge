@@ -1,0 +1,75 @@
+<% provide(:title, "Inicio") %>
+<div class="hero-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6">
+	            <div class="jumbotron-content">
+	                <h1 class="jumbotron-header">
+	                	Heurísticas de Nielsen
+	                </h1>
+	                
+	                <p class="jumbotron-subheader">
+	                	Una aproximación a la Usabilidad Web o ¿Cómo sobrevivir en la Red?
+	                </p>
+	                
+	                <%= link_to 'Empieza aquí!', introduction_path, class: "hero-btn" %>
+	                
+	            </div>
+			</div>
+
+			<div class="col-xs-6">	
+				<%= image_tag "button_push-256.png", alt: "Usability" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= link_to(heuristics_path) do %>				
+				<%= image_tag "heuristics.png", alt: "Heurísticas", class: "icon-anchor" %>
+			<% end %>
+			<div class="section-title">
+				<%= link_to 'Heurísticas', heuristics_path, class: "text-anchor" %>
+			</div>
+			<p>Conoce las diez guías generales para el diseño de interfaces definidas por el gurú de la usabilidad Jacob Nielsen.</p>
+		</div>
+		
+		<div class="col-xs-3">
+			<%= link_to(evaluations_path) do %>
+				<%= image_tag "evaluation.png", alt: "Evaluación", class: "icon-anchor" %>
+			<% end %>			
+			<div class="section-title">
+				<%= link_to 'Evaluación', evaluations_path, class: "text-anchor" %>
+			</div>
+			<p>Mide tus conocimientos a través de breves evaluaciones, entérate de tus debilidades y supera tu propia marca.</p>
+		</div>
+
+		<div class="col-xs-3">
+			<%= link_to(practices_path) do %>
+				<%= image_tag "practice.png", alt: "Práctica", class: "icon-anchor" %>
+			<% end %>			
+			<div class="section-title">
+				<%= link_to 'Práctica', practices_path, class: "text-anchor" %>
+			</div>
+			<p>Aplica la teoría en la reparación de una interfaz dañada trabajando directamente con las tecnologías de front-end a través de Codepen.</p>
+		</div>
+
+		<div class="col-xs-3">
+			<%= link_to(references_path) do %>
+				<%= image_tag "resources.png", alt: "Recursos", class: "icon-anchor" %>
+			<% end %>
+			<div class="section-title">
+				<%= link_to 'Recursos', references_path, class: "text-anchor" %>
+			</div>
+			<p>Navega y aprende a través de la colección de referencias externas reunidas en este recurso de aprendizaje.</p>
+		</div>
+	</div>	
+</div>
+
+<div class="container">
+	<div class="home-footer">
+		2015 por Javier Cáceres
+	</div>
+</div>

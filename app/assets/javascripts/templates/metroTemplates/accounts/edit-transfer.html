@@ -1,0 +1,84 @@
+<div id="transfer-container">
+	<div class="centered-box transfer">
+		<div class="row">
+			<div class="col-xs-2">
+				<button class="btn square back" ui-sref="app.accounts-show">
+					<span class="glyphicon glyphicon-download" 
+						  aria-hidden="true"
+						  title="Volver">
+					</span> 
+				</button>
+			</div>
+			
+			<div class="col-xs-9">
+				<h1 class="metro-h1">
+					Transferir 
+				</h1>
+
+				<h3 class="metro-h3">
+					Saldo disponible
+				</h3>			
+
+				<div class="metro-regular-text">
+					{{userAccount.balance | customCurrency:"$":",":".":0}} en su cuenta
+				</div>
+
+				<div style="height:5px"></div>
+				<div flash-message="10000" ></div>
+
+				<form name="transferForm" 
+				      ng-controller="account#edit-transfer"
+				      ng-submit="transferForm.$valid && updateTransfer( transferData )"
+				      novalidate>
+
+				    <div ng-show="transferForm.$submitted">
+						<span ng-show="transferForm.rut.$error.rut" class="error">
+							El rut ingresado no es válido
+						</span>
+						
+						<span ng-show="transferForm.rut.$error.required" class="error">
+							Escribe el Rut del destinatario
+						</span>
+					</div>
+						
+					<label>Rut del destinatario:
+						<input name="rut" 
+						       type="text"
+						       class="form-control square" 
+						       ng-model="transferData.rut"
+						       mask="99?.999.999-w" 
+						       limit = "true" 
+						       placeholder="12.345.678-9" 
+						       rut 
+						       required>
+					</label>
+
+					 <div ng-show="transferForm.$submitted">
+					 	<span ng-show="transferForm.amount.$error.required" class="error">
+							Escribe el monto a transferir
+						</span>
+						
+						<span ng-show="transferForm.amount.$error.positive" class="error">
+							Escribe un monto mayor a 0
+						</span>
+				    </div>
+					
+					<label>Monto:
+						<input name="amount"
+						       type="text"
+						       class="form-control square" 
+						       ng-model="transferData.amount"
+						       placeholder="1" 
+						       ng-latam-int 
+						       positive
+						       required>
+					</label>
+					
+					<button type="submit" class="btn btn-primary square form-btn">
+						Transferir fondos
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

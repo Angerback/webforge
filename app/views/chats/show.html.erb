@@ -1,0 +1,65 @@
+<% provide(:title, @chat.title + " de " + current_user.name) %>
+<div class="container">
+	<div>
+		<div>
+			<ol class="breadcrumb ms">
+			  	<li><%= link_to "Inicio", root_path %></li>
+			  	<li><%= link_to "Conversaciones", chats_path %></li>
+			  	<li class="active"> <%= @chat.title %> de <%= @owner.name %></li>
+			</ol>
+		</div>
+		<div class="row">
+			<div class="col-xs-10">
+				<h1 class="question-instructions"> <%= @chat.title %> de <%= @owner.name %> </h1>		
+			</div>
+			<div class="col-xs-2">
+				<%= link_to(chats_path) do %>
+					<span class="glyphicon glyphicon-remove btn-exit" aria-hidden="true"></span>
+				<% end %>
+			</div>	
+		</div>
+		<div>
+			<div>
+				<% @messages.each do |message| %>
+					<% if @authors[message.id] == current_user.name %>
+						<div class="my-message clear">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<h2 class="ms-h2">
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+										<%= @authors[message.id]%> dice:
+									</h2>
+									<p><%= message.created_at %></p>
+									<div class="well">
+										<%= message.body.html_safe %>
+									</div>
+									<div>
+										<%= link_to 'Responder', {controller: "messages", action: "new", id: message.chat_id}, class: "btn btn-primary square" %>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% else %>
+						<div class="their-message clear">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<h2 class="ms-h2">
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+										<%= @authors[message.id]%> dice:
+									</h2>
+									<p><%= message.created_at %></p>
+									<div class="well">
+										<%= message.body.html_safe %>
+									</div>
+									<div>
+										<%= link_to 'Responder', {controller: "messages", action: "new", id: message.chat_id}, class: "btn btn-primary square" %>
+									</div>	
+								</div>
+							</div>
+						</div>
+					<%end %>
+				<% end %>	
+			</div>
+		</div>
+	</div>
+</div>

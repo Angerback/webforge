@@ -1,0 +1,54 @@
+<% provide(:title, @user.name) %>
+<div class="container">
+	<ol class="breadcrumb ms">
+        <li><%= link_to "Inicio", root_path %></li>
+        <li><%= link_to "Usuarios", users_path %></li>
+        <li class="active"> Cuenta de  <%= @user.name %></li>
+    </ol>
+	<h1 class="question-instructions"><%= @user.name %></h1>
+	<% flash.each do |message_type, message| %>
+  		<div class=""><%= message %></div>
+	<% end %>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2 class="ms-h2">Información básica</h2>
+					<p>
+						<strong>Rut:</strong> <%= @user.rut %>
+					</p>		
+					<p>
+						<strong>Correo:</strong> <%= @user.email %>
+					</p>	
+					<p>
+						<strong>Rol:</strong> <%= @user.user_type %>
+					</p>	
+				</div>
+			</div>	
+		</div>
+		<div class="col-xs-6">
+			<% if @lastTest %>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h2 class="ms-h2">Últimas evaluaciones</h2>
+						<p>
+							<strong>Calificación en <%= @evaluation.name %>:</strong> <%= @lastTest.grade %>
+						</p>	
+					</div>
+				</div>
+			<% end %>			
+		</div>
+	</div>
+	
+	<div>
+		<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
+		<%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary square" %></td>
+		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square" %>
+	</div>
+	<div>
+		
+	</div>
+	<div>
+		
+	</div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+uno:
+  balance: 0
+  user_id: 1
+  status: Activa
+  id: 1
+
+dos:
+  balance: 1000
+  user_id: 2
+  status: Activa
+  id: 2

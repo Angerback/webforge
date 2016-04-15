@@ -1,0 +1,64 @@
+<% provide(:title, "Iniciar sesión") %>
+<div class="container login-box">
+   <div class="row">
+      <div class="col-xs-7">
+         <div class="image-container">
+            <%= image_tag "happiness.jpg", alt: "Happy users", class: "welcome-img" %>
+        
+            <div class="greetings-container">
+               <h1 class="jumbotron-header">Bienvenido a WebForge</h1>
+               <p class="random-message">
+                  ¡Si tu Software fuera un helado esta debería ser la cara de tu cliente! El secreto: ¡Software fácil de usar!
+               </p>
+            </div>
+         </div>  
+      </div>
+
+      <div class="col-xs-5 login-right-container">
+         <h1 class="login-head">Iniciar Sesión</h1>
+
+         <div class="login-form-container">
+            <div class="login-text">
+               Cuenta WebForge
+            </div>
+            
+            <div>
+               <% flash.each do |message_type, message| %>
+                  <div><%= message %></div>
+               <% end %>
+            </div>
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <%= devise_error_messages! %>
+               <div class="field">
+                  <%= f.email_field :email, autofocus: true, placeholder: 'alguien@ejemplo.com', class: "form-control ms-input" %>
+               </div>
+
+               <div class="field">
+                  <%= f.password_field :password, autocomplete: "off", placeholder: 'Contraseña', class: "form-control ms-input" %>
+               </div>
+
+               <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                     <%= f.check_box :remember_me, class: "" %>
+                     <%= f.label :remember_me, "Mantenme conectado", class: "login-text" %>
+                  </div>
+               <% end -%>
+
+               <div class="actions">
+                  <%= f.submit "Iniciar sesión", class: "btn btn-primary btn-login square" %>
+               </div>
+            <% end %>
+
+            <!--
+            <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name) %>
+
+            <div class="bottom-message">
+               <span class="login-text">No tienes una cuenta?</span>
+               <%= link_to "¡Pídela ya!", '#' %>
+            </div>
+            -->
+         </div>      
+      </div>
+   </div>
+</div>
