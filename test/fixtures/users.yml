@@ -5,13 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one: 
-	name: Juanito Nieves 
-	rut: 20.356.594-1
-	email: test@mail.com 
-	password: entrar00 
-	password_confirmation: entrar00
-	admin: false 
-	user_type: Alumno
+  name: Juanito Nieves 
+  rut: 20.356.594-1
+  email: test@mail.com 
+  password: entrar00 
+  password_confirmation: entrar00
+  admin: false 
+  user_type: Alumno
 
 #
 two: {}
