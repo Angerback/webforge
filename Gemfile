@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner', '1.4.1'
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :test do
