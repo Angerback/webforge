@@ -1,7 +1,7 @@
 <h1> Últimos movimientos </h1>
 
 <ul>
-	<li ng-repeat="record in userRecords">{{record}}</li>
+	<li ng-repeat="record in userRecords track by $index">{{record}}</li>
 </ul>
    
 <button ui-sref="app.accounts-show">Realizar otra operación</button>
