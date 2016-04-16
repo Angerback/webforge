@@ -22,7 +22,7 @@ angular.module('MetroRecordsController', [])
 
 				var name = ''
 				 ,  rut  = '';
-
+				console.log(records[i].operation);
 				switch( records[i].operation ) {
 						
 						case 'deposito':
@@ -30,6 +30,7 @@ angular.module('MetroRecordsController', [])
 								                     " Deposistaste: " +
 								                     records[i].amount + " CLP"
 								                     + " en tu cuenta" );
+							
 							break;
 						
 						case 'retiro':
@@ -67,7 +68,8 @@ angular.module('MetroRecordsController', [])
 				}
 			}
 			for (var k = 0; k < 6; k++) {
-				$scope.metroRecords[k] = $scope.userRecords[k];
+				$scope.metroRecords.push($scope.userRecords[k]);
+				console.log("HOLI" + $scope.metroRecords[k]);
 			} 
 		})
 	}

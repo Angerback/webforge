@@ -16,7 +16,7 @@
 				</h1>
 
 				<ul>
-					<li ng-repeat="record in metroRecords" 
+					<li ng-repeat="record in metroRecords track by $index" 
 						class="metro-regular-text">
 						{{record}}
 					</li>
