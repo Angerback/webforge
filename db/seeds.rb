@@ -10,8 +10,7 @@
 #1
 #User.create(name: "Javier", rut: "20.356.594-1", email: "wolfden00@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: true, user_type: "Profesor")
 #2
-User.create(name: "Ismael Vicencio", rut: "17.680.797-0", email: "
-	", password: "entrar00", password_confirmation: "entrar00", admin: true, user_type: "Profesor")
+User.create(name: "Ismael Vicencio", rut: "17.680.797-0", email: "ismael.vicencio@usach.cl", password: "entrar00", password_confirmation: "entrar00", admin: true, user_type: "Profesor")
 
 # Alumnos
 
