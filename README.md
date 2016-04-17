@@ -13,5 +13,4 @@ Luego de hacer clone:
 bundle install
 rake db:setup
 rake db:migrate
-print s
 ```
