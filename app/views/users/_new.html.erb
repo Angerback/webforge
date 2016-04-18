@@ -1,13 +1,4 @@
-<% provide(:title, "Nuevo usuario") %>
-<div class="container">
-  <div>
-    <ol class="breadcrumb ms">
-        <li><%= link_to "Inicio", root_path %></li>
-        <li><%= link_to "Usuarios", users_path %></li>
-        <li class="active"> Nuevo usuario</li>
-    </ol>
-  </div>
-  <h1 class="question-instructions">Nuevo usuario</h1>
+<div>
   <%= form_for(@user) do |f| %>
     <div>
       <% if @user.errors.any? %>
@@ -34,12 +25,11 @@
       <%= f.label :password, "Contraseña" %><br />
       <%= f.password_field :password, autocomplete: "off", class: "form-control ms-input" %>
     </div>
-    <div class="field">
+    <div class="field" id="tipoUsuarioSelect">
       <%= label :user_type, "Tipo de Usuario" %>
       <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]) %>
       </div>
       <%= f.submit 'Crear usuario', :class  => "btn btn-primary square" %>
-      <%= link_to 'Cancelar', users_path, class: "btn btn-primary square" %>
     </div>
   <% end %>
 </div>

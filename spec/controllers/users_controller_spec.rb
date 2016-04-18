@@ -38,7 +38,7 @@ RSpec.describe UsersController do
 
   describe "POST #create" do
     it "Creación exitosa de usuario" do
-      post :create, user: { name: "Jacinto", email: "a@z.com", rut: "8.464.946-5", 
+      post :create, user: { name: "Jacinto", email: "a@z.com", rut: "8.464.946-5",
       user_type: "Alumno", password: "entrar05" }
     end
   end
@@ -52,7 +52,7 @@ RSpec.describe UsersController do
 
   describe "DELETE #destroy" do
     it "Eliminación exitosa de usuario" do
-      expect{ 
+      expect{
         delete :destroy, :id => 2
      }.to change(User, :count).by(-1)
     end

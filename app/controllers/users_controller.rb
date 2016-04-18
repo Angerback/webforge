@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  	
+
   	before_action :authenticate_user!
 	before_filter :authorize_admin, except: [:edit]
 
 	# GET /users
 	def index
+    @user = User.new
 		@users = User.all
 	end
 
@@ -14,11 +15,11 @@ class UsersController < ApplicationController
 		#@tests = Array.new
 		#@evaluations = Evaluation.all
 		@evaluation = Evaluation.find(1)
-		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last 
+		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
 
 		#if Test.where( :user_id => current_user.id, :grade =>  0.9..7.1 ).last
 		#	@evaluations.each do |evaluation|
-		#		@tests[evaluation.id] = Test.where( :user_id => current_user.id, 
+		#		@tests[evaluation.id] = Test.where( :user_id => current_user.id,
   		#	                     		  			:evaluation_id => evaluation.id,
   		#	                      		  			:grade =>  0.9..7.1 ).last
 		#	end
@@ -43,9 +44,18 @@ class UsersController < ApplicationController
 			redirect_to users_path
 			flash[:success] = "Usuario creado exitosamente"
 		else
-			render :new
+			redirect_to users_path
+      if @user.errors.any?
+        errors = @user.errors.full_messages.first
+        @user.errors.full_messages.each do |msg|
+          if errors != msg
+            errors = errors + ", " + msg
+          end
+        end
+        flash[:error] = errors
+      end
 		end
-		
+
 	end
 
 	 # PATCH/PUT /users/:id
@@ -55,20 +65,20 @@ class UsersController < ApplicationController
 			flash[:success] = "Usuario actualizado exitosamente"
 			redirect_to @user
 		else
-			render :edit 
+			render :edit
 		end
 	end
 
 	# DELETE /users/:id
 	def destroy
 		@user = User.find(params[:id])
-		if @user.admin 
+		if @user.admin
 			flash[:danger] = "El usuario es administrador del sistema y no puede ser eliminado"
 		else
 			@user.destroy
 			flash[:success] = "Usuario eliminado exitosamente"
 		end
-		redirect_to(users_path)      
+		redirect_to(users_path)
 	end
 end
 
