@@ -26,92 +26,82 @@
             <div class="jumbotron push-down-margin">
         <h1>Heurísticas de Nielsen</h1>
                 <p>Una aproximación a la Usabilidad Web o ¿Cómo sobrevivir en la Red?</p>
+
+                <%= link_to 'Empieza aquí!', introduction_path, class: "btn" %>
                 </div>
                 <div class="row">
                     
-                    <div class="col-md-3">
-                        
+                    <div class="col-md-3">                        
                         <div class="menu-item blue">
                             <a href="#feature-modal" data-toggle="modal">
-                                <i class="fa fa-magic"></i>
-                                <p>Feature</p>
+                                <%= link_to(heuristics_path) do %>              
+                                        <%= image_tag "heuristics.png", alt: "Heurísticas", class: "icon-anchor" %>
+                                    <% end %>
+                                    <h1 class="item-title"><%= link_to 'Heurísticas', heuristics_path, class: "text-anchor" %></h1>
+                                    <p>Conoce las diez guías generales para el diseño de interfaces definidas por el gurú de la usabilidad Jacob Nielsen.</p>
                             </a>
                         </div>
-                        
-                        <div class="menu-item green">
-                            <a href="#portfolio-modal" data-toggle="modal">
-                                <i class="fa fa-file-photo-o"></i>
-                                <p>Portfolio</p>
-                            </a>
-                        </div>
-                        
-                        <div class="menu-item light-red">
-                            <a href="#about-modal" data-toggle="modal">
-                                <i class="fa fa-user"></i>
-                                <p>About Us</p>
-                            </a>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="col-md-6">
-                        
-                        <!-- Start Carousel Section -->
-                        <div class="home-slider">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px;">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                </ol>
+                         </div>
 
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                    <div class="item active">
 
-                                        <%= image_tag("plantilla-provisional/about-01.jpg", class: "img-responsive") %>                                        
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("plantilla-provisional/about-02.jpg", class: "img-responsive") %>             
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("plantilla-provisional/about-03.jpg", class: "img-responsive") %>             
-                                    </div>
 
-                                </div>
 
-                            </div>
-                        </div>
-                        <!-- Start Carousel Section -->
-                        
 
-                    </div>
-                    
-                    <div class="col-md-3">
-                        
-                        <div class="menu-item light-red">
-                            <a href="#contact-modal" data-toggle="modal">
-                                <i class="fa fa-envelope-o"></i>
-                                <p>Contact</p>
-                            </a>
-                        </div>
-                        
-                        <div class="menu-item color">
-                            <a href="#testimonial-modal" data-toggle="modal">
-                                <i class="fa fa-comment-o"></i>
-                                <p>Testimonial</p>
-                            </a>
-                        </div>
+                         <div class="col-md-3">
                         
                         <div class="menu-item blue">
-                            <a href="#news-modal" data-toggle="modal">
-                                <i class="fa fa-mortar-board"></i>
-                                <p>Latest News</p>
+                            <a href="#portfolio-modal" data-toggle="modal">
+                                <%= link_to(evaluations_path) do %>
+                                        <%= image_tag "evaluation.png", alt: "Evaluación", class: "icon-anchor" %>
+                                    <% end %>           
+                                    <div class="section-title">
+                                        <h1 class="item-title"><%= link_to 'Evaluación', evaluations_path, class: "text-anchor" %></h1>
+                                    </div>
+                                    <p>Mide tus conocimientos a través de breves evaluaciones, entérate de tus debilidades y supera tu propia marca.</p>
                             </a>
                         </div>
+                        </div>
+
+
+                        <div class="col-md-3">
                         
+                        <div class="menu-item blue">
+                            <a href="#portfolio-modal" data-toggle="modal">
+                                <%= link_to(practices_path) do %>
+                                        <%= image_tag "practice.png", alt: "Práctica", class: "icon-anchor" %>
+                                    <% end %>           
+                                    <div class="section-title">
+                                        <h1 class="item-title"><%= link_to 'Práctica', practices_path, class: "text-anchor" %></h1>
+                                    </div>
+                                    <p>Aplica la teoría en la reparación de una interfaz dañada trabajando directamente con las tecnologías de front-end a través de Codepen.</p>
+                            </a>
+                        </div>
+                        </div>
+
+
+    <div class="col-md-3">                        
+                        <div class="menu-item blue">
+                            <a href="#contact-modal" data-toggle="modal">
+                                <%= link_to(references_path) do %>
+                                    <%= image_tag "resources.png", alt: "Recursos", class: "icon-anchor" %>
+                                <% end %>
+                                <div class="section-title">
+                                    <h1 class="item-title"><%= link_to 'Recursos', references_path, class: "text-anchor" %></h1>
+                                </div>
+                                <p>Navega y aprende a través de la colección de referencias 
+                                externas reunidas en este recurso de aprendizaje.</p>
+                            </a>
+                        </div>
                     </div>
+
+
+
+                    
+                       
+
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
