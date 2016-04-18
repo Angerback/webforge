@@ -53,6 +53,7 @@ module Webforge
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
+
     # Bower asset paths
     root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
       config.sass.load_paths << bower_path
