@@ -22,6 +22,7 @@
 //= require angular-flash-alert/dist/angular-flash
 //= require angular-vs-repeat/src/angular-vs-repeat
 //= require bootstrap-sass/assets/javascripts/bootstrap.min
+//= require metro/build/js/metro.min
 //= require tinymce
 //= require_tree .
 

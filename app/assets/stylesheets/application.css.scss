@@ -10,13 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap-sass
+ * require bootstrap-sass
+
  *= require_tree .
- *= require_self
+ *= require_self 
+ * require metro-bootstrap
+
  */
 
 /* T.T primera linea revisar https://github.com/twbs/bootstrap-sass/issues/592 final */
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
-@import "bootstrap-sass/assets/stylesheets/_bootstrap-sprockets";
-@import "bootstrap-sass/assets/stylesheets/_bootstrap";
+/*@import "bootstrap-sass/assets/stylesheets/_bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap";*/
 
+@import "metro-bootstrap/dist/css/metro-bootstrap";
