@@ -30,7 +30,9 @@
 			<%= form_tag("/users", :method => "get",class: "form-inline", id:"search-form") do %>
 					<div class="pull-left">
 						<%= link_to 'Nuevo', new_user_path, class: "btn btn-primary square" %>
-						<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
+						<%if @searching%>
+							<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
+						<%end%>
 					</div>
 					<div class="pull-right">
 					<%= submit_tag "Buscar", class: "btn btn-primary square"%>
