@@ -15,21 +15,32 @@
 
 		<!-- Generic search form -->
 		<!-- A form_tag se le pasa el PATH y el método que por defecto POST -->
-		
-		<%= form_tag("/users", :method => "get", id:"search-form") do %>
-		  <%= text_field_tag :search, params[:search] ,placeholder: "Nombre, Rut, Rol, Email" %>
-		  <%= submit_tag "Buscar"%>
-		<% end %>
+
+
 		<br>
 		<!-- En caso de que no se encuentre nada -->
 		<%if @users.blank? %>
 			<h4> No se encontraron coincidencias para <strong>"<%= params[:search] %>"</strong></h4>
-			<a href="/users"> Volver</a>
+
 			<br>
 			<br>
 		<%end%>
 		<!--/Generic search form -->
+		<div class="fluid-row">
+			<%= form_tag("/users", :method => "get",class: "form-inline", id:"search-form") do %>
+					<div class="pull-left">
+						<%= link_to 'Nuevo', new_user_path, class: "btn btn-primary square" %>
+						<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
+					</div>
+					<div class="pull-right">
+					<%= submit_tag "Buscar", class: "btn btn-primary square"%>
+			  	<%= text_field_tag :search, params[:search], class:"form-control ms-input", placeholder: "Nombre, Rut, Rol, Email" %>
+				</div>
+			<% end %>
 
+		</div>
+
+		<% if !@users.blank? %>
 		<table class="table">
 			<tr>
 				<th>Nombre</th>
@@ -50,8 +61,10 @@
 				</tr>
 			<% end %>
 		</table>
+		<% end %>
 		<div>
-			<%= link_to 'Nuevo', new_user_path, class: "btn btn-primary square" %>
+
 		</div>
+
 	</div>
 </div>
