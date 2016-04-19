@@ -11,6 +11,25 @@
 		<% flash.each do |message_type, message| %>
   			<div class=""><%= message %></div>
 		<% end %>
+
+
+		<!-- Generic search form -->
+		<!-- A form_tag se le pasa el PATH y el método que por defecto POST -->
+		
+		<%= form_tag("/users", :method => "get", id:"search-form") do %>
+		  <%= text_field_tag :search, params[:search] ,placeholder: "Nombre, Rut, Rol, Email" %>
+		  <%= submit_tag "Buscar"%>
+		<% end %>
+		<br>
+		<!-- En caso de que no se encuentre nada -->
+		<%if @users.blank? %>
+			<h4> No se encontraron coincidencias para <strong>"<%= params[:search] %>"</strong></h4>
+			<a href="/users"> Volver</a>
+			<br>
+			<br>
+		<%end%>
+		<!--/Generic search form -->
+
 		<table class="table">
 			<tr>
 				<th>Nombre</th>

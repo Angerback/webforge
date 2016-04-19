@@ -6,6 +6,11 @@ class UsersController < ApplicationController
 	# GET /users
 	def index
 		@users = User.all
+		if params[:search]
+			@users = User.search(params[:search])
+		#else
+			#@users = User.all.order("created_at DESC")
+		end
 	end
 
 	# GET /users/:id

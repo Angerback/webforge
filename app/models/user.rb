@@ -19,4 +19,19 @@ class User < ActiveRecord::Base
     validates :name, presence: true	
    	validates :rut, presence: true, rut: true, uniqueness: true
    	validates :user_type, presence: true, inclusion: { in: %w( Alumno Ayudante Profesor ) } 
+
+
+   	# Método de busquedad
+   	def self.search(search)
+   		#Declarar los campos donde buscar al realizar una consulta
+   		where("name LIKE ? OR rut LIKE ? OR email LIKE ? OR user_type LIKE ?",
+   			"%#{search}%",
+   			"%#{search}%",
+   			"%#{search}%",
+   			"%#{search}%"
+   			)
+   	end
+   	#Nota: "LIKE" solo funciona con SQLite y Mysql
+   	#Para Postgresql se usa "ILIKE"
+
 end
