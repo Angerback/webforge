@@ -1,7 +1,5 @@
 /* Fonts */
 
-$colorClaro: '';
-
 @font-face {
   font-family: 'Segoi UI Light';
   src:font-url('segoeuil.ttf') format('truetype');
@@ -220,11 +218,11 @@ li.user-icon {
 }
 
 nav.wf-nav {
-	background-color: $colorClaro;
+	background-color: #e6e6e6;
  }
 
 ul.multi-col {
-	background-color: $colorClaro; 
+	background-color: #e6e6e6; 
 }
 
 ul.nav li a {
@@ -383,7 +381,7 @@ p.jumbotron-subheader {
 }
 
 .footerContainer {
-	background-color: $colorClaro;
+	background-color: #e6e6e6;
 }
 
 .fourColumnFooter {

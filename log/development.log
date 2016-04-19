@@ -1,0 +1,1275 @@
+  [1m[36m (252.8ms)[0m  [1mCREATE TABLE "alternatives" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "sentence" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "order" varchar) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (115.5ms)[0m  [1mCREATE  INDEX "index_alternatives_on_question_id" ON "alternatives" ("question_id")[0m
+  [1m[35m (139.4ms)[0m  CREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_id" integer, "question_id" integer, "alternative" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "correct" integer) 
+  [1m[36m (115.0ms)[0m  [1mCREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+
+  [1m[36m (122.9ms)[0m  [1mCREATE  INDEX "index_answers_on_test_id" ON "answers" ("test_id")[0m
+  [1m[35m (141.1ms)[0m  CREATE TABLE "bank_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "balance" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" varchar) 
+  [1m[36m (115.3ms)[0m  [1mCREATE TABLE "chats" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "practice_id" integer) [0m
+  [1m[35m (124.1ms)[0m  CREATE  INDEX "index_chats_on_user_id" ON "chats" ("user_id")
+  [1m[36m (148.5ms)[0m  [1mCREATE TABLE "compositions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "evaluation_id" integer, "question_id" integer, "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (115.5ms)[0m  CREATE  INDEX "index_compositions_on_evaluation_id" ON "compositions" ("evaluation_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+[0m
+  [1m[35m (123.9ms)[0m  CREATE  INDEX "index_compositions_on_question_id" ON "compositions" ("question_id")
+  [1m[36m (141.3ms)[0m  [1mCREATE TABLE "donts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "heuristic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (124.0ms)[0m  CREATE TABLE "dos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "heuristic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (114.5ms)[0m  [1mCREATE TABLE "evaluations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar) [0m
+  [1m[35m (114.7ms)[0m  CREATE TABLE "examples" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "heuristic_id" integer, "description" text, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (140.3ms)[0m  [1mCREATE TABLE "exercises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "practice_id" integer, "plunk" varchar, "embed" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (115.0ms)[0m  CREATE  INDEX "index_exercises_on_practice_id" ON "exercises" ("practice_id")
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+[0m
+  [1m[35m (121.3ms)[0m  CREATE  INDEX "index_exercises_on_user_id" ON "exercises" ("user_id")
+  [1m[36m (140.7ms)[0m  [1mCREATE TABLE "heuristics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (122.6ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "user_id" integer, "chat_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (114.9ms)[0m  [1mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+
+  [1m[36m (147.4ms)[0m  [1mCREATE  INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  [1m[35m (114.5ms)[0m  CREATE TABLE "practices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "plunk" varchar, "embed" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (114.3ms)[0m  [1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_id" integer, "sentence" text, "answer" integer, "question_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar) [0m
+  [1m[35m (123.0ms)[0m  CREATE  INDEX "index_questions_on_topic_id" ON "questions" ("topic_id")
+  [1m[36m (140.1ms)[0m  [1mCREATE TABLE "records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "operation" varchar, "owner_id" integer, "receiver_id" varchar, "amount" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (124.3ms)[0m  CREATE TABLE "references" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "heuristic_id" integer, "description" text, "link" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (131.1ms)[0m  [1mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "evaluation_id" integer, "grade" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (139.0ms)[0m  CREATE  INDEX "index_tests_on_evaluation_id" ON "tests" ("evaluation_id")
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+[0m
+  [1m[35m (129.5ms)[0m  CREATE  INDEX "index_tests_on_user_id" ON "tests" ("user_id")
+  [1m[36m (122.8ms)[0m  [1mCREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (152.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "name" varchar, "rut" varchar, "user_type" varchar, "admin" boolean DEFAULT 'f') 
+  [1m[36m (132.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (131.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (431.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (132.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (122.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150906034043')[0m
+  [1m[35m (133.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150616225843')
+  [1m[36m (124.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150504013604')[0m
+  [1m[35m (133.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150504202542')
+  [1m[36m (133.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150508063003')[0m
+  [1m[35m (132.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150508063133')
+  [1m[36m (133.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150516214834')[0m
+  [1m[35m (116.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150604183701')
+  [1m[36m (124.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150604184454')[0m
+  [1m[35m (124.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150604184524')
+  [1m[36m (133.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150607192236')[0m
+  [1m[35m (141.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150607192242')
+  [1m[36m (124.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150616223843')[0m
+  [1m[35m (141.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150616225504')
+  [1m[36m (141.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150616234932')[0m
+  [1m[35m (141.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150617001649')
+  [1m[36m (132.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150617003145')[0m
+  [1m[35m (132.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150617010705')
+  [1m[36m (124.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150621235939')[0m
+  [1m[35m (141.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150622030804')
+  [1m[36m (141.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150622031409')[0m
+  [1m[35m (132.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150622040005')
+  [1m[36m (132.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150624040215')[0m
+  [1m[35m (141.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150625061420')
+  [1m[36m (141.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150630015707')[0m
+  [1m[35m (141.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150704231429')
+  [1m[36m (141.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150704234528')[0m
+  [1m[35m (141.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150705222028')
+  [1m[36m (141.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150705224952')[0m
+  [1m[35m (132.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150830182539')
+  [1m[36m (124.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150904035647')[0m
+  [1m[35m (146.2ms)[0m  CREATE TABLE "alternatives" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "sentence" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "order" varchar) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (180.6ms)[0m  CREATE  INDEX "index_alternatives_on_question_id" ON "alternatives" ("question_id")
+  [1m[36m (147.7ms)[0m  [1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_id" integer, "question_id" integer, "alternative" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "correct" integer) [0m
+  [1m[35m (139.5ms)[0m  CREATE  INDEX "index_answers_on_question_id" ON "answers" ("question_id")
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (204.6ms)[0m  CREATE  INDEX "index_answers_on_test_id" ON "answers" ("test_id")
+  [1m[36m (157.1ms)[0m  [1mCREATE TABLE "bank_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "balance" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" varchar) [0m
+  [1m[35m (123.4ms)[0m  CREATE TABLE "chats" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "practice_id" integer) 
+  [1m[36m (132.1ms)[0m  [1mCREATE  INDEX "index_chats_on_user_id" ON "chats" ("user_id")[0m
+  [1m[35m (216.0ms)[0m  CREATE TABLE "compositions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "evaluation_id" integer, "question_id" integer, "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (198.7ms)[0m  [1mCREATE  INDEX "index_compositions_on_evaluation_id" ON "compositions" ("evaluation_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+
+  [1m[36m (190.1ms)[0m  [1mCREATE  INDEX "index_compositions_on_question_id" ON "compositions" ("question_id")[0m
+  [1m[35m (166.2ms)[0m  CREATE TABLE "donts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "heuristic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (123.8ms)[0m  [1mCREATE TABLE "dos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "heuristic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (124.0ms)[0m  CREATE TABLE "evaluations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar) 
+  [1m[36m (148.5ms)[0m  [1mCREATE TABLE "examples" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "heuristic_id" integer, "description" text, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (206.1ms)[0m  CREATE TABLE "exercises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "practice_id" integer, "plunk" varchar, "embed" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (148.5ms)[0m  [1mCREATE  INDEX "index_exercises_on_practice_id" ON "exercises" ("practice_id")[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+
+  [1m[36m (188.4ms)[0m  [1mCREATE  INDEX "index_exercises_on_user_id" ON "exercises" ("user_id")[0m
+  [1m[35m (164.9ms)[0m  CREATE TABLE "heuristics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (147.8ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "user_id" integer, "chat_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (148.6ms)[0m  CREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+[0m
+  [1m[35m (164.2ms)[0m  CREATE  INDEX "index_messages_on_user_id" ON "messages" ("user_id")
+  [1m[36m (149.5ms)[0m  [1mCREATE TABLE "practices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "plunk" varchar, "embed" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (206.1ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_id" integer, "sentence" text, "answer" integer, "question_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar) 
+  [1m[36m (131.1ms)[0m  [1mCREATE  INDEX "index_questions_on_topic_id" ON "questions" ("topic_id")[0m
+  [1m[35m (165.2ms)[0m  CREATE TABLE "records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "operation" varchar, "owner_id" integer, "receiver_id" varchar, "amount" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (149.0ms)[0m  [1mCREATE TABLE "references" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "heuristic_id" integer, "description" text, "link" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (148.7ms)[0m  CREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "evaluation_id" integer, "grade" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (158.0ms)[0m  [1mCREATE  INDEX "index_tests_on_evaluation_id" ON "tests" ("evaluation_id")[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+
+  [1m[36m (154.6ms)[0m  [1mCREATE  INDEX "index_tests_on_user_id" ON "tests" ("user_id")[0m
+  [1m[35m (138.9ms)[0m  CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (157.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime, "name" varchar, "rut" varchar, "user_type" varchar, "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (186.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.6ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (148.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (164.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (148.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (148.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150906034043')
+  [1m[36m (124.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150616225843')[0m
+  [1m[35m (149.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150504013604')
+  [1m[36m (141.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150504202542')[0m
+  [1m[35m (141.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150508063003')
+  [1m[36m (132.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150508063133')[0m
+  [1m[35m (124.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150516214834')
+  [1m[36m (132.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150604183701')[0m
+  [1m[35m (132.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150604184454')
+  [1m[36m (124.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150604184524')[0m
+  [1m[35m (132.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150607192236')
+  [1m[36m (116.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150607192242')[0m
+  [1m[35m (132.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150616223843')
+  [1m[36m (124.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150616225504')[0m
+  [1m[35m (141.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150616234932')
+  [1m[36m (183.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150617001649')[0m
+  [1m[35m (182.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150617003145')
+  [1m[36m (182.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150617010705')[0m
+  [1m[35m (182.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150621235939')
+  [1m[36m (191.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150622030804')[0m
+  [1m[35m (182.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150622031409')
+  [1m[36m (341.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150622040005')[0m
+  [1m[35m (240.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150624040215')
+  [1m[36m (141.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150625061420')[0m
+  [1m[35m (141.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150630015707')
+  [1m[36m (124.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150704231429')[0m
+  [1m[35m (141.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150704234528')
+  [1m[36m (124.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150705222028')[0m
+  [1m[35m (179.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150705224952')
+  [1m[36m (127.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150830182539')[0m
+  [1m[35m (124.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150904035647')
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ismael.vicencio@usach.cl' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.680.797-0' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "admin", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ismael Vicencio"], ["rut", "17.680.797-0"], ["email", "ismael.vicencio@usach.cl"], ["encrypted_password", "$2a$10$cIEJHO/UOrf6mmUkx0UnAOMYdP8A128WQVg3RbVI75195CPXMP6eG"], ["admin", "t"], ["user_type", "Profesor"], ["created_at", "2016-04-19 04:28:16.718868"], ["updated_at", "2016-04-19 04:28:16.718868"]]
+  [1m[35m (207.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'francisco.avello@usach.cl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.189.568-3' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Francisco Avello"], ["rut", "18.189.568-3"], ["email", "francisco.avello@usach.cl"], ["encrypted_password", "$2a$10$u8tMih32.jUWYhx7f96q8uLX2/3L6s7eKG/WOciXOy2YWbtGaiT/2"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:17.052630"], ["updated_at", "2016-04-19 04:28:17.052630"]]
+  [1m[36m (132.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alexis.casanueva@usach.cl' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.204.469-5' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alexis Casanueva"], ["rut", "18.204.469-5"], ["email", "alexis.casanueva@usach.cl"], ["encrypted_password", "$2a$10$J1EHoafl1kkuA.OpQ7qnBOJZXFIFbZNbC9r76PFknFQ4oXhGVDDw."], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:17.318126"], ["updated_at", "2016-04-19 04:28:17.318126"]]
+  [1m[35m (149.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'gabriel.godoy@usach.cl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.308.623-7' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Gabriel Godoy"], ["rut", "17.308.623-7"], ["email", "gabriel.godoy@usach.cl"], ["encrypted_password", "$2a$10$zSdzJLotoNnMq.0VrptO9eENyxM9grTDxDjzdbKqBxqAJ0C2GN3i."], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:17.621829"], ["updated_at", "2016-04-19 04:28:17.621829"]]
+  [1m[36m (121.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'claudia.guzmans@usach.cl' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.708.786-6' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Claudia Guzman"], ["rut", "17.708.786-6"], ["email", "claudia.guzmans@usach.cl"], ["encrypted_password", "$2a$10$f3gJKDg6y1saui7BqgiJUeONIckDWrXF6ehvAPizfZF1xekxE.5CG"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:17.895082"], ["updated_at", "2016-04-19 04:28:17.895082"]]
+  [1m[35m (139.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'camila.marin@usach.cl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.072.934-8' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Camila Marin"], ["rut", "18.072.934-8"], ["email", "camila.marin@usach.cl"], ["encrypted_password", "$2a$10$BRdZS3XVkx5w99xIGINrNOl.U1UfXWlnyFCeH8e5bCKnDjUJfLh3m"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:18.186940"], ["updated_at", "2016-04-19 04:28:18.186940"]]
+  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sergio.medina@usach.cl' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.120.798-1' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sergio Medina"], ["rut", "18.120.798-1"], ["email", "sergio.medina@usach.cl"], ["encrypted_password", "$2a$10$epqaZV6KUmLFRLjLAkjDbeWTfrwhgbrMPx9yj584se5LZUQ9JqjJG"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:18.462925"], ["updated_at", "2016-04-19 04:28:18.462925"]]
+  [1m[35m (121.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ian.mejias@usach.cl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.832.733-k' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Ian Mejías"], ["rut", "17.832.733-k"], ["email", "ian.mejias@usach.cl"], ["encrypted_password", "$2a$10$UiJEimr8EAZml1gqt1FgDuXX.Ht/NaiOCgJcNn2Vd2SzB7yPh5usy"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:18.738312"], ["updated_at", "2016-04-19 04:28:18.738312"]]
+  [1m[36m (138.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'daniel.morales@usach.cl' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.122.672-2' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Daniel Morales"], ["rut", "18.122.672-2"], ["email", "daniel.morales@usach.cl"], ["encrypted_password", "$2a$10$qfBPU1LVBzWAzS4GRZF6rOGJWXoCir574Bdp2/yiEN.8vlROiOKAG"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:19.017137"], ["updated_at", "2016-04-19 04:28:19.017137"]]
+  [1m[35m (117.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'pablo.salinas.cabanas@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.455.374-0' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Pablo Salinas"], ["rut", "18.455.374-0"], ["email", "pablo.salinas.cabanas@gmail.com"], ["encrypted_password", "$2a$10$12alJyg9V0fqfX1KaOJeuueSZQRNBAuh14JRpNDLExaK59/FCGKOq"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:19.287657"], ["updated_at", "2016-04-19 04:28:19.287657"]]
+  [1m[36m (188.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'psalinas_m@hotmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.115.904-9' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pablo Salinas"], ["rut", "18.115.904-9"], ["email", "psalinas_m@hotmail.com"], ["encrypted_password", "$2a$10$e.XlGYglJ0R3RcTrb8yYX.IVS5ZhvYRwI1nINnlabptcyj3QOurX2"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:19.629380"], ["updated_at", "2016-04-19 04:28:19.629380"]]
+  [1m[35m (147.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'alberto.toro@usach.cl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.294.586-4' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Alberto Toro"], ["rut", "17.294.586-4"], ["email", "alberto.toro@usach.cl"], ["encrypted_password", "$2a$10$YbXLySPcGT1EwR4KBa2Ns.Cc./LoIZOcOmS03uVmZIXMMzBBoNIOG"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:19.923472"], ["updated_at", "2016-04-19 04:28:19.923472"]]
+  [1m[36m (177.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'caro.vh@live.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."rut" = '17.958.228-7' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Carolina Vásquez "], ["rut", "17.958.228-7"], ["email", "caro.vh@live.com"], ["encrypted_password", "$2a$10$8qZ6eTtCnZwHbxBStcs9EuSvaSa5PdglRWzeczWzE8WJzWrxsDiaG"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:20.254627"], ["updated_at", "2016-04-19 04:28:20.254627"]]
+  [1m[35m (121.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'vasco_esteban@hotmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."rut" = '18.210.538-4' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "rut", "email", "encrypted_password", "user_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Vasco Vergara"], ["rut", "18.210.538-4"], ["email", "vasco_esteban@hotmail.com"], ["encrypted_password", "$2a$10$GamTHdhnra9AC5wpEQbJbuYDBuLCAF/6zyAif/N4giZ1q8om72Uwy"], ["user_type", "Alumno"], ["created_at", "2016-04-19 04:28:20.525709"], ["updated_at", "2016-04-19 04:28:20.525709"]]
+  [1m[36m (192.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Visibilidad del Estado del Sistema"], ["description", "El sistema siempre debe mantener a los usuarios informados acerca de su estado, con una retroalimentación apropiada y en un tiempo razonable."], ["created_at", "2016-04-19 04:28:20.738866"], ["updated_at", "2016-04-19 04:28:20.738866"]]
+  [1m[35m (202.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 1], ["description", "Cada acción u operación debería generar una respuesta perceptible por el usuario, desde el posicionamiento del cursor sobre un ícono al envío de datos mediante formularios. Lo anterior también se aplica para cambios de estado como la liberación de un botón previamente bloqueado o el indicar que una opción ya ha sido seleccionada, por ejemplo, un hipervínculo."], ["created_at", "2016-04-19 04:28:20.956030"], ["updated_at", "2016-04-19 04:28:20.956030"]]
+  [1m[36m (136.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 1], ["description", "En general los tiempos de respuesta deben ser apropiados para cada tarea, si existen demoras mayores a 15 segundos en las respuestas del sistema el usuario debería informado del progreso en la concreción de la respuesta."], ["created_at", "2016-04-19 04:28:21.096713"], ["updated_at", "2016-04-19 04:28:21.096713"]]
+  [1m[35m (119.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 1], ["description", "Finalmente, un sistema cuenta con buena visibilidad si permite al usuario indicar verbalmente el estado y alternativas de acción en todo momento incluyendo la navegación, como se verá en la tercera heurística."], ["created_at", "2016-04-19 04:28:21.221966"], ["updated_at", "2016-04-19 04:28:21.221966"]]
+  [1m[36m (119.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 1], ["description", "Si se utilizan ventanas emergentes (pop-up) para mostrar mensajes de error, estas ventanas no deben bloquear la visualización el error en la interfaz cuando se despliegan, de otro modo la respuesta ocultaría parte del estado del sistema."], ["created_at", "2016-04-19 04:28:21.354088"], ["updated_at", "2016-04-19 04:28:21.354088"]]
+  [1m[35m (145.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 1], ["description", "Un mensaje de retroalimentación es desplegado cuando una acción ha sido realizada.\n"], ["image", "examples/h1/e1.png"], ["created_at", "2016-04-19 04:28:21.507257"], ["updated_at", "2016-04-19 04:28:21.507257"]]
+  [1m[36m (127.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 1], ["description", "Un mensaje e indicador de progreso se muestra mientras la aplicación carga.\n"], ["image", "examples/h1/e2.png"], ["created_at", "2016-04-19 04:28:21.637219"], ["updated_at", "2016-04-19 04:28:21.637219"]]
+  [1m[35m (172.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 1], ["description", "La fuerza de la contraseña es mostrada conforme se ingresa la clave.\n"], ["image", "examples/h1/e3.jpg"], ["created_at", "2016-04-19 04:28:21.811950"], ["updated_at", "2016-04-19 04:28:21.811950"]]
+  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Correspondencia entre el sistema y el mundo real"], ["description", "El sistema debe hablar el lenguaje de los usuarios, con las palabras, frases y conceptos familiares, en lugar de términos que estén orientados al sistema. Utilizar convenciones del mundo de real, haciendo que la información aparezca en un orden natural y lógico."], ["created_at", "2016-04-19 04:28:21.937335"], ["updated_at", "2016-04-19 04:28:21.937335"]]
+  [1m[35m (122.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 2], ["description", "Esta heurística no solo se limita a la comunicación entre el usuario y el sistema a través de mensajes, se persigue la sensación de familiaridad para el usuario en todo momento, es decir, este principio se aplica sobre iconos, colores, nombres de variables y acciones."], ["created_at", "2016-04-19 04:28:22.064095"], ["updated_at", "2016-04-19 04:28:22.064095"]]
+  [1m[36m (125.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 2], ["description", "Una buena práctica es utilizar formas de objetos de la interfaz como pistas visuales basándose siempre en las convenciones culturales del usuario.  \n"], ["created_at", "2016-04-19 04:28:22.197126"], ["updated_at", "2016-04-19 04:28:22.197126"]]
+  [1m[35m (118.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 2], ["description", "Preguntas e instrucciones que acompañen formularios y operaciones han de escribirse siguiendo la jerga del usuario con la mayor simpleza y claridad posible. \n"], ["created_at", "2016-04-19 04:28:22.321393"], ["updated_at", "2016-04-19 04:28:22.321393"]]
+  [1m[36m (119.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 2], ["description", "Botones que representan acciones reales o teclas existentes deben conservar el nombre de su homólogo real, la misma idea se aplica para las categorías. "], ["created_at", "2016-04-19 04:28:22.446025"], ["updated_at", "2016-04-19 04:28:22.446025"]]
+  [1m[35m (179.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 2], ["description", "Los códigos y tecnicismos computacionales, muy comunes en comandos y errores, deben evitarse en todo momento."], ["created_at", "2016-04-19 04:28:22.630020"], ["updated_at", "2016-04-19 04:28:22.630020"]]
+  [1m[36m (136.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 2], ["description", "Los menús y la información no pueden ser ordenados de la manera más clara para el diseñador o programador, se debe considerar el orden más natural para el usuario."], ["created_at", "2016-04-19 04:28:22.771332"], ["updated_at", "2016-04-19 04:28:22.771332"]]
+  [1m[35m (186.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 2], ["description", "No se debe utilizar nombre ambiguos, todo nombre debe ser unívoco."], ["created_at", "2016-04-19 04:28:22.962382"], ["updated_at", "2016-04-19 04:28:22.962382"]]
+  [1m[36m (188.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 2], ["description", "Otra forma de acercar los valores de campos numéricos a la realidad del usuario es ingresar de manera automática los signos de dólar (o la moneda apropiada) cuando se trate valores monetarios, ingresar automáticamente puntos en valores superiores a 999 o los signos correspondientes a campos que tengan un formato específico como números telefónicos o identificaciones. \n"], ["created_at", "2016-04-19 04:28:23.154962"], ["updated_at", "2016-04-19 04:28:23.154962"]]
+  [1m[35m (201.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 2], ["description", "ITunes se organiza como una librería que contiene tu multimedia separándola por tipo."], ["image", "examples/h2/e1.png"], ["created_at", "2016-04-19 04:28:23.363320"], ["updated_at", "2016-04-19 04:28:23.363320"]]
+  [1m[36m (186.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 2], ["description", "En Mindomo las ramas y la jerarquía de un mapa mental pueden reorganizarse fácilmente de una forma no lineal. El servicio implementa perfectamente el paradigma."], ["image", "examples/h2/e2.png"], ["created_at", "2016-04-19 04:28:23.555277"], ["updated_at", "2016-04-19 04:28:23.555277"]]
+  [1m[35m (227.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Control y libertad para el Usuario"], ["description", "Ocasionalmente los usuarios eligen funciones del sistema por error y a menudo necesitan una salida de emergencia claramente marcada, esto es, salir del estado indeseado sin tener que pasar por un diálogo extendido. Es importante disponer de las funcionalidades de “hacer” y “deshacer."], ["created_at", "2016-04-19 04:28:23.788686"], ["updated_at", "2016-04-19 04:28:23.788686"]]
+  [1m[36m (186.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 3], ["description", "La heurística es clara respecto a que hacer, implementar una función que permita revertir una acción como “deshacer” y “rehacer” es altamente recomendable."], ["created_at", "2016-04-19 04:28:23.980550"], ["updated_at", "2016-04-19 04:28:23.980550"]]
+  [1m[35m (193.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 3], ["description", "Los usuarios deberían ser capaces de cancelar acciones en progreso."], ["created_at", "2016-04-19 04:28:24.180128"], ["updated_at", "2016-04-19 04:28:24.180128"]]
+  [1m[36m (186.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 3], ["description", "Se debe solicitar confirmación al usuario ante acciones que tendrán consecuencias drásticas, negativas o destructivas."], ["created_at", "2016-04-19 04:28:24.371769"], ["updated_at", "2016-04-19 04:28:24.371769"]]
+  [1m[35m (194.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 3], ["description", "Ante menús, diálogos o cajas de múltiples niveles se debe permitir a los usuarios volver a un punto previo, incluso editar datos o cambiar elecciones anteriormente realizadas; si el orden en que se recibe la información no es crítica el usuario podrá llenar información por adelantado.\n"], ["created_at", "2016-04-19 04:28:24.571858"], ["updated_at", "2016-04-19 04:28:24.571858"]]
+  [1m[36m (343.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 3], ["description", "Ofrecer cierto grado de personalización también se enmarca en la esencia de esta heurística."], ["created_at", "2016-04-19 04:28:24.922226"], ["updated_at", "2016-04-19 04:28:24.922226"]]
+  [1m[35m (184.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 3], ["description", "El usuario siempre ha de saber dónde se encuentra y hacia dónde puede ir, es importante apoyar la navegación con etiquetas conceptuales, mapas o marcas."], ["created_at", "2016-04-19 04:28:25.113100"], ["updated_at", "2016-04-19 04:28:25.113100"]]
+  [1m[36m (205.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 3], ["description", "Si el sistema utiliza ventanas superpuestas estas no deben limitar el foco del usuario, deben permitir su libre navegación entre las múltiples ventanas."], ["created_at", "2016-04-19 04:28:25.322155"], ["updated_at", "2016-04-19 04:28:25.322155"]]
+  [1m[35m (201.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 3], ["description", "El creador de formularios Wufoo marca con claridad dónde se encuentra la persona y donde puede ir mostrando la selección en cada menú."], ["image", "examples/h3/e1.png"], ["created_at", "2016-04-19 04:28:25.530178"], ["updated_at", "2016-04-19 04:28:25.530178"]]
+  [1m[36m (346.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 3], ["description", "La herramienta de maquetación Balsamiq dispone de los botones “rehacer” y “deshacer” en su barra de herramientas, también se puede acceder a ellos a través de los atajos de teclado estándares."], ["image", "examples/h3/e2.png"], ["created_at", "2016-04-19 04:28:25.880455"], ["updated_at", "2016-04-19 04:28:25.880455"]]
+  [1m[35m (413.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Consistencia y Estándares"], ["description", "Los usuarios no deben tener que preguntarse si las diversas palabras, situaciones, o acciones significan la misma cosa. En general siga las normas y convenciones de la plataforma sobre la que se está implementando el sistema."], ["created_at", "2016-04-19 04:28:26.295935"], ["updated_at", "2016-04-19 04:28:26.295935"]]
+  [1m[36m (239.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Es importante respetar los formatos de la organización tras el sistema y preservar su consistencia a lo largo de todas las pantallas."], ["created_at", "2016-04-19 04:28:26.539319"], ["updated_at", "2016-04-19 04:28:26.539319"]]
+  [1m[35m (318.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Considerando lo anterior, el esquema de diseño de los íconos y su estética debe ser consistente en todo el sistema; se aconseja utilizar etiquetas para los íconos.\n"], ["created_at", "2016-04-19 04:28:26.862220"], ["updated_at", "2016-04-19 04:28:26.862220"]]
+  [1m[36m (379.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "El despliegue de datos comienza en la parte superior izquierda de la pantalla. Cada parte de la interfaz debe comenzar con un título o encabezamiento que describa el contenido de la pantalla.\n"], ["created_at", "2016-04-19 04:28:27.245701"], ["updated_at", "2016-04-19 04:28:27.245701"]]
+  [1m[35m (188.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Prefiera la utilización de menús verticales donde el último elemento sea la opción de salir, si existe. Los títulos de dichos menús pueden ir centrados o justificados a la izquierda mientras que los ítems siempre están justificados a la izquierda. Es útil que el texto de los ítems sea precedido por un número o elemento mnemotécnico, los apuntadores, o listas de elementos emergentes, de dichos ítems deben desplegarse a la derecha. Idealmente los deberían ser anchos (muchos ítems) antes que profundos (muchos niveles)."], ["created_at", "2016-04-19 04:28:27.437012"], ["updated_at", "2016-04-19 04:28:27.437012"]]
+  [1m[36m (189.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Las ventanas o campos activos deberían ser identificados con un elemento visual."], ["created_at", "2016-04-19 04:28:27.628468"], ["updated_at", "2016-04-19 04:28:27.628468"]]
+  [1m[35m (164.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Las instrucciones deben aparecer en un lugar semejante a lo largo de las diferentes pantallas, formularios o menús. El mismo principio se aplica para mensajes de estado y error."], ["created_at", "2016-04-19 04:28:27.795060"], ["updated_at", "2016-04-19 04:28:27.795060"]]
+  [1m[36m (189.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Las etiquetas de campos y los campos se deben distinguir topográficamente entre sí; las etiquetas deben mantener una forma consistente entre las diferentes pantallas del sistema. Cuando un campo es sencillo su etiqueta puede ir a su izquierda, para listas de campos se recomienda posicionarla arriba."], ["created_at", "2016-04-19 04:28:27.987019"], ["updated_at", "2016-04-19 04:28:27.987019"]]
+  [1m[35m (177.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Se recomienda variar el tamaño del texto hasta en cuatro niveles, su intensidad en dos y utilizar a lo más tres fuentes distintas."], ["created_at", "2016-04-19 04:28:28.166156"], ["updated_at", "2016-04-19 04:28:28.166156"]]
+  [1m[36m (176.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Respecto al uso de colores no deberían utilizarse más de cuatro o siete con regularidad y colores adicionales solo ocasionalmente. Los colores altamente cromáticos son una buena alternativa para captar la atención del usuario."], ["created_at", "2016-04-19 04:28:28.345293"], ["updated_at", "2016-04-19 04:28:28.345293"]]
+  [1m[35m (181.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Los sonidos deben ser suaves para notificar situaciones regulares y bruscos para las críticas."], ["created_at", "2016-04-19 04:28:28.530302"], ["updated_at", "2016-04-19 04:28:28.530302"]]
+  [1m[36m (195.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Los diferentes componentes de la interfaz deben ser consistentes y mantener un mismo comportamiento a través de las distintas pantallas del sistema."], ["created_at", "2016-04-19 04:28:28.728447"], ["updated_at", "2016-04-19 04:28:28.728447"]]
+  [1m[35m (182.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "No se debe abusar del uso de letras mayúsculas en las distintas vistas."], ["created_at", "2016-04-19 04:28:28.913849"], ["updated_at", "2016-04-19 04:28:28.913849"]]
+  [1m[36m (178.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "No utilizar más de 12 a 20 tipos de íconos."], ["created_at", "2016-04-19 04:28:29.095190"], ["updated_at", "2016-04-19 04:28:29.095190"]]
+  [1m[35m (181.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 4], ["description", "Respecto a los colores, se deben evitar los pares espectralmente extremos y altamente cromáticos y nunca utilizar azules saturados para texto u otro elemento pequeño."], ["created_at", "2016-04-19 04:28:29.280247"], ["updated_at", "2016-04-19 04:28:29.280247"]]
+  [1m[36m (179.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 4], ["description", "Los distintos programas que componen la suite de Office usan la misma barra de herramientas y el mismo menú primario de opciones: Home, Insert, Page Layout."], ["image", "examples/h4/e1.png"], ["created_at", "2016-04-19 04:28:29.462062"], ["updated_at", "2016-04-19 04:28:29.462062"]]
+  [1m[35m (181.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Prevención de Errores"], ["description", "Un diseño cuidadoso que prevenga la ocurrencia de errores es incluso mejor que la generación de buenos mensajes para describirlos. Resulta válida tanto la eliminación de condiciones propensas a errores como su detección y presentación ante los usuarios con una opción de confirmación antes de ejecutar la acción."], ["created_at", "2016-04-19 04:28:29.645174"], ["updated_at", "2016-04-19 04:28:29.645174"]]
+  [1m[36m (189.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 5], ["description", "Las elecciones disponibles en menús deben ser lógicas, distinguibles entre sí y mutuamente excluyentes."], ["created_at", "2016-04-19 04:28:29.836966"], ["updated_at", "2016-04-19 04:28:29.836966"]]
+  [1m[35m (189.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 5], ["description", "El sistema se ha de diseñar de tal manera que las opciones con nombres similares no ejecuten acciones opuestas (y/o potencialmente peligrosas)."], ["created_at", "2016-04-19 04:28:30.028509"], ["updated_at", "2016-04-19 04:28:30.028509"]]
+  [1m[36m (189.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 5], ["description", "Las entradas de datos deberían ser insensibles a mayúsculas siempre que sea posible. Cuando el número de caracteres es limitado se debe indicar el número de caracteres disponibles. Los campos en las pantallas de entradas de datos y las cajas de diálogo deberían contener valores por defecto cuando corresponda."], ["created_at", "2016-04-19 04:28:30.220274"], ["updated_at", "2016-04-19 04:28:30.220274"]]
+  [1m[35m (198.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 5], ["description", "El nombre de una elección en el menú de nivel superior se debe usar como título de menú para el menú de nivel inferior."], ["created_at", "2016-04-19 04:28:30.420311"], ["updated_at", "2016-04-19 04:28:30.420311"]]
+  [1m[36m (181.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 5], ["description", "Una acción primaria es resaltada a través de un área mayor, mientras que “Cancelar” y acciones secundarias solo se muestran como vínculos."], ["image", "examples/h5/e1.png"], ["created_at", "2016-04-19 04:28:30.605854"], ["updated_at", "2016-04-19 04:28:30.605854"]]
+  [1m[35m (186.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 5], ["description", "Desactivar el botón de actualización tras ser presionado de manera que la persona no pueda actualizar la publicación dos veces por error."], ["image", "examples/h5/e2.png"], ["created_at", "2016-04-19 04:28:30.796863"], ["updated_at", "2016-04-19 04:28:30.796863"]]
+  [1m[36m (203.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 5], ["description", "El autofoco previene una fuente común de frustración: Escribir para luego darse cuenta que no se ha seleccionado campo alguno."], ["image", "examples/h5/e3.png"], ["created_at", "2016-04-19 04:28:31.003614"], ["updated_at", "2016-04-19 04:28:31.003614"]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Reconocer antes que Recordar"], ["description", "Minimizar la carga de memoria de los usuarios haciendo objetos, acciones y opciones visibles. Él no debería tener que recordar la información de una parte del diálogo a otra. Las instrucciones de uso del sistema deben ser visibles o fácilmente recuperables cuando sea apropiado."], ["created_at", "2016-04-19 04:28:31.186985"], ["updated_at", "2016-04-19 04:28:31.186985"]]
+  [1m[36m (189.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "El usuario debe contar con toda la información que necesita en cada paso de una transacción. Idealmente la primera palabra de cada opción debería ser la más importante."], ["created_at", "2016-04-19 04:28:31.378607"], ["updated_at", "2016-04-19 04:28:31.378607"]]
+  [1m[35m (198.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 6], ["description", "El uso de pistas visuales y espacios en blanco ayuda a distinguir diferentes componentes de la interfaz, también se refuerza la idea de grupo al mantener la misma distancia entre los elementos que conforman un conjunto y se aplica una mayor entre estos y los grupos vecinos."], ["created_at", "2016-04-19 04:28:31.579018"], ["updated_at", "2016-04-19 04:28:31.579018"]]
+  [1m[36m (189.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "Las áreas de texto requieren de espacios, denominados de respiración, que las rodeen."], ["created_at", "2016-04-19 04:28:31.770321"], ["updated_at", "2016-04-19 04:28:31.770321"]]
+  [1m[35m (189.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 6], ["description", "Las etiquetas de campos deben estar cerca de ellos pero distantes por al menos un espacio en blanco. Es recomendable que los campos en columna que son largos se descompongan en grupos de cinco, separados por una línea en blanco. Si un campo es opcional se debe indicar con claridad.\n"], ["created_at", "2016-04-19 04:28:31.961684"], ["updated_at", "2016-04-19 04:28:31.961684"]]
+  [1m[36m (214.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "Como se ha mencionado, el uso de títulos para cada sección apoya también la identificación de grupos, otros recursos son colores, líneas de separación y áreas sombreadas."], ["created_at", "2016-04-19 04:28:32.178492"], ["updated_at", "2016-04-19 04:28:32.178492"]]
+  [1m[35m (189.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 6], ["description", "Otro uso del espacio en blanco es la creación de simetría para guiar al ojo del usuario, es importante que las pistas visuales y mensajes estén posicionados en lugares de la pantalla en donde es probable que el usuario dirija su mirada."], ["created_at", "2016-04-19 04:28:32.369914"], ["updated_at", "2016-04-19 04:28:32.369914"]]
+  [1m[36m (189.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "Para facilitar el reconocimiento de la importancia de cada ítem en pantalla se pueden usar variaciones al tamaño de letra, realce de fuente, subrayado, color, sombreado o tipografía especial."], ["created_at", "2016-04-19 04:28:32.561769"], ["updated_at", "2016-04-19 04:28:32.561769"]]
+  [1m[35m (206.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 6], ["description", "Los colores suaves, brillantes y saturados han de utilizarse para enfatizar datos, mientras que los colores oscuros, opacos y no saturados para des-enfatizar datos."], ["created_at", "2016-04-19 04:28:32.770015"], ["updated_at", "2016-04-19 04:28:32.770015"]]
+  [1m[36m (240.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "Es importante lograr un buen contraste entre de brillo y de color entre los colores usados para imágenes y fondo. "], ["created_at", "2016-04-19 04:28:33.013827"], ["updated_at", "2016-04-19 04:28:33.013827"]]
+  [1m[35m (186.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 6], ["description", "Finalmente debería ser fácil para el usuario saber dónde puede realizar una acción o selección."], ["created_at", "2016-04-19 04:28:33.203584"], ["updated_at", "2016-04-19 04:28:33.203584"]]
+  [1m[36m (189.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 6], ["description", "Mostrar el estilo de una fuente a elegir en lugar de sólo su nombre. "], ["image", "examples/h6/e1.png"], ["created_at", "2016-04-19 04:28:33.395410"], ["updated_at", "2016-04-19 04:28:33.395410"]]
+  [1m[35m (189.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Flexibilidad y eficiencia de uso"], ["description", "Los atajos, generalmente ignorados por usuarios inexpertos, a menudo pueden acelerar la interacción para el usuario experto de tal manera que el sistema puede servir tanto a los usuarios novatos y a los experimentados. Se debe permitir a los usuarios adaptarse a las acciones frecuentes."], ["created_at", "2016-04-19 04:28:33.586901"], ["updated_at", "2016-04-19 04:28:33.586901"]]
+  [1m[36m (181.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 7], ["description", "Los usuarios pueden reducir el tiempo de entrada de datos si se les permite copiar y pegar datos existentes."], ["created_at", "2016-04-19 04:28:33.770546"], ["updated_at", "2016-04-19 04:28:33.770546"]]
+  [1m[35m (189.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 7], ["description", "Los usuarios deberían tener la opción tanto de hacer clic en una lista de ítems como de utilizar atajo usando el teclado. El mismo comportamiento se espera para formularios, cajas de diálogo y scrolling (desplazamiento) vertical u horizontal."], ["created_at", "2016-04-19 04:28:33.961819"], ["updated_at", "2016-04-19 04:28:33.961819"]]
+  [1m[36m (198.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 7], ["description", "Es útil definir atajos de teclado para las tareas más frecuentes y permitir a los usuarios cierto grado de personalización de ellas. De existir estos atajos se deben presentar a los usuarios."], ["created_at", "2016-04-19 04:28:34.161812"], ["updated_at", "2016-04-19 04:28:34.161812"]]
+  [1m[35m (198.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 7], ["description", "Si el sistema soporta a usuarios novatos y expertos es una buena práctica establecer mensajes para cada nivel de usuario."], ["created_at", "2016-04-19 04:28:34.361945"], ["updated_at", "2016-04-19 04:28:34.361945"]]
+  [1m[36m (172.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 7], ["description", "Para pantallas de entrada de datos con muchos campos o en los cuales los documentos fuentes pueden estar incompletos, se debería permitir a los usuarios el grabar una pantalla parcialmente completada."], ["created_at", "2016-04-19 04:28:34.536511"], ["updated_at", "2016-04-19 04:28:34.536511"]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 7], ["description", "Lista de atajos de teclado en un sitio o aplicación.\n"], ["image", "examples/h7/e1.png"], ["created_at", "2016-04-19 04:28:34.720308"], ["updated_at", "2016-04-19 04:28:34.720308"]]
+  [1m[36m (189.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Estética de diálogos y Diseño minimalista"], ["description", "Los diálogos no deberían contener información irrelevante o raramente necesaria. Cada unidad de información extra en un diálogo compite con las unidades de información importante y disminuye su visibilidad relativa."], ["created_at", "2016-04-19 04:28:34.911879"], ["updated_at", "2016-04-19 04:28:34.911879"]]
+  [1m[35m (180.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 8], ["description", "Solo la información esencial para tomar decisiones (y solo esta información) debe ser mostrada en la pantalla."], ["created_at", "2016-04-19 04:28:35.095280"], ["updated_at", "2016-04-19 04:28:35.095280"]]
+  [1m[36m (189.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 8], ["description", "Los íconos deben ser visualmente distinguibles de acuerdo a su significado conceptual. Los objetos extensos, las líneas resaltadas y las áreas simples de la pantalla, se han de distinguir de los iconos: Cada icono debe estar resaltado con respecto a su fondo."], ["created_at", "2016-04-19 04:28:35.286914"], ["updated_at", "2016-04-19 04:28:35.286914"]]
+  [1m[35m (189.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 8], ["description", "Cada pantalla de entrada de datos debe incluir un título simple, corto, claro y suficientemente distintivo. Los títulos de los menús deben ser breves pero suficientemente largos como para comunicar su contenido."], ["created_at", "2016-04-19 04:28:35.478516"], ["updated_at", "2016-04-19 04:28:35.478516"]]
+  [1m[36m (197.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 8], ["description", "El menú de búsqueda de la imagen ejemplifica los cuatro principios del diseño visual: Contraste, texto acentuado es usado en las dos etiquetas de la búsqueda; Repetición, los colores naranjo, azul y verde representan los diferentes multimedios; Alineamiento, el texto es alineado a la izquierda, mientras la pestaña a la derecha; Proximidad, una delgada línea es usada para separar las diferentes opciones."], ["image", "examples/h8/e1.png"], ["created_at", "2016-04-19 04:28:35.678584"], ["updated_at", "2016-04-19 04:28:35.678584"]]
+  [1m[35m (189.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores"], ["description", "Los mensajes de error se deben expresar en un lenguaje claro (no haya códigos extraños), se debe indicar exactamente el problema, y deben ser constructivos."], ["created_at", "2016-04-19 04:28:35.870721"], ["updated_at", "2016-04-19 04:28:35.870721"]]
+  [1m[36m (188.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 9], ["description", "Los mensajes de error deberían informar a los usuarios sobre la severidad del error cometidos, sugerir la causa del problema que los ha ocasionado e indicar qué acción debe realizar el usuario para corregir el error correspondiente."], ["created_at", "2016-04-19 04:28:36.061599"], ["updated_at", "2016-04-19 04:28:36.061599"]]
+  [1m[35m (386.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 9], ["description", "Si se detecta un error en un campo de entrada de datos el sistema debería posicionar el cursor en ese campo o resaltarlo de alguna manera."], ["created_at", "2016-04-19 04:28:36.449497"], ["updated_at", "2016-04-19 04:28:36.449497"]]
+  [1m[36m (193.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 9], ["description", "Finalmente los mensajes de error deben estar expresados de manera tal que es el sistema, y no el usuario, sea quien se hace cargo de los errores, sin embargo, los mensajes deben colocar al sistema bajo el control del usuario."], ["created_at", "2016-04-19 04:28:36.644706"], ["updated_at", "2016-04-19 04:28:36.644706"]]
+  [1m[35m (173.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 9], ["description", "Nunca utilice palabras violentas u hostiles para describir un error."], ["created_at", "2016-04-19 04:28:36.821762"], ["updated_at", "2016-04-19 04:28:36.821762"]]
+  [1m[36m (178.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "donts" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 9], ["description", "Si se usan mensajes de error con humor deben ser apropiados y nunca faltar el respeto a la comunidad de usuarios."], ["created_at", "2016-04-19 04:28:37.003390"], ["updated_at", "2016-04-19 04:28:37.003390"]]
+  [1m[35m (172.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 9], ["description", "Un mensaje de error cuya única descripción es un código computacional no ofrece información de valor para el usuario."], ["image", "examples/h9/e1.png"], ["created_at", "2016-04-19 04:28:37.178464"], ["updated_at", "2016-04-19 04:28:37.178464"]]
+  [1m[36m (189.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 9], ["description", "Se utiliza una imagen graciosa para informar al usuario del error “Página no encontrada” a la vez que se proveen alternativas y un curso de acción."], ["image", "examples/h9/e2.png"], ["created_at", "2016-04-19 04:28:37.369816"], ["updated_at", "2016-04-19 04:28:37.369816"]]
+  [1m[35m (181.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 9], ["description", "Se provee una respuesta inmediata con instrucciones específicas."], ["image", "examples/h9/e3.png"], ["created_at", "2016-04-19 04:28:37.553327"], ["updated_at", "2016-04-19 04:28:37.553327"]]
+  [1m[36m (198.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "heuristics" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ayuda y Documentación"], ["description", "Aunque es mejor si el sistema se puede utilizar sin documentación, puede ser necesario disponer de ayuda y documentación. Esta ha de ser fácil de buscar, centrada en las tareas del usuario, tener información de las etapas a realizar y no ser muy extensa."], ["created_at", "2016-04-19 04:28:37.753595"], ["updated_at", "2016-04-19 04:28:37.753595"]]
+  [1m[35m (181.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "Las instrucciones deben seguir la secuencia de acciones del usuario. Si las opciones de los menús son ambiguas, el sistema ha de proveer información aclaratoria adicional cuando un ítem sea seleccionado."], ["created_at", "2016-04-19 04:28:37.936778"], ["updated_at", "2016-04-19 04:28:37.936778"]]
+  [1m[36m (181.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "Deben existir ayudas de memoria para los comandos y atajos de teclado, por ejemplo, a través de referencias rápidas. "], ["created_at", "2016-04-19 04:28:38.120053"], ["updated_at", "2016-04-19 04:28:38.120053"]]
+  [1m[35m (189.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "La función de ayuda del menú debe ser visible (por ejemplo, una tecla etiquetada AYUDA o un menú especial)."], ["created_at", "2016-04-19 04:28:38.311360"], ["updated_at", "2016-04-19 04:28:38.311360"]]
+  [1m[36m (223.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "Desde la perspectiva de la Navegación: la información ¿es fácil de encontrar?\n"], ["created_at", "2016-04-19 04:28:38.536718"], ["updated_at", "2016-04-19 04:28:38.536718"]]
+  [1m[35m (188.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "Desde la perspectiva de la Presentación: ¿la disposición visual está bien diseñada?\n"], ["created_at", "2016-04-19 04:28:38.727772"], ["updated_at", "2016-04-19 04:28:38.727772"]]
+  [1m[36m (182.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "Aplique el concepto de Conversación, es decir, ¿la información es exacta, completa y comprensible? ¿La información es relevante? "], ["created_at", "2016-04-19 04:28:38.911663"], ["updated_at", "2016-04-19 04:28:38.911663"]]
+  [1m[35m (198.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "Considere la Orientación a la meta (¿qué puedo hacer yo con este programa?)"], ["created_at", "2016-04-19 04:28:39.111622"], ["updated_at", "2016-04-19 04:28:39.111622"]]
+  [1m[36m (198.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "El material de ayuda debe ser Descriptivo (¿para qué es esta cosa?)\n"], ["created_at", "2016-04-19 04:28:39.311722"], ["updated_at", "2016-04-19 04:28:39.311722"]]
+  [1m[35m (189.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "También debe ser Procedimental (¿cómo hago yo para hacer esta tarea?)\n"], ["created_at", "2016-04-19 04:28:39.503422"], ["updated_at", "2016-04-19 04:28:39.503422"]]
+  [1m[36m (189.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "El material debe ser Interpretativo (¿por qué sucedió eso?) "], ["created_at", "2016-04-19 04:28:39.695033"], ["updated_at", "2016-04-19 04:28:39.695033"]]
+  [1m[35m (189.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["heuristic_id", 10], ["description", "Y por último, debe ser Navegacional (¿dónde estoy?)\n"], ["created_at", "2016-04-19 04:28:39.886887"], ["updated_at", "2016-04-19 04:28:39.886887"]]
+  [1m[36m (181.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "dos" ("heuristic_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "Idealmente la ayuda debe ser sensible al contexto y ofrecer más de un nivel de detalle que el usuario pueda elegir; acceder y regresar del sistema de ayuda debe ser fácil."], ["created_at", "2016-04-19 04:28:40.071787"], ["updated_at", "2016-04-19 04:28:40.071787"]]
+  [1m[35m (186.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["heuristic_id", 10], ["description", "Utilizar vídeos para mostrar características a los usuarios novatos es una buena práctica"], ["image", "examples/h10/e1.png"], ["created_at", "2016-04-19 04:28:40.261741"], ["updated_at", "2016-04-19 04:28:40.261741"]]
+  [1m[36m (181.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "examples" ("heuristic_id", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["heuristic_id", 10], ["description", "Se pueden emplear consejos de ayuda que respondan al situar el puntero sobre ellos apuntando preguntas frecuentes acerca del campo de instrucciones que acompañan."], ["image", "examples/h10/e2.png"], ["created_at", "2016-04-19 04:28:40.445013"], ["updated_at", "2016-04-19 04:28:40.445013"]]
+  [1m[35m (197.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Introducción"], ["path", "introduction_path"], ["created_at", "2016-04-19 04:28:40.648621"], ["updated_at", "2016-04-19 04:28:40.648621"]]
+  [1m[36m (194.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Introducción a las Heurísticas de Nielsen"], ["path", "heuristics_path"], ["created_at", "2016-04-19 04:28:40.844655"], ["updated_at", "2016-04-19 04:28:40.844655"]]
+  [1m[35m (214.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "H1: Visibilidad del Estado del Sistema"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 1 }"], ["created_at", "2016-04-19 04:28:41.061798"], ["updated_at", "2016-04-19 04:28:41.061798"]]
+  [1m[36m (181.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "H2: Correspondencia entre el sistema y el mundo real"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 2 }"], ["created_at", "2016-04-19 04:28:41.244711"], ["updated_at", "2016-04-19 04:28:41.244711"]]
+  [1m[35m (231.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "H3: Control y libertad para el Usuario"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 3 }"], ["created_at", "2016-04-19 04:28:41.477716"], ["updated_at", "2016-04-19 04:28:41.477716"]]
+  [1m[36m (181.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "H4: Consistencia y Estándares"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 4 }"], ["created_at", "2016-04-19 04:28:41.661094"], ["updated_at", "2016-04-19 04:28:41.661094"]]
+  [1m[35m (223.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "H5: Prevención de Errores"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 5 }"], ["created_at", "2016-04-19 04:28:41.886117"], ["updated_at", "2016-04-19 04:28:41.886117"]]
+  [1m[36m (181.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "H6: Reconocer antes que Recordar"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 6 }"], ["created_at", "2016-04-19 04:28:42.069861"], ["updated_at", "2016-04-19 04:28:42.069861"]]
+  [1m[35m (181.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "H7: Flexibilidad y eficiencia de uso"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 7 }"], ["created_at", "2016-04-19 04:28:42.253402"], ["updated_at", "2016-04-19 04:28:42.253402"]]
+  [1m[36m (163.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "H8: Estética de diálogos y Diseño minimalista"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 8 }"], ["created_at", "2016-04-19 04:28:42.419746"], ["updated_at", "2016-04-19 04:28:42.419746"]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 9 }"], ["created_at", "2016-04-19 04:28:42.603284"], ["updated_at", "2016-04-19 04:28:42.603284"]]
+  [1m[36m (172.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "H10: Ayuda y Documentación"], ["path", "{:action => \"show\", :controller => \"heuristics\", :heuristic_id => 10 }"], ["created_at", "2016-04-19 04:28:42.777977"], ["updated_at", "2016-04-19 04:28:42.777977"]]
+  [1m[35m (198.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "topics" ("name", "path", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Evaluación Heurística"], ["path", "heuristic_evaluation_path"], ["created_at", "2016-04-19 04:28:42.978158"], ["updated_at", "2016-04-19 04:28:42.978158"]]
+  [1m[36m (164.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["sentence", "Verdadero"], ["created_at", "2016-04-19 04:28:43.147778"], ["updated_at", "2016-04-19 04:28:43.147778"]]
+  [1m[35m (169.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["question_id", 1], ["sentence", "Falso"], ["created_at", "2016-04-19 04:28:43.319210"], ["updated_at", "2016-04-19 04:28:43.319210"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "evaluations" ("name", "description", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Introducción a las Heurísticas de Nielsen"], ["description", "Esta evaluación mide el conocimiento de las heurísticas de Nielsen y la capacidad de identificar problemas básicos en interfaces a partir de estos principios."], ["image", "evaluations/evaluation 1/index.png"], ["created_at", "2016-04-19 04:28:43.498745"], ["updated_at", "2016-04-19 04:28:43.498745"]]
+  [1m[35m (218.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 13], ["sentence", "Las Heurísticas de Nielsen sólo se utilizan en la fase de diseño del ciclo de vida del software."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:43.724995"], ["updated_at", "2016-04-19 04:28:43.724995"]]
+  [1m[36m (184.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 1], ["number", 1], ["created_at", "2016-04-19 04:28:43.916225"], ["updated_at", "2016-04-19 04:28:43.916225"]]
+  [1m[35m (183.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 1], ["sentence", "La adopción de estándares puede disminuir la tasa de rebote de un sitio."], ["answer", 1], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:44.102848"], ["updated_at", "2016-04-19 04:28:44.102848"]]
+  [1m[36m (189.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 2], ["number", 2], ["created_at", "2016-04-19 04:28:44.294382"], ["updated_at", "2016-04-19 04:28:44.294382"]]
+  [1m[35m (206.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 4], ["sentence", "La correspondencia entre el sistema y el mundo real se basa en la utilización de mensajes apropiados."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:44.502844"], ["updated_at", "2016-04-19 04:28:44.502844"]]
+  [1m[36m (189.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 3], ["number", 3], ["created_at", "2016-04-19 04:28:44.694915"], ["updated_at", "2016-04-19 04:28:44.694915"]]
+  [1m[35m (171.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 13], ["sentence", "La Heurística 4 tiene una mayor incidencia sobre las demás que cualquier otra heurística."], ["answer", 1], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:44.870900"], ["updated_at", "2016-04-19 04:28:44.870900"]]
+  [1m[36m (169.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 4], ["number", 4], ["created_at", "2016-04-19 04:28:45.045312"], ["updated_at", "2016-04-19 04:28:45.045312"]]
+  [1m[35m (169.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 9], ["sentence", "La Heurística 7, Flexibilidad y eficiencia de uso de focaliza en facilitar la navegación para el usuario."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:45.220914"], ["updated_at", "2016-04-19 04:28:45.220914"]]
+  [1m[36m (187.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 5], ["number", 5], ["created_at", "2016-04-19 04:28:45.411147"], ["updated_at", "2016-04-19 04:28:45.411147"]]
+  [1m[35m (181.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 7], ["sentence", "El mejor curso de acción ante errores es que sean comunicados en el lenguaje del usuario (H2) y ayudarle en el reconocimiento, diagnóstico y recuperación (H9)."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:45.594698"], ["updated_at", "2016-04-19 04:28:45.594698"]]
+  [1m[36m (181.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 6], ["number", 6], ["created_at", "2016-04-19 04:28:45.778115"], ["updated_at", "2016-04-19 04:28:45.778115"]]
+  [1m[35m (180.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 12], ["sentence", "Todo sistema debe contar con ayuda detallada y tan completa como sea posible para facilitar las tareas del usuario."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:45.961373"], ["updated_at", "2016-04-19 04:28:45.961373"]]
+  [1m[36m (172.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 7], ["number", 7], ["created_at", "2016-04-19 04:28:46.138180"], ["updated_at", "2016-04-19 04:28:46.138180"]]
+  [1m[35m (177.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 8], ["sentence", "Siguiendo las prácticas de la H6, es recomendable minimizar, y si es posible, evitar completamente el uso de espacios en blanco para optimizar los contenidos a mostrar en cada página."], ["answer", 2], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:46.321019"], ["updated_at", "2016-04-19 04:28:46.321019"]]
+  [1m[36m (196.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 8], ["number", 8], ["created_at", "2016-04-19 04:28:46.519566"], ["updated_at", "2016-04-19 04:28:46.519566"]]
+  [1m[35m (214.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 5], ["sentence", "La tercera heurística, Control y Libertad para el Usuario, plantea la necesidad de facilitar la salida al usuario de situaciones problemáticas e indeseadas."], ["answer", 1], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:46.736062"], ["updated_at", "2016-04-19 04:28:46.736062"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 9], ["number", 9], ["created_at", "2016-04-19 04:28:46.911397"], ["updated_at", "2016-04-19 04:28:46.911397"]]
+  [1m[35m (370.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 3], ["sentence", "El uso de indicadores, como barras de progreso, facilita la comunicación del estado del sistema."], ["answer", 1], ["question_type", "VF"], ["created_at", "2016-04-19 04:28:47.284827"], ["updated_at", "2016-04-19 04:28:47.284827"]]
+  [1m[36m (216.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 10], ["number", 10], ["created_at", "2016-04-19 04:28:47.503378"], ["updated_at", "2016-04-19 04:28:47.503378"]]
+  [1m[35m (180.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 11], ["sentence", "Se utiliza el lenguaje del usuario como indica la H2."], ["order", "a"], ["created_at", "2016-04-19 04:28:47.686215"], ["updated_at", "2016-04-19 04:28:47.686215"]]
+  [1m[36m (181.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 11], ["sentence", "No se respetan estándares faltando a la H4."], ["order", "b"], ["created_at", "2016-04-19 04:28:47.869532"], ["updated_at", "2016-04-19 04:28:47.869532"]]
+  [1m[35m (171.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 11], ["sentence", "Se utilizan adecuadamente los estándares de la plataforma siguiendo los principios de la H4."], ["order", "c"], ["created_at", "2016-04-19 04:28:48.044247"], ["updated_at", "2016-04-19 04:28:48.044247"]]
+  [1m[36m (172.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["topic_id", 6], ["sentence", "De los ejemplos de inicio de sesión de la imagen, es correcto que:"], ["answer", 4], ["question_type", "Selección múltiple"], ["image", "evaluations/evaluation 1/question11.png"], ["created_at", "2016-04-19 04:28:48.219514"], ["updated_at", "2016-04-19 04:28:48.219514"]]
+  [1m[35m (164.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 11], ["number", 11], ["created_at", "2016-04-19 04:28:48.386896"], ["updated_at", "2016-04-19 04:28:48.386896"]]
+  [1m[36m (171.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 12], ["sentence", "Se utiliza un objeto representativo del mundo real para el ingreso de datos lo que hace innecesario y confuso para el usuario agregar otros mecanismos."], ["order", "a"], ["created_at", "2016-04-19 04:28:48.561375"], ["updated_at", "2016-04-19 04:28:48.561375"]]
+  [1m[35m (172.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 12], ["sentence", "El ingreso de datos por medio de teclado es prioritario como estándar por sobre el diseño presentado por la interfaz."], ["order", "b"], ["created_at", "2016-04-19 04:28:48.735908"], ["updated_at", "2016-04-19 04:28:48.735908"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 12], ["sentence", "Ninguna de las alternativas anteriores es correcta."], ["order", "c"], ["created_at", "2016-04-19 04:28:48.911869"], ["updated_at", "2016-04-19 04:28:48.911869"]]
+  [1m[35m (186.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["topic_id", 6], ["sentence", "En una interfaz el ingreso de la hora se realiza exclusivamente a través del reloj, respecto a la interfaz es correcto decir:"], ["answer", 7], ["question_type", "Selección múltiple"], ["image", "evaluations/evaluation 1/question12.png"], ["created_at", "2016-04-19 04:28:49.104910"], ["updated_at", "2016-04-19 04:28:49.104910"]]
+  [1m[36m (176.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 12], ["number", 12], ["created_at", "2016-04-19 04:28:49.287698"], ["updated_at", "2016-04-19 04:28:49.287698"]]
+  [1m[35m (184.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 13], ["sentence", "La interfaz ofrece múltiples caminos a seguir para el usuario facilitando la flexibilidad y navegación."], ["order", "a"], ["created_at", "2016-04-19 04:28:49.477659"], ["updated_at", "2016-04-19 04:28:49.477659"]]
+  [1m[36m (180.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 13], ["sentence", "La ayuda se encuentra claramente definida."], ["order", "b"], ["created_at", "2016-04-19 04:28:49.661405"], ["updated_at", "2016-04-19 04:28:49.661405"]]
+  [1m[35m (164.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 13], ["sentence", "Las opciones presentadas son confusas."], ["order", "c"], ["created_at", "2016-04-19 04:28:49.828023"], ["updated_at", "2016-04-19 04:28:49.828023"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["topic_id", 7], ["sentence", "¿Qué evaluación resulta más relevante para el usuario?"], ["answer", 11], ["question_type", "Selección múltiple"], ["image", "evaluations/evaluation 1/question13.png"], ["created_at", "2016-04-19 04:28:50.003202"], ["updated_at", "2016-04-19 04:28:50.003202"]]
+  [1m[35m (172.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 13], ["number", 13], ["created_at", "2016-04-19 04:28:50.178117"], ["updated_at", "2016-04-19 04:28:50.178117"]]
+  [1m[36m (172.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 14], ["sentence", "Se utiliza un método de interacción adecuado para el ingreso de información."], ["order", "a"], ["created_at", "2016-04-19 04:28:50.352614"], ["updated_at", "2016-04-19 04:28:50.352614"]]
+  [1m[35m (173.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 14], ["sentence", "Se presentan las instrucciones con claridad."], ["order", "b"], ["created_at", "2016-04-19 04:28:50.528283"], ["updated_at", "2016-04-19 04:28:50.528283"]]
+  [1m[36m (172.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 14], ["sentence", "Los elementos son organizados respetando espacios y símbolos para representar el formato del dato a ingresar."], ["order", "c"], ["created_at", "2016-04-19 04:28:50.702917"], ["updated_at", "2016-04-19 04:28:50.702917"]]
+  [1m[35m (173.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["topic_id", 6], ["sentence", "Respecto a la imagen, es falso que:"], ["answer", 12], ["question_type", "Selección múltiple"], ["image", "evaluations/evaluation 1/question14.png"], ["created_at", "2016-04-19 04:28:50.878301"], ["updated_at", "2016-04-19 04:28:50.878301"]]
+  [1m[36m (197.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 14], ["number", 14], ["created_at", "2016-04-19 04:28:51.079815"], ["updated_at", "2016-04-19 04:28:51.079815"]]
+  [1m[35m (194.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 15], ["sentence", "Es una implementación inteligente de los calendarios como método de interacción."], ["order", "a"], ["created_at", "2016-04-19 04:28:51.277503"], ["updated_at", "2016-04-19 04:28:51.277503"]]
+  [1m[36m (165.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 15], ["sentence", "Es difícil para el usuario ingresar el día de su nacimiento a través de este método."], ["order", "b"], ["created_at", "2016-04-19 04:28:51.444842"], ["updated_at", "2016-04-19 04:28:51.444842"]]
+  [1m[35m (180.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 15], ["sentence", "Es difícil para el usuario indicar el mes y año de su nacimiento a través de la interfaz."], ["order", "c"], ["created_at", "2016-04-19 04:28:51.628099"], ["updated_at", "2016-04-19 04:28:51.628099"]]
+  [1m[36m (164.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["topic_id", 6], ["sentence", "La interfaz de la imagen es utilizada para ingresar la fecha de nacimiento del usuario, al respecto es correcto que:"], ["answer", 17], ["question_type", "Selección múltiple"], ["image", "evaluations/evaluation 1/question15.png"], ["created_at", "2016-04-19 04:28:51.795029"], ["updated_at", "2016-04-19 04:28:51.795029"]]
+  [1m[35m (171.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 15], ["number", 15], ["created_at", "2016-04-19 04:28:51.969712"], ["updated_at", "2016-04-19 04:28:51.969712"]]
+  [1m[36m (164.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["topic_id", 10], ["sentence", "La __ explica cómo cada unidad de información compite con el resto para captar la atención del usuario."], ["answer", 19], ["question_type", "Palabra faltante"], ["created_at", "2016-04-19 04:28:52.136039"], ["updated_at", "2016-04-19 04:28:52.136039"]]
+  [1m[35m (173.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 16], ["number", 16], ["created_at", "2016-04-19 04:28:52.311896"], ["updated_at", "2016-04-19 04:28:52.311896"]]
+  [1m[36m (136.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 16], ["sentence", "H4."], ["order", "a"], ["created_at", "2016-04-19 04:28:52.453005"], ["updated_at", "2016-04-19 04:28:52.453005"]]
+  [1m[35m (113.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 16], ["sentence", "H8."], ["order", "b"], ["created_at", "2016-04-19 04:28:52.569340"], ["updated_at", "2016-04-19 04:28:52.569340"]]
+  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 16], ["sentence", "H6."], ["order", "c"], ["created_at", "2016-04-19 04:28:52.694447"], ["updated_at", "2016-04-19 04:28:52.694447"]]
+  [1m[35m (114.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 11], ["sentence", "La __ trata acerca del contenido e importancia de los mensajes de error para el usuario."], ["answer", 22], ["question_type", "Palabra faltante"], ["created_at", "2016-04-19 04:28:52.811868"], ["updated_at", "2016-04-19 04:28:52.811868"]]
+  [1m[36m (119.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 17], ["number", 17], ["created_at", "2016-04-19 04:28:52.937788"], ["updated_at", "2016-04-19 04:28:52.937788"]]
+  [1m[35m (169.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 17], ["sentence", "H2."], ["order", "a"], ["created_at", "2016-04-19 04:28:53.111341"], ["updated_at", "2016-04-19 04:28:53.111341"]]
+  [1m[36m (173.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 17], ["sentence", "H9."], ["order", "b"], ["created_at", "2016-04-19 04:28:53.287479"], ["updated_at", "2016-04-19 04:28:53.287479"]]
+  [1m[35m (176.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 17], ["sentence", "H5."], ["order", "c"], ["created_at", "2016-04-19 04:28:53.469514"], ["updated_at", "2016-04-19 04:28:53.469514"]]
+  [1m[36m (214.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["topic_id", 7], ["sentence", "Los errores se deben _____ siempre que sea posible a fin de facilitar la experiencia del usuario con la interfaz."], ["answer", 24], ["question_type", "Palabra faltante"], ["created_at", "2016-04-19 04:28:53.686530"], ["updated_at", "2016-04-19 04:28:53.686530"]]
+  [1m[35m (172.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 18], ["number", 18], ["created_at", "2016-04-19 04:28:53.861087"], ["updated_at", "2016-04-19 04:28:53.861087"]]
+  [1m[36m (123.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 18], ["sentence", "Prevenir."], ["order", "a"], ["created_at", "2016-04-19 04:28:53.986259"], ["updated_at", "2016-04-19 04:28:53.986259"]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 18], ["sentence", "Explicar."], ["order", "b"], ["created_at", "2016-04-19 04:28:54.169746"], ["updated_at", "2016-04-19 04:28:54.169746"]]
+  [1m[36m (163.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 18], ["sentence", "Resaltar."], ["order", "c"], ["created_at", "2016-04-19 04:28:54.336334"], ["updated_at", "2016-04-19 04:28:54.336334"]]
+  [1m[35m (172.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["topic_id", 9], ["sentence", "La implementación de atajos y teclas de acceso rápido es parte del principio planteado por la __."], ["answer", 27], ["question_type", "Palabra faltante"], ["created_at", "2016-04-19 04:28:54.511383"], ["updated_at", "2016-04-19 04:28:54.511383"]]
+  [1m[36m (172.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["evaluation_id", 1], ["question_id", 19], ["number", 19], ["created_at", "2016-04-19 04:28:54.686198"], ["updated_at", "2016-04-19 04:28:54.686198"]]
+  [1m[35m (172.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 19], ["sentence", "H7."], ["order", "a"], ["created_at", "2016-04-19 04:28:54.861050"], ["updated_at", "2016-04-19 04:28:54.861050"]]
+  [1m[36m (181.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 19], ["sentence", "H4."], ["order", "b"], ["created_at", "2016-04-19 04:28:55.044152"], ["updated_at", "2016-04-19 04:28:55.044152"]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 19], ["sentence", "H1."], ["order", "c"], ["created_at", "2016-04-19 04:28:55.228001"], ["updated_at", "2016-04-19 04:28:55.228001"]]
+  [1m[36m (181.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "questions" ("topic_id", "sentence", "answer", "question_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["topic_id", 9], ["sentence", "La heurística 7, Flexibilidad y eficiencia de uso, explica la importancia de crear condiciones tanto para usuarios novatos como para _____."], ["answer", 32], ["question_type", "Palabra faltante"], ["created_at", "2016-04-19 04:28:55.411352"], ["updated_at", "2016-04-19 04:28:55.411352"]]
+  [1m[35m (180.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "compositions" ("evaluation_id", "question_id", "number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["evaluation_id", 1], ["question_id", 20], ["number", 20], ["created_at", "2016-04-19 04:28:55.594605"], ["updated_at", "2016-04-19 04:28:55.594605"]]
+  [1m[36m (172.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 20], ["sentence", "Administradores."], ["order", "a"], ["created_at", "2016-04-19 04:28:55.769381"], ["updated_at", "2016-04-19 04:28:55.769381"]]
+  [1m[35m (164.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["question_id", 20], ["sentence", "Casuales."], ["order", "b"], ["created_at", "2016-04-19 04:28:55.936026"], ["updated_at", "2016-04-19 04:28:55.936026"]]
+  [1m[36m (189.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "alternatives" ("question_id", "sentence", "order", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["question_id", 20], ["sentence", "Expertos."], ["order", "c"], ["created_at", "2016-04-19 04:28:56.127734"], ["updated_at", "2016-04-19 04:28:56.127734"]]
+  [1m[35m (341.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "practices" ("name", "description", "plunk", "embed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Login"], ["description", "Modulo de identificación de la terminal bancaria"], ["plunk", "http://plnkr.co/edit/b4lkrujvYTCcME7bjDyb"], ["embed", "<iframe style=\"width: 100%; height: 150px\" src=\"http://embed.plnkr.co/b4lkrujvYTCcME7bjDyb\" frameborder=\"0\" allowfullscren=\"allowfullscren\"></iframe>"], ["created_at", "2016-04-19 04:28:56.479895"], ["updated_at", "2016-04-19 04:28:56.479895"]]
+  [1m[36m (152.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "practices" ("name", "description", "plunk", "embed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Depósito"], ["description", "Modulo de depósito de fondos de la terminal bancaria"], ["plunk", "http://plnkr.co/edit/7yzYYyexsBg7B80OFo3b"], ["embed", "<iframe style=\"width: 100%; height: 150px\" src=\"http://embed.plnkr.co/7yzYYyexsBg7B80OFo3b\" frameborder=\"0\" allowfullscren=\"allowfullscren\"></iframe>"], ["created_at", "2016-04-19 04:28:56.635707"], ["updated_at", "2016-04-19 04:28:56.635707"]]
+  [1m[35m (123.2ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "practices" ("name", "description", "plunk", "embed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Retiro"], ["description", "Modulo de retiro de fondos de la terminal bancaria"], ["plunk", "http://plnkr.co/edit/KPYCKJicK9wfL5MG1pkE"], ["embed", "<iframe style=\"width: 100%; height: 150px\" src=\"http://embed.plnkr.co/KPYCKJicK9wfL5MG1pkE\" frameborder=\"0\" allowfullscren=\"allowfullscren\"></iframe>"], ["created_at", "2016-04-19 04:28:56.762797"], ["updated_at", "2016-04-19 04:28:56.762797"]]
+  [1m[36m (127.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "practices" ("name", "description", "plunk", "embed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Transferencia"], ["description", "Modulo de transferencia de fondos de la terminal bancaria"], ["plunk", "http://plnkr.co/edit/orjeIe3Ap1eAXBhIxKc7"], ["embed", "<iframe style=\"width: 100%; height: 150px\" src=\"http://embed.plnkr.co/orjeIe3Ap1eAXBhIxKc7\" frameborder=\"0\" allowfullscren=\"allowfullscren\"></iframe>"], ["created_at", "2016-04-19 04:28:56.900560"], ["updated_at", "2016-04-19 04:28:56.900560"]]
+  [1m[35m (158.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_alternatives_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_alternatives_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_test_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_test_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_chats_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_chats_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_compositions_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_compositions_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_compositions_on_evaluation_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_exercises_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_exercises_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_exercises_on_practice_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_chat_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_topic_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_topic_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tests_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tests_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tests_on_evaluation_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 01:29:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (32.4ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_header2.html.erb (34.9ms)
+Completed 200 OK in 4916ms (Views: 4898.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/application-f6a9678e2c65ac7bd94fc19572eec230.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:39 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/application-62fc134803415a8bfd17afb43965b7de.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-19 01:29:40 -0300
