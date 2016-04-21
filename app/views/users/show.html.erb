@@ -32,7 +32,21 @@
 					<div class="panel-body">
 						<h2 class="ms-h2">Últimas evaluaciones</h2>
 						<p>
-							<strong>Calificación en <%= @evaluation.name %>:</strong> <%= @lastTest.grade %>
+							<strong>Calificación en <%= @evaluation.name %>:</strong> 
+
+							
+								<!-- RECORRO CADA UNO DE LOS TEST HECHO POR EL USUARIO
+								LOS TUVE QUE RELLENAR MANUALMENTE EN LA BASE DE DATOS -->
+								<br>
+								La ultima nota es 
+								<%=@lastTest.grade %><br>
+								La mejor nota es
+								<%= @mejorNota %><br>
+								La peor nota es
+								<%= @peorNota %><br>
+								El promedio es
+								<%= @promedioNota %><br>
+
 						</p>	
 					</div>
 				</div>
@@ -52,3 +66,6 @@
 		
 	</div>
 </div>
+
+
+
