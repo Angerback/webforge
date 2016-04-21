@@ -75,16 +75,16 @@ Example.create(heuristic_id:1, description:"La fuerza de la contraseña es mostr
 Heuristic.create(name:"Correspondencia entre el sistema y el mundo real", description:"El sistema debe hablar el lenguaje de los usuarios, con las palabras, frases y conceptos familiares, en lugar de términos que estén orientados al sistema. Utilizar convenciones del mundo de real, haciendo que la información aparezca en un orden natural y lógico.")
 
 Do.create(heuristic_id: 2, description: "Esta heurística no solo se limita a la comunicación entre el usuario y el sistema a través de mensajes, se persigue la sensación de familiaridad para el usuario en todo momento, es decir, este principio se aplica sobre iconos, colores, nombres de variables y acciones.")
-Do.create(heuristic_id: 2, description: "Una buena práctica es utilizar formas de objetos de la interfaz como pistas visuales basándose siempre en las convenciones culturales del usuario.  
+Do.create(heuristic_id: 2, description: "Una buena práctica es utilizar formas de objetos de la interfaz como pistas visuales basándose siempre en las convenciones culturales del usuario.
 ")
-Do.create(heuristic_id: 2, description: "Preguntas e instrucciones que acompañen formularios y operaciones han de escribirse siguiendo la jerga del usuario con la mayor simpleza y claridad posible. 
+Do.create(heuristic_id: 2, description: "Preguntas e instrucciones que acompañen formularios y operaciones han de escribirse siguiendo la jerga del usuario con la mayor simpleza y claridad posible.
 ")
 Do.create(heuristic_id: 2, description: "Botones que representan acciones reales o teclas existentes deben conservar el nombre de su homólogo real, la misma idea se aplica para las categorías. ")
 
 Dont.create(heuristic_id: 2, description: "Los códigos y tecnicismos computacionales, muy comunes en comandos y errores, deben evitarse en todo momento.")
 Dont.create(heuristic_id: 2, description: "Los menús y la información no pueden ser ordenados de la manera más clara para el diseñador o programador, se debe considerar el orden más natural para el usuario.")
 Dont.create(heuristic_id: 2, description: "No se debe utilizar nombre ambiguos, todo nombre debe ser unívoco.")
-Dont.create(heuristic_id: 2, description: "Otra forma de acercar los valores de campos numéricos a la realidad del usuario es ingresar de manera automática los signos de dólar (o la moneda apropiada) cuando se trate valores monetarios, ingresar automáticamente puntos en valores superiores a 999 o los signos correspondientes a campos que tengan un formato específico como números telefónicos o identificaciones. 
+Dont.create(heuristic_id: 2, description: "Otra forma de acercar los valores de campos numéricos a la realidad del usuario es ingresar de manera automática los signos de dólar (o la moneda apropiada) cuando se trate valores monetarios, ingresar automáticamente puntos en valores superiores a 999 o los signos correspondientes a campos que tengan un formato específico como números telefónicos o identificaciones.
 ")
 
 Example.create(heuristic_id: 2, description:"ITunes se organiza como una librería que contiene tu multimedia separándola por tipo.", image:"examples/h2/e1.png")
@@ -223,51 +223,51 @@ Example.create(heuristic_id: 10, description:"Se pueden emplear consejos de ayud
 Topic.create( name: "Introducción", path:"introduction_path")
 
 # Introducción a las heurísticas - ID:2
-Topic.create( name: "Introducción a las Heurísticas de Nielsen", 
+Topic.create( name: "Introducción a las Heurísticas de Nielsen",
 			  path: "heuristics_path")
 
-# H1 - ID:3 
-Topic.create( name: "H1: Visibilidad del Estado del Sistema" , 
-			  path: '{:action => "show", :controller => "heuristics", :heuristic_id => 1 }') 
+# H1 - ID:3
+Topic.create( name: "H1: Visibilidad del Estado del Sistema" ,
+			  path: '{:action => "show", :controller => "heuristics", :heuristic_id => 1 }')
 
 # H2 - ID:4
-Topic.create( name: "H2: Correspondencia entre el sistema y el mundo real", 
+Topic.create( name: "H2: Correspondencia entre el sistema y el mundo real",
 			  path: '{:action => "show", :controller => "heuristics", :heuristic_id => 2 }')
 
 # H3 - ID:5
-Topic.create( name: "H3: Control y libertad para el Usuario", 
+Topic.create( name: "H3: Control y libertad para el Usuario",
 			  path: '{:action => "show", :controller => "heuristics", :heuristic_id => 3 }')
 
 # H4 - ID:6
-Topic.create( name: "H4: Consistencia y Estándares", 
+Topic.create( name: "H4: Consistencia y Estándares",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 4 }')
 
 # H5 - ID:7
-Topic.create( name: "H5: Prevención de Errores", 
+Topic.create( name: "H5: Prevención de Errores",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 5 }')
 
 # H6 - ID:8
-Topic.create( name: "H6: Reconocer antes que Recordar", 
+Topic.create( name: "H6: Reconocer antes que Recordar",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 6 }')
 
 # H7 - ID:9
-Topic.create( name: "H7: Flexibilidad y eficiencia de uso", 
+Topic.create( name: "H7: Flexibilidad y eficiencia de uso",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 7 }')
 
 # H8 - ID:10
-Topic.create( name: "H8: Estética de diálogos y Diseño minimalista", 
+Topic.create( name: "H8: Estética de diálogos y Diseño minimalista",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 8 }')
 
 # H9 - ID:11
-Topic.create( name: "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores", 
+Topic.create( name: "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 9 }')
 
 # H10 - ID:12
-Topic.create( name: "H10: Ayuda y Documentación", 
+Topic.create( name: "H10: Ayuda y Documentación",
 	          path: '{:action => "show", :controller => "heuristics", :heuristic_id => 10 }')
 
 # Evaluación Heurística - ID:13
-Topic.create( name: "Evaluación Heurística", 
+Topic.create( name: "Evaluación Heurística",
 	          path: "heuristic_evaluation_path")
 
 # ANSWERS V F
@@ -280,7 +280,7 @@ Alternative.create(question_id: 1, sentence: "Falso")
 
 # Evaluación 1
 
-Evaluation.create(name: "Introducción a las Heurísticas de Nielsen", 
+Evaluation.create(name: "Introducción a las Heurísticas de Nielsen",
 				  description: "Esta evaluación mide el conocimiento de las heurísticas de Nielsen y la capacidad de identificar problemas básicos en interfaces a partir de estos principios.",
 				  image: "evaluations/evaluation 1/index.png")
 
@@ -597,3 +597,13 @@ Practice.create(name: "Transferencia",
 				plunk: "http://plnkr.co/edit/orjeIe3Ap1eAXBhIxKc7",
 				embed: '<iframe style="width: 100%; height: 150px" src="http://embed.plnkr.co/orjeIe3Ap1eAXBhIxKc7" frameborder="0" allowfullscren="allowfullscren"></iframe>')
 
+# courses
+
+Course.create(
+	name: 'Curso nuevo',
+	semester: 1)
+
+User.find(2).user_courses.create(course: Course.find(1))
+User.find(3).user_courses.create(course: Course.find(1))
+User.find(4).user_courses.create(course: Course.find(1))
+User.find(5).user_courses.create(course: Course.find(1))
