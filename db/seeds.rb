@@ -605,5 +605,3 @@ Course.create(
 
 User.find(2).user_courses.create(course: Course.find(1))
 User.find(3).user_courses.create(course: Course.find(1))
-User.find(4).user_courses.create(course: Course.find(1))
-User.find(5).user_courses.create(course: Course.find(1))
