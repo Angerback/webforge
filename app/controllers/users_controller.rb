@@ -32,16 +32,18 @@ class UsersController < ApplicationController
 		##RECORRO EL ARRAY PARA OBTENER LA MEJOR PEOR Y PROMEDIO DE NOTA
 
 		@tests.each do |test|
-			if test.grade > @mejorNota
-				@mejorNota = test.grade
+			if test.grade
+				if test.grade > @mejorNota
+					@mejorNota = test.grade
+				end
+	
+				if test.grade < @peorNota
+					@peorNota = test.grade
+				end
+	
+				sumadorNotas = sumadorNotas + test.grade
+				cantidadNotas = cantidadNotas + 1
 			end
-
-			if test.grade < @peorNota
-				@peorNota = test.grade
-			end
-
-			sumadorNotas = sumadorNotas + test.grade
-			cantidadNotas = cantidadNotas + 1
 		end
 
 		@promedioNota = sumadorNotas / cantidadNotas
