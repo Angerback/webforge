@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		##DEFINO MEJOR NOTA, PEOR NOTA y PROMEDIO
 		@mejorNota = 0
 		@peorNota = 7.0
-		@promedioNota
+		@promedioNota = 0
 		sumadorNotas = 0
 		cantidadNotas = 0 
 
@@ -45,16 +45,10 @@ class UsersController < ApplicationController
 				cantidadNotas = cantidadNotas + 1
 			end
 		end
-
-		@promedioNota = sumadorNotas / cantidadNotas
-
-
-
-
-
-
 		
-
+		if cantidadNotas != 0
+			@promedioNota = sumadorNotas / cantidadNotas
+		end
 
 
 		#if Test.where( :user_id => current_user.id, :grade =>  0.9..7.1 ).last
