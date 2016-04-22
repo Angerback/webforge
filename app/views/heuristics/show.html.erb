@@ -63,32 +63,40 @@
 		<%if @heuristic.id > 1%>
 			<div class="back-box">
 				<%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => @heuristic.id-1 }) do %>
-					<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
-				<% end %>
-				H<%= @heuristica_anterior.id %>: <%= @heuristica_anterior.name %>
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+						<div>H<%= @heuristica_anterior.id %>: <%= @heuristica_anterior.name %></div>
+					</div>
+				<% end %>				
 			</div> 
 		<% else %>
 			<div class="back-box">
 				<%= link_to({:action => "index", :controller => "heuristics"}) do %>
-					<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
-				<% end %>
-				(Introduccion)
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>	
+						<div>Introducción</div>
+					</div>
+				<% end %>				
 			</div>
 		<% end %>
 		
 		<%if @heuristic.id < 10%>
 			<div class="next-box">
 				<%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => @heuristic.id+1 }, id: "next") do %>
-					<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
-				<% end %>
-				H<%= @heuristica_siguiente.id %>: <%= @heuristica_siguiente.name %>
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+						<div>H<%= @heuristica_siguiente.id %>: <%= @heuristica_siguiente.name %></div>
+					</div>
+				<% end %>	
 			</div>
 		<% else %>
 			<div class="next-box">
 				<%= link_to(heuristic_evaluation_path, id: "next") do %>
-					<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+						<div>Evaluación Heurística</div>
+					</div>
 				<% end %>
-				(Evaluacion)
 			</div>
 		<% end %>
 	</div>

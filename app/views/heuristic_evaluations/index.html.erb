@@ -282,11 +282,14 @@
   <p>El enfoque analítico es rigurso y las listas diseñadas para su aplicación son amplias, por ello, en lugar de desarrollar un ejemplo se proporciona el siguiente documento: <%= link_to "Lista de comprobación de ítems de D. Pierotti (ESP, PDF)",
     "http://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf", :target => "_blank" %></p>		
 
-  <div>
-    <%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => 10 }) do %>
-      <span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
-    <% end %>
-  </div>
+    <div>
+        <%= link_to({:action => "show", :controller => "heuristics", :heuristic_id => 10 }) do %>
+          <div>
+            <span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+            <div>H10: Ayuda y Documentación</div>
+          </div>
+        <% end %>       
+      </div> 
 
 	<span id="references" class="anchor"></span>
 	<div>
