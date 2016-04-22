@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootbox
 //= require angular/angular
 //= require angular-devise/lib/devise
 //= require angular-ui-router/release/angular-ui-router

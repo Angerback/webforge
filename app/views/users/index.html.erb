@@ -41,15 +41,13 @@
             <p>
                 ¿Esta seguro que desea eliminar al usuario <b id="delete-user-name"></b>?
             </p>
-
             <%= link_to 'Eliminar', '', method: :delete, class: "btn btn-primary", id: 'delete-user-button' %></td>
             <%= button_tag 'Cancelar', :onclick => "hideDialog()", class: "btn btn-primary" %>
-        	</div>
+</div>
 
 
 
 <script>
-
 <%# Realiza la confirmacion de eliminacion de usuario %>
 
     function showDialog(usuario, id){
