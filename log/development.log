@@ -15095,3 +15095,3500 @@ Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.
 
 
 Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:07:05 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:07:41 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mChat Load (0.2ms)[0m  SELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 411ms (Views: 409.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:07:43 -0300
+
+
+Started GET "/practices" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+Processing by PracticesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mPractice Load (0.2ms)[0m  SELECT "practices".* FROM "practices"
+  [1m[36mExercise Load (0.1ms)[0m  [1mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."user_id" = ? AND "exercises"."practice_id" = ?  ORDER BY "exercises"."id" DESC LIMIT 1[0m  [["user_id", 8], ["practice_id", 1]]
+  [1m[35mExercise Load (0.1ms)[0m  SELECT  "exercises".* FROM "exercises" WHERE "exercises"."user_id" = ? AND "exercises"."practice_id" = ?  ORDER BY "exercises"."id" DESC LIMIT 1  [["user_id", 8], ["practice_id", 2]]
+  [1m[36mExercise Load (0.1ms)[0m  [1mSELECT  "exercises".* FROM "exercises" WHERE "exercises"."user_id" = ? AND "exercises"."practice_id" = ?  ORDER BY "exercises"."id" DESC LIMIT 1[0m  [["user_id", 8], ["practice_id", 3]]
+  [1m[35mExercise Load (0.1ms)[0m  SELECT  "exercises".* FROM "exercises" WHERE "exercises"."user_id" = ? AND "exercises"."practice_id" = ?  ORDER BY "exercises"."id" DESC LIMIT 1  [["user_id", 8], ["practice_id", 4]]
+  Rendered practices/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mChat Load (0.5ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (2.2ms)
+Completed 200 OK in 443ms (Views: 438.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:31 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:08:32 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:08:37 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.1ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 437ms (Views: 436.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:37 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:37 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:37 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:37 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:08:38 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:08:39 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.3ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (9.5ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 450ms (Views: 448.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:09 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:09:10 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.2ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (3.5ms)
+Completed 200 OK in 415ms (Views: 413.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:25 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:09:26 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.3ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (4.4ms)
+Completed 200 OK in 423ms (Views: 421.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:37 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:09:38 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:09:50 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.2ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 429ms (Views: 428.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:50 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:50 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:50 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:09:51 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:10:16 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.1ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 407ms (Views: 405.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/app-96645fabfe25e6310a5b609dbf121fa8.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/application-39253cb80a17f708707bad67b08873ab.css?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:10:17 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:10:18 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:11:09 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.1ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (5.7ms)
+Completed 200 OK in 1703ms (Views: 1702.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/app-58fdd4dc46595b3d56b100a33c437734.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/application-a9bf10b1c2e2145fa78c654ba2e67e5f.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:10 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:11:11 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:11:23 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.1ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 1754ms (Views: 1752.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/app-ba201d11f94baba249d1ff70c8fdfe89.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/application-1b0bcb2c8ff0693bdf2330f875452bef.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:24 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:11:25 -0300
+
+
+Started GET "/references" for 127.0.0.1 at 2016-04-21 21:11:41 -0300
+Processing by ReferencesController#index as HTML
+  Rendered references/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.3ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (3.5ms)
+Completed 200 OK in 502ms (Views: 501.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:42 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:11:43 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-21 21:11:45 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mChat Load (0.1ms)[0m  [1mSELECT "chats".* FROM "chats" WHERE "chats"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header2.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 427ms (Views: 425.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sass/assets/stylesheets/_bootstrap-50118cca081ed455e95da80d54cc880d.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/bank_terminals-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/heuristic_evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/evaluations-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/courses-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/exercises-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/chats-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/heuristics-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/home-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/intro-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/messages-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/practices-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/questions-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/references-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/scaffolds-42db12b8cdc03216e9bcd139f9ef5533.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/users-dd385a885ce04d77e055738aeaed08dd.css?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/jquery-6c8a4b235cee3393483fc0463c4f7d0a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/jquery_ujs-5916de2964b72c9aefdbe5496b0b0b92.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular/angular-e03d708096fcec47f66e07bd5dee7a9e.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-devise/lib/devise-db1c19e9375c21de943cfe6399e39796.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-ui-router/release/angular-ui-router-b7d35b454bd87e6b37018edd3e89c9c4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-resource/angular-resource-b73e496ba263215b05940521d3723cde.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-cookies/angular-cookies-fab12ce6ce09c994656b94e52eafbed5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-rails-templates-4cc3f99462d2c819f1ad067126028881.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-mask/dist/ngMask.min-ffb1415bfd380950c97a879cdf707b2a.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-flash-alert/dist/angular-flash-5cee0f093f4b80178244c55f7210a3f6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/angular-vs-repeat/src/angular-vs-repeat-b1283ab7715b2d41cd0a3160a4233564.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/javascripts/bootstrap.min-fb9dbd079e9cc63945ce914644f8ec68.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/tinymce/preinit-2b55845143f1e7c756113e846c4d65ac.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/tinymce/tinymce-f5a7942c44a13364a26d69b7d74828fc.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/tinymce-c00f2c288111c16197d37cdfc51499b3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/bank_terminals-7a8682f5dd03caae31fe85018b47dd76.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/chats-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/AccountsController-ca51cdadc5fc3b1b841311bd0d875db9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/ApplicationController-0cc20dc565e9605ce49701c6d32b1f79.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/LoginController-2bb3de9821c6c42d268a5e36801d340c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/RecordsController-cc6a5bc99c29d11294433782b8baa7f3.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/metroControllers/AccountsController-a836bd5dfddb2d2b2133cd17d2298daf.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/metroControllers/ApplicationController-ed498b8a4ea180cdf0d7545d926c6be1.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/metroControllers/LoginController-eb519b2f63776d78a73cd06521eb8483.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/controllers/metroControllers/RecordsController-c8b9231ba8799842a87b94e02df1e82f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/courses-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/directives/ngLatamInt-438d17ae27558284c12c70387f7de56c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/directives/validators-f9d7253cd5c5647debd9631357728d5b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/exercises-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/filters/customCurrency-2d8fa9f3bf5ec959b39bba1642882c55.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/heuristic_evaluations-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/heuristics-18d2b47fda48b52d8c1c4f12b24bbdf5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/home-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/intro-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/messages-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/metro-993d8453fc93b6012237754d95cb7da9.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/practices-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/questions-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/references-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/services/bank_account-52630d58f4f85bc577f4f845cce1ffe5.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/services/record-a7a756779a4b466da3af632dee8cdf82.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/services/session-a23511065aeba6e51423df0e1a63e22b.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/services/user-6a4693f581002d83935dbef29efb5e00.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/services/utils-d8ec7d98d4c881ffaeb31af957f8c623.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/accounts/edit-deposit-52023dc04b7ae487336b33f372ae5221.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/accounts/edit-lock-382ac0d5a1d3861f8bd3b768a45ddac4.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/accounts/edit-transfer-a0a083194e760840690ceef5bcd19715.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/accounts/edit-withdrawal-4322841bfc228febabdcc8beccb24d0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/accounts/show-06ad130b6195a5013c548b2934880b0f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/layouts/application-c48141f40202a1a1561e1c0c67d49161.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:46 -0300
+
+
+Started GET "/assets/templates/layouts/no-header-9e35d1ab70c9ce02fc62705ed0f5bf7d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/login/index-a0bdba4caea9f595906ccdc3bca91188.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-deposit-8b9d3eafda523390f6a63e787f581372.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-lock-2e214b2d0f223fc7f4e884e17f2196cb.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-transfer-aeaae8460665b6218e82785299e1027f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/edit-withdrawal-ff3626b56570fb260f88bdf0bc74190c.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/accounts/show-62daf294aca0716cf5618d8057a76dbd.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/application-5d63fefcd24420cd749a17d73f47cef6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/layouts/no-header-41fb5dd34a5ee57a15befb40cab7f1c6.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/login/index-d5ddaddd410dae5d15b41cc3e566603d.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/metroTemplates/records/index-ab14d2e57caa60090aa4b0d2f56f7926.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/templates/records/index-cabdb070e073075a193f3171cc4a1f29.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/users-2d8c0967b092ceb8338e6da3dd528e22.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/application-0418c3d1155d746d22c0beb892e4dd6f.js?body=1" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/logo-7eb1b28f3f565d0ff834261b36e04a73.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/button_push-256-5a9c018d16a80f72e626db884726caf3.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/evaluation-f4329afa19d678df214274dc2c30447e.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/heuristics-c7d14dffac8ea781720fd16a6b3dc810.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/practice-c0188e4538625a15b286b7a3a674ee53.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/resources-3eddd28f384de16eefb68544e0ea48a2.png" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/Roboto-Regular-87845a2d6d4e0353a0cbc8a43cf4b02a.ttf" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular-468eeac569353ccd8df4247234799e78.woff2" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/segoeuil-47d575868a6eb0dba7f72792703cb6f4.ttf" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
+
+
+Started GET "/assets/segoeui-3138feca98c848b7df5b9ba373703c54.ttf" for 127.0.0.1 at 2016-04-21 21:11:47 -0300
