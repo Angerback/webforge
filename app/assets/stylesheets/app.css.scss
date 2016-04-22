@@ -424,11 +424,17 @@ a.footerLink:hover {
 /* Sessions */
 
 .login-box {
-	top: 40px;
+
+  width: 1120px!important;
+
+/* Esta clase deforma la vista login por completo (cuando se le pone header y footer) 
+Borro todo excepto el width, ya que la vista de login es un poco mas ancha, por la foto del helado */
+/*
+	top: 40px;  
 	left: 50%;
 	position: fixed;
   width: 1120px!important;
-  margin-left: -535px!important;
+  margin-left: -535px!important;*/
 }
 
 .welcome-img {

@@ -10,14 +10,14 @@
 </head>
 <body>
 
-  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'registrations') %>
-    <%= render 'layouts/header2' %>
-  <% end %>
+  <%= render 'layouts/header2' %>
+
 
   <%= yield %>
   
-  <% if (controller.controller_name != 'sessions')  && (controller.controller_name != 'registrations') && (controller.controller_name != 'metro')%>
-    <%= render 'layouts/footer' %>
+  <% if (controller.controller_name != 'metro')%>
+    <%= render "layouts/footer" %>
   <% end %>  
+  
 </body>
 </html>

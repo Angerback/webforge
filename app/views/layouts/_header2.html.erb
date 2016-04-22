@@ -14,24 +14,24 @@
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
 						            <li><%= link_to "Introducción", heuristics_path%></li>
-						            <li><%= link_to "H1: Visibilidad del Estado del Sistema", {:action => "show", :controller => "heuristics", :heuristic_id => 1 } %></li>
-            						<li><%= link_to "H2: Correspondencia entre el Sistema y el Mundo Real", {:action => "show", :controller => "heuristics", :heuristic_id => 2 } %></li>
-            						<li><%= link_to "H3: Control y Libertad",  {:action => "show", :controller => "heuristics", :heuristic_id => 3 } %></li>
+						            <li><%= link_to "H1: Visibilidad del Estado del Sistema", {:action => "show", :controller => "/heuristics", :heuristic_id => 1 } %></li>
+            						<li><%= link_to "H2: Correspondencia entre el Sistema y el Mundo Real", {:action => "show", :controller => "/heuristics", :heuristic_id => 2 } %></li>
+            						<li><%= link_to "H3: Control y Libertad",  {:action => "show", :controller => "/heuristics", :heuristic_id => 3 } %></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><%= link_to "H4: Consistencia y Estándares", {:action => "show", :controller => "heuristics", :heuristic_id => 4 } %></li>
-            						<li><%= link_to "H5: Prevención de Errores", {:action => "show", :controller => "heuristics", :heuristic_id => 5 } %></li>
-            						<li><%= link_to "H6: Reconocer antes que Recordar", {:action => "show", :controller => "heuristics", :heuristic_id => 6 } %></li>
-            						<li><%= link_to "H7: Flexibilidad y Eficiencia de Uso", {:action => "show", :controller => "heuristics", :heuristic_id => 7 } %></li>
+						            <li><%= link_to "H4: Consistencia y Estándares", {:action => "show", :controller => "/heuristics", :heuristic_id => 4 } %></li>
+            						<li><%= link_to "H5: Prevención de Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 5 } %></li>
+            						<li><%= link_to "H6: Reconocer antes que Recordar", {:action => "show", :controller => "/heuristics", :heuristic_id => 6 } %></li>
+            						<li><%= link_to "H7: Flexibilidad y Eficiencia de Uso", {:action => "show", :controller => "/heuristics", :heuristic_id => 7 } %></li>
 					            </ul>
 				            </div>
 				            <div class="col-sm-4">
 					            <ul class="multi-column-dropdown">
-						            <li><%= link_to "H8: Estética de Diálogos y Diseño Minimalista", {:action => "show", :controller => "heuristics", :heuristic_id => 8 } %></li>
-            						<li><%= link_to "H9: Ayuda a los Usuarios ante Errores", {:action => "show", :controller => "heuristics", :heuristic_id => 9 } %></li>
-            						<li><%= link_to "H10: Ayuda y Documentación", {:action => "show", :controller => "heuristics", :heuristic_id => 10 } %></li>
+						            <li><%= link_to "H8: Estética de Diálogos y Diseño Minimalista", {:action => "show", :controller => "/heuristics", :heuristic_id => 8 } %></li>
+            						<li><%= link_to "H9: Ayuda a los Usuarios ante Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 9 } %></li>
+            						<li><%= link_to "H10: Ayuda y Documentación", {:action => "show", :controller => "/heuristics", :heuristic_id => 10 } %></li>
 						            <li><%= link_to "Evaluación Heurística", heuristic_evaluation_path %></li>
 					            </ul>
 				            </div>
@@ -58,7 +58,7 @@
 						<ul class="dropdown-menu multi-col">
 							<li><%= link_to 'Editar Perfil',edit_user_registration_path %></li>
 							<% if (Chat.where(user_id: current_user.id).length > 0) || (current_user.admin?) %>
-								<li><%= link_to 'Conversaciones', {controller: "chats", action: "index"} %></li>
+								<li><%= link_to 'Conversaciones', {controller: "/chats", action: "index"} %></li>
 							<% end %>
 							<li><%= link_to 'Ayuda', '#' %></li>
 							<% if current_user.admin? %>	
