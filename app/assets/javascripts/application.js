@@ -24,7 +24,6 @@
 //= require angular-vs-repeat/src/angular-vs-repeat
 //= require bootstrap-sass/assets/javascripts/bootstrap.min
 //= require tinymce
-//= require notify.min.js
 //= require metroui
 //= require_tree .
 

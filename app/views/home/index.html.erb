@@ -1,28 +1,31 @@
 <% provide(:title, "Inicio") %>
-<div class="hero-banner">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6">
-	            <div class="jumbotron-content">
-	                <h1 class="jumbotron-header">
-	                	Heurísticas de Nielsen
+
+
+<div class="container">
+	<div class="grid">
+	    <div class="row">
+	        <div class="cell">
+
+	        		<h1 class="align-center">
+	                		Heurísticas de Nielsen
 	                </h1>
-	                
-	                <p class="jumbotron-subheader">
+
+	                <p class="align-center">
 	                	Una aproximación a la Usabilidad Web o ¿Cómo sobrevivir en la Red?
 	                </p>
-	                
-	                <%= link_to 'Empieza aquí!', introduction_path, class: "hero-btn" %>
-	                
-	            </div>
-			</div>
 
-			<div class="col-xs-6">	
+	                <p class="align-center">
+	                <%= link_to 'Empieza aquí!', introduction_path %>
+			</p>
+	                <div class="align-center">	
 				<%= image_tag "button_push-256.png", alt: "Usability" %>
 			</div>
-		</div>
+
+	        </div>
+	    </div>
 	</div>
 </div>
+
 
 <div class="container">
 	<div class="row">

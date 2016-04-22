@@ -3,17 +3,22 @@
   <script>
     $(document).ready(function(){
       <%
-      # Los codigos usados aca no son los mismos que en notify.js, por eso hay que hacer este mapeo:
+      # Los codigos usados aca no son los mismos que en metro, por eso hay que hacer este mapeo:
       map = {
-        'error' => 'error',
+        'error' => 'alert',
         'success' => 'success',
-        'alert' => 'warn',
-        'danger' => 'error'
+        'alert' => 'warning',
+        'danger' => 'alert'
       }
       map.default = 'info'
       %>
       <% flash.each do |message_type, message| %>
-          $( ".navbar-right"  ).notify("<%= message %>", "<%= map[message_type] %>");    
+
+        $.Notify({
+      content: "<%= message %>",
+      type: "<%= map[message_type] %>"
+      });
+         
       <% end %>
     });
   </script>
