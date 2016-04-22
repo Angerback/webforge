@@ -16,7 +16,7 @@
 
   <%= yield %>
   
-  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'home') && (controller.controller_name != 'registrations') && (controller.controller_name != 'metro')%>
+  <% if (controller.controller_name != 'sessions')  && (controller.controller_name != 'registrations') && (controller.controller_name != 'metro')%>
     <%= render 'layouts/footer' %>
   <% end %>  
 </body>
