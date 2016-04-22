@@ -10,16 +10,6 @@
   src:font-url('segoeui.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Roboto Light';
-  src:font-url('Roboto-Light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Roboto Regular';
-  src:font-url('Roboto-Regular.ttf') format('truetype');
-}
-
 
 body { 
   padding-top: 50px!important; 
@@ -30,7 +20,7 @@ body {
 
 a {
 
-  font-family: 'Roboto Regular';
+  font-family: 'Segoi UI Regular';
   font-size: 16px;
   color: #1e75bb;
   font-weight: 300;
@@ -95,7 +85,7 @@ h2.ms-h2 {
 }
 
 p, li {
-  font-family: 'Roboto Regular';
+  font-family: 'Segoi UI Regular';
   font-size: 17px;
   font-weight: 300;
   color: #454545;
@@ -105,7 +95,7 @@ p, li {
 }
 
 a {
-  font-family: 'Roboto Regular';
+  font-family: 'Segoi UI Regular';
   font-size: 16px;
   color: #1e75bb;
   font-weight: 300;
@@ -161,7 +151,7 @@ ol, ul {
 .breadcrumb.ms a {
      color: #656565;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 .breadcrumb.ms a:hover {
@@ -172,7 +162,7 @@ ol, ul {
 .breadcrumb.ms > .active {
      color: #00188f;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 /* Change breadcrumb separator to raquo symbol*/
@@ -230,9 +220,24 @@ ol, ul {
 
 .side-bar li {
   padding-top: 11px;
+  .dropdown-menu {		
+		min-width: 325px;
+        white-space: normal;
+	}
+  .dropdown-menu li a {		
+      padding: 5px 15px;		
+      font-weight: 300;		
+  }
 }
 
-
+.dropdown-menu {		
+      min-width: 325px;
+      white-space: normal;
+  }
+.dropdown-menu li a {		
+    padding: 5px 15px;		
+    font-weight: 300;		
+}
 
 
 /* Breadcrumbs */
@@ -252,7 +257,7 @@ ol, ul {
 .breadcrumb.ms a {
      color: #656565;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 .breadcrumb.ms a:hover {
@@ -263,7 +268,7 @@ ol, ul {
 .breadcrumb.ms > .active {
      color: #00188f;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 /* Change breadcrumb separator to raquo symbol*/
