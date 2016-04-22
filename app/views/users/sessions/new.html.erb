@@ -27,11 +27,6 @@
                Cuenta WebForge
             </div>
             
-            <div>
-               <% flash.each do |message_type, message| %>
-                  <div><%= message %></div>
-               <% end %>
-            </div>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                <%= devise_error_messages! %>

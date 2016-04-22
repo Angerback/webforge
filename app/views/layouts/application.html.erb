@@ -10,14 +10,25 @@
 </head>
 <body>
 
+  <%# Todas las vistas tienen header %>
   <%= render 'layouts/header2' %>
 
-
+  <%# Contenido de la pagina %>
   <%= yield %>
-  
+
+  <%# La vista METRO no tiene footer %>
   <% if (controller.controller_name != 'metro')%>
     <%= render "layouts/footer" %>
   <% end %>  
-  
+
+
+<%# Se crean dialogos de alerta para los mensajes Flash (mensaje pasado de una vista a otra) %>
+<script>
+  <% flash.each do |message_type, message| %>
+    bootbox.alert("<%= message %>");
+  <% end %>
+</script>
+
+
 </body>
 </html>
