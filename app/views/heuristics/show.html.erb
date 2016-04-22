@@ -91,6 +91,7 @@
 	
 	<span id="references" class="anchor"></span>
 	<div>
+		<% if @references.length > 0 %>
 		<h2 class="ms-h2">Recursos relacionados</h2>
 			<% (0..@references.length-1).each do |i| %>
 				<div>
@@ -98,5 +99,6 @@
 								@references[i].link %>
 				</div>
 			<% end %>
+		<% end %>
 	</div>
 </div>
