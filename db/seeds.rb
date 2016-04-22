@@ -91,7 +91,7 @@ Example.create(heuristic_id: 2, description:"ITunes se organiza como una librer�
 Example.create(heuristic_id: 2, description:"En Mindomo las ramas y la jerarquía de un mapa mental pueden reorganizarse fácilmente de una forma no lineal. El servicio implementa perfectamente el paradigma.", image:"examples/h2/e2.png")
 
 #H3
-Heuristic.create(name:"Control y libertad para el Usuario", description:"Ocasionalmente los usuarios eligen funciones del sistema por error y a menudo necesitan una salida de emergencia claramente marcada, esto es, salir del estado indeseado sin tener que pasar por un diálogo extendido. Es importante disponer de las funcionalidades de “hacer” y “deshacer.")
+Heuristic.create(name:"Control y libertad para el Usuario", description:"Ocasionalmente los usuarios eligen funciones del sistema por error y a menudo necesitan una salida de emergencia claramente marcada, esto es, salir del estado indeseado sin tener que pasar por un diálogo extendido. Es importante disponer de las funcionalidades de “deshacer” y “rehacer”.")
 
 Do.create(heuristic_id: 3, description: "La heurística es clara respecto a que hacer, implementar una función que permita revertir una acción como “deshacer” y “rehacer” es altamente recomendable.")
 Do.create(heuristic_id: 3, description: "Los usuarios deberían ser capaces de cancelar acciones en progreso.")
