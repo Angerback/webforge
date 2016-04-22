@@ -18,6 +18,15 @@
 
 /*Footer CSS*/
 
+a.footerLink:hover {
+  color: #666!important;
+  opacity: .7;
+}
+
+a.footer-arrow:hover{
+	color:#444!important;
+}
+
 footer {
 	background:#b1b0b0;
 }
