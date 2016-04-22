@@ -1,58 +1,93 @@
-<div>
-	<div class="footerSock">
-		<div class="container">
+<!-- footer -->
+<footer role="contentinfo" class="site-footer" id="colophon">
+	<div class="container">
+		<div class="row">
+			<div id="accordion" class="collapse-footer">
+				<div class="panel">
+					<div class="panel-heading">
+						<h4 class="panel-title"> 
+							<a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="collapsed"> 
+								<span class="glyphicon glyphicon-chevron-down"></span> 
+							</a> 
+						</h4>
+					</div>
+					<div class="panel-collapse collapse" id="collapseOne" style="height: 0px;">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<h5 class="title"><span>Heurísticas de Nielsen</span></h5>
+									<div class="menu-main-menu-container">
+										<ul class="nav nav-footer" id="menu-main-menu-1">
 
-		</div>
-	</div>
-	<div class="footerContainer">
-		<div class="container">
-		<div class="home-footer">
-			2015 por Javier Cáceres
-		</div>
-			<div class="row fourColumnFooter">
+											<li><%= link_to "Introducción", heuristics_path, class: "footerLink" %></li>
+											<li><%= link_to "H1: Visibilidad del Estado del Sistema", {:action => "show", :controller => "/heuristics", :heuristic_id => 1 }, class: "footerLink" %></li>
+											<li><%= link_to "H2: Correspondencia entre el Sistema y el Mundo Real", {:action => "show", :controller => "/heuristics", :heuristic_id => 2 }, class: "footerLink" %></li>
+											<li><%= link_to "H3: Control y Libertad para el Usuario",  {:action => "show", :controller => "/heuristics", :heuristic_id => 3 }, class: "footerLink" %></li>
+											<li><%= link_to "H4: Consistencia y Estándares", {:action => "show", :controller => "/heuristics", :heuristic_id => 4 }, class: "footerLink" %></li>
+											<li><%= link_to "H5: Prevención de Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 5 }, class: "footerLink" %></li>
+											<li><%= link_to "H6: Reconocer antes que Recordar", {:action => "show", :controller => "/heuristics", :heuristic_id => 6 }, class: "footerLink" %></li>
+											<li><%= link_to "H7: Flexibilidad y Eficiencia de Uso", {:action => "show", :controller => "/heuristics", :heuristic_id => 7 }, class: "footerLink" %></li>
+											<li><%= link_to "H8: Estética de Diálogos y Diseño Minimalista", {:action => "show", :controller => "/heuristics", :heuristic_id => 8 }, class: "footerLink" %></li>
+											<li><%= link_to "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 9 }, class: "footerLink" %></li>
+											<li><%= link_to "H10: Ayuda y Documentación", {:action => "show", :controller => "/heuristics", :heuristic_id => 10 }, class: "footerLink" %></li>
+											<li><%= link_to "Evaluación Heurística", heuristic_evaluation_path, class: "footerLink" %></li>
 
-				<div class="col-xs-3">
-					<div class="footerTitle">Heurísticas de Nielsen</div>
-					<ul class="footerList">
-						<li><%= link_to "Introducción", heuristics_path, class: "footerLink" %></li>
-						<li><%= link_to "H1: Visibilidad del Estado del Sistema", {:action => "show", :controller => "/heuristics", :heuristic_id => 1 }, class: "footerLink" %></li>
-            			<li><%= link_to "H2: Correspondencia entre el Sistema y el Mundo Real", {:action => "show", :controller => "/heuristics", :heuristic_id => 2 }, class: "footerLink" %></li>
-            			<li><%= link_to "H3: Control y Libertad para el Usuario",  {:action => "show", :controller => "/heuristics", :heuristic_id => 3 }, class: "footerLink" %></li>
-            			<li><%= link_to "H4: Consistencia y Estándares", {:action => "show", :controller => "/heuristics", :heuristic_id => 4 }, class: "footerLink" %></li>
-			            <li><%= link_to "H5: Prevención de Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 5 }, class: "footerLink" %></li>
-			            <li><%= link_to "H6: Reconocer antes que Recordar", {:action => "show", :controller => "/heuristics", :heuristic_id => 6 }, class: "footerLink" %></li>
-			            <li><%= link_to "H7: Flexibilidad y Eficiencia de Uso", {:action => "show", :controller => "/heuristics", :heuristic_id => 7 }, class: "footerLink" %></li>
-			            <li><%= link_to "H8: Estética de Diálogos y Diseño Minimalista", {:action => "show", :controller => "/heuristics", :heuristic_id => 8 }, class: "footerLink" %></li>
-			            <li><%= link_to "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores", {:action => "show", :controller => "/heuristics", :heuristic_id => 9 }, class: "footerLink" %></li>
-			            <li><%= link_to "H10: Ayuda y Documentación", {:action => "show", :controller => "/heuristics", :heuristic_id => 10 }, class: "footerLink" %></li>
-			            <li><%= link_to "Evaluación Heurística", heuristic_evaluation_path, class: "footerLink" %></li>
-					</ul>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<h5 class="title"><span>Evaluación</span></h5>
+									<div class="menu-footer-sitemap-container">
+										<ul class="nav nav-footer" id="menu-footer-sitemap">
+											<li><%= link_to "Evaluación 1: Introducción a las Heurísticas de Nielsen", {:action => "begin", :controller => "/evaluations", :evaluation_id => 1 }, class: "footerLink" %></li>
+											<li><%= link_to "Evaluación 2: Aplicación de las Heurísticas de Nielsen", {:action => "begin", :controller => "/evaluations", :evaluation_id => 2 }, class: "footerLink" %></li>
+										</ul>
+									</div>
+								</div>
+
+
+
+								<div class="col-md-3">
+									<h5 class="title"><span>Módulo de Práctica</span></h5>
+									<div class="menu-footer-sitemap-container">
+										<ul class="nav nav-footer" id="menu-footer-sitemap">
+											<li><%= link_to "Práctica 1: Login", {:action => "show", :controller => "/practices", :id => 1 }, class: "footerLink" %></li>
+											<li><%= link_to "Práctica 2: Depósito", {:action => "show", :controller => "/practices", :id => 2 }, class: "footerLink" %></li>
+											<li><%= link_to "Práctica 3: Retiro", {:action => "show", :controller => "/practices", :id => 3 }, class: "footerLink" %></li>
+											<li><%= link_to "Práctica 4: Transferencia", {:action => "show", :controller => "/practices", :id => 4 }, class: "footerLink" %></li>
+										</ul>
+									</div>
+								</div>
+
+
+
+								<div class="col-md-3">
+									<h5 class="title"><span>Recursos</span></h5>
+									<div class="menu-footer-sitemap-container">
+										<ul class="nav nav-footer" id="menu-footer-sitemap">
+											<li><%= link_to "Heurísticas de Nielsen", references_path, class: "footerLink" %></li>
+											<li><%= link_to "Evaluación Heurística", references_path, class: "footerLink" %></li>
+											<li><%= link_to "Otros", references_path, class: "footerLink" %></li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-xs-3">
-					<div class="footerTitle">Evaluación</div>
-					<ul class="footerList">
-						<li><%= link_to "Evaluación 1: Introducción a las Heurísticas de Nielsen", {:action => "begin", :controller => "/evaluations", :evaluation_id => 1 }, class: "footerLink" %></li>
-						<li><%= link_to "Evaluación 2: Aplicación de las Heurísticas de Nielsen", {:action => "begin", :controller => "/evaluations", :evaluation_id => 2 }, class: "footerLink" %></li>
-					</ul>
-				</div>
-				<div class="col-xs-3">
-					<div class="footerTitle">Módulo de Práctica</div>
-					<ul class="footerList">
-						<li><%= link_to "Práctica 1: Login", {:action => "show", :controller => "/practices", :id => 1 }, class: "footerLink" %></li>
-						<li><%= link_to "Práctica 2: Depósito", {:action => "show", :controller => "/practices", :id => 2 }, class: "footerLink" %></li>
-						<li><%= link_to "Práctica 3: Retiro", {:action => "show", :controller => "/practices", :id => 3 }, class: "footerLink" %></li>
-						<li><%= link_to "Práctica 4: Transferencia", {:action => "show", :controller => "/practices", :id => 4 }, class: "footerLink" %></li>
-					</ul>
-				</div>
-				<div class="col-xs-3">
-					<div class="footerTitle">Recursos</div>
-					<ul class="footerList">
-						<li><%= link_to "Heurísticas de Nielsen", references_path, class: "footerLink" %></li>
-						<li><%= link_to "Evaluación Heurística", references_path, class: "footerLink" %></li>
-						<li><%= link_to "Otros", references_path, class: "footerLink" %></li>
-					</ul>
-				</div>	
 			</div>
 		</div>
 	</div>
-</div>
+
+	<!-- Copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row copyright-img">
+				<div class="col-lg-4 col-sm-4"> WebForge</div>
+				<div class="col-lg-8 col-sm-8 text-right" id="footertext">2015 por Javier Cáceres</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Copyright -->
+</footer>
