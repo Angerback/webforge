@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+IHC:
+ name: Interfaz Humano Computador
+ students: 12 
+ semester: 1
+ id: 1
+
+Fingeso:
+ name: FINGESO
+ students: 12 
+ semester: 1
+ id: 2
+
+SISTOPE:
+ name: Sistemas Operativos
+ students: 12 
+ semester: 1
+ id: 3
