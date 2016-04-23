@@ -48,10 +48,11 @@
 							<% if (Chat.where(user_id: current_user.id).length > 0) || (current_user.admin?) %>
 							<li><%= link_to 'Conversaciones', {controller: "/chats", action: "index"} %></li>
 							<% end %>
-							<li><%= link_to 'Ayuda', '#' %></li>
 							<% if current_user.admin? %>	
-							<li><%= link_to 'Usuarios', users_path %></li>
-							<% end %> 
+								<li><%= link_to 'Usuarios', users_path %></li>
+								<li><%= link_to 'Cursos', courses_path %></li> 
+							<% end %>
+							<li><%= link_to 'Ayuda', '#' %></li>
 							<li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
 						</ul>
 					</li>
