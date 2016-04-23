@@ -7,7 +7,7 @@
 one: 
   name: IHC 
   semester: 1
-  students: 20 
+  students: 20
 
 #
 two: {}
