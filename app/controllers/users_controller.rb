@@ -3,8 +3,16 @@ class UsersController < ApplicationController
   	before_action :authenticate_user!
 	before_filter :authorize_admin, except: [:edit]
 
+  def get_user(id)
+    @user = User.find(params[:id])
+    @evaluation = Evaluation.find(1)
+		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
+  end
+  helper_method :get_user
+
 	# GET /users
 	def index
+    @evaluation = Evaluation.find(1)
     @user = User.new
     @searching = false
 		@users = User.all
