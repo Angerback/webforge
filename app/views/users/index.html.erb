@@ -14,7 +14,7 @@
     </div>
 
 		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn btn-primary square" data-toggle="modal" data-target="#nuevoUsuario">Crear Usuario</button>
+		
 		<!-- Modal -->
 		<div id="nuevoUsuario" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
@@ -35,6 +35,37 @@
 
 
 		<br>
+		<br>
+		<!-- En caso de que no se encuentre nada -->
+		<%if @users.blank? %>
+			<h4> No se encontraron coincidencias para <strong>"<%= params[:search] %>"</strong></h4>
+
+			<br>
+			<br>
+		<%end%>
+
+		<!--/Generic search form -->
+		<div class="fluid-row">
+			<%= form_tag("/users", :method => "get",class: "form-inline", id:"search-form") do %>
+					<div class="pull-left">
+						<button type="button" class="btn btn-primary square" data-toggle="modal" data-target="#nuevoUsuario">Crear Usuario</button>
+						<%if @searching%>
+							<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
+						<%end%>
+					</div>
+					<div class="pull-right">
+
+					<%if @users.present? %>
+					<!-- Generic search form -->
+					<!-- A form_tag se le pasa el PATH y el método que por defecto POST -->
+			  		<%= text_field_tag :search, params[:search], class:"form-control ms-input", placeholder: "Nombre, Rut, Rol, Email" %>
+			  		<%= submit_tag "Buscar", class: "btn btn-primary square"%>
+			  		<%end%>
+					</div>
+			<% end %>
+		</div>
+
+		<% if !@users.blank? %>
 		<table class="table">
 			<tr>
 				<th>Nombre</th>
@@ -55,6 +86,12 @@
 				</tr>
 			<% end %>
 		</table>
+		<% end %>
+
+
+		<div>
+
+		</div>
 
 	</div>
 </div>
