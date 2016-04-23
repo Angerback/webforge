@@ -24,13 +24,13 @@
           <td><%= course.semester %></td>
           <td><%= course.students %></td>
           <td><%= link_to 'Ver', course %></td>
-          <td><%= link_to 'Editar', edit_course_path(course) %></td>
-          <td><%= link_to 'Eliminar', 'javascript:;', :onclick => 'deleteCourseDialog.showDialog("'+course.name+'", '+String(course.id)+');' %></td>
+          <!--td><%= link_to 'Editar', edit_course_path(course) %></td!-->
+          <!--td><%= link_to 'Eliminar', 'javascript:;', :onclick => 'deleteCourseDialog.showDialog("'+course.name+'", '+String(course.id)+');' %></td!-->
         </tr>
       <% end %>
     </table>
     <div>
-      <%= link_to 'Nuevo', new_course_path, class: "btn btn-primary square" %>
+      <%= link_to 'Volver', root_path, class: "btn btn-primary square" %>
     </div>
   </div>
 </div>
