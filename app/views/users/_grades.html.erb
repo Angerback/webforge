@@ -1,4 +1,6 @@
-<table class="table">
+
+<!-- Este contenido aparece siempre en la ventana emergente -->
+<table class="table" id>
 
 			<div align="center"><%= @evaluation.name %></div>
 			<tr>
@@ -17,4 +19,11 @@
 			<% end %>
 </table>
 
+<!-- Este div se esconde y aparece al apretar el boton -->
 
+<div id="user-info-extra" style="display:none">
+<p>Hola soy una info extra, coloca aqui todo lo que quieras que aparezca al presionar el boton "Ver mas/ocultar"</p>
+<p>Este archivo esta en views/users/_grades.html.erb, y hay un DIV (este mismo) para agregar esta informacion.</p>
+</div>
+
+<%= link_to 'Ver mas', 'javascript:;', :onclick => "verMasUser.verMas();", class: "btn btn-primary square", id: "boton-user-info-extra" %>

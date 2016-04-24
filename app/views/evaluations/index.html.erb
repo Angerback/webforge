@@ -20,12 +20,12 @@
 								<p><%= evaluation.description %></p>
 								<div>
 									<div class="btns">
-										<%= button_to "Comenzar evaluación", { action: "begin", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square square", id: "test" + evaluation.id.to_s %>
+										<%= button_to "Comenzar evaluación", { action: "begin", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square", id: "test" + evaluation.id.to_s %>
 									</div>
 									<% if current_user %>
 										<% if @continue[evaluation.id] %>
 											<div class="btns">
-												<%= button_to "Continuar última evaluación", { action: "continue", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square square" %>
+												<%= button_to "Continuar última evaluación", { action: "continue", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square" %>
 											</div>
 										<% end %>
 

@@ -31,7 +31,7 @@
 						          	<%= text_field_tag :plunk %>
 						        </div>
 						        					
-								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square square"  %>
+								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square"  %>
 							<% end %>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 						          	<%= text_field_tag :embed %>
 						        </div>
 						        					
-								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square square" %>
+								<%= submit_tag "Actualizar", data: { disable_with: "Guardando cambios..." }, class: "btn btn-primary square" %>
 							<% end %>
 						</div>
 					</div>	
@@ -58,15 +58,15 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div>
-								<%= link_to "Mensaje al ayudante", {controller: "messages", action: "new", id: @chat.id}, class: "btn btn-primary square square" %>
+								<%= link_to "Mensaje al ayudante", {controller: "messages", action: "new", id: @chat.id}, class: "btn btn-primary square" %>
 							</div>
 							<br/>
 							<div>
-								<%= link_to "Continuar en Plunker", @exercise.plunk, :target => "_blank", class: "btn btn-primary square square"  %>
+								<%= link_to "Continuar en Plunker", @exercise.plunk, :target => "_blank", class: "btn btn-primary square"  %>
 							</div>
 							<br/>
 							<div>
-								<%= link_to "Volver", practices_path, class: "btn btn-primary square square"  %>
+								<%= link_to "Volver", practices_path, class: "btn btn-primary square"  %>
 							</div>	
 						</div>	
 					</div>	
@@ -93,7 +93,7 @@
 							        	</li>
 							        </ul>
 							        <div class="btns">
-					            		<%= link_to "Siguiente", "#step2", class: "next btn btn-primary square square" %></li>
+					            		<%= link_to "Siguiente", "#step2", class: "next btn btn-primary square" %></li>
 					        		</div>
 					        	</div>
 					        </div>     
@@ -113,7 +113,7 @@
 			          						<%= text_field_tag :plunk %>
 			        					</div>
 			        					<div>
-			        						<%= submit_tag "Registrar trabajo", data: { disable_with: "Registrando tu trabajo..." }, class: "btn btn-primary square square" %>
+			        						<%= submit_tag "Registrar trabajo", data: { disable_with: "Registrando tu trabajo..." }, class: "btn btn-primary square" %>
 			        					</div>	
 			    					</div>
 			    				</div>
@@ -123,7 +123,7 @@
 			        				<p>Para registrar tu trabajo copia la URL desde Plunker y pégala en el campo de la izquierda</p>
 
 			        				<div class="btns">
-										<%= link_to "Volver", "#step1", class: "prev btn btn-primary square square" %></li>
+										<%= link_to "Volver", "#step1", class: "prev btn btn-primary square" %></li>
 			        				</div>
 			    				</div>
 			    			</div>
@@ -136,7 +136,7 @@
   						<div class=""><%= message %></div>
 					<% end %>
 			        <p>A continuación te guiaremos a través de los pasos necesarios para iniciar tu práctica.</p>
-			        <%= link_to "Comenzar!", "#step1", class: "btn btn-primary square square" %>
+			        <%= link_to "Comenzar!", "#step1", class: "btn btn-primary square" %>
 			    </div>
 			<% end %>
 

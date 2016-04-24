@@ -36,9 +36,9 @@
 	    <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"]]), class: "form-control" %>
       </div>
       <div class="actions">
-	    <%= f.submit 'Actualizar usuario', class: "btn btn-primary square square" %>
-	    <%= link_to 'Cancelar', users_path, class: "btn btn-primary square square" %>	    	
-		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square square" %>	
+	    <%= f.submit 'Actualizar usuario', class: "btn btn-primary square" %>
+	    <%= link_to 'Cancelar', users_path, class: "btn btn-primary square" %>	    	
+		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square" %>	
 	  </div>
 
 
