@@ -1,27 +1,35 @@
 <% provide(:title, "Inicio") %>
-
-
 <div class="container">
 	<div class="grid">
-	    <div class="row">
-	        <div class="cell">
-
-	        		<h1 class="align-center">
+	    
+<div class="greetings-container">
+<div class="row">
+	<div class="col-md-6">
+			<h1>
 	                		Heurísticas de Nielsen
 	                </h1>
 
-	                <p class="align-center">
+	                <p>
 	                	Una aproximación a la Usabilidad Web o ¿Cómo sobrevivir en la Red?
 	                </p>
 
-	                <p class="align-center">
-	                <%= link_to 'Empieza aquí!', introduction_path %>
-			</p>
-	                <div class="align-center">	
+	               
+	                <%= link_to 'Empieza aquí!', introduction_path, class: "button-banner-cover" %>
+			
+
+	</div>
+
+	<div class="col-md-6">
+	<div>	
 				<%= image_tag "button_push-256.png", alt: "Usability" %>
 			</div>
 
-	        </div>
+	</div>
+
+
+	                
+
+            </div>
 	    </div>
 	</div>
 </div>

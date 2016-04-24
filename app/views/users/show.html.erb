@@ -53,7 +53,7 @@
 								ABRE LA VIEW LLAMADA _grades QUE SE ENCUENTRA EN LA
 								CARPETA views/users -->	
 								<!-- Trigger the modal with a button -->
-								<button type="button" class="btn btn-primary square" data-toggle="modal" data-target="#allGrade">Ver mas</button>
+								<button type="button" class="btn btn-primary square square" data-toggle="modal" data-target="#allGrade">Ver mas</button>
 								<!-- Modal -->
 								<div id="allGrade" class="modal fade" role="dialog">
 								  <div class="modal-dialog">
@@ -80,9 +80,9 @@
 	</div>
 	
 	<div>
-		<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
-		<%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary square" %></td>
-		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square" %>
+		<%= link_to 'Volver', users_path, class: "btn btn-primary square square" %>
+		<%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary square square" %></td>
+		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square square" %>
 	</div>
 	<div>
 		

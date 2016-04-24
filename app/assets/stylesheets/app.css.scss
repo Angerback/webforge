@@ -34,15 +34,40 @@ a:hover{
 }
 
 
-.btn-primary, .btn-primary:visited, .btn-primary:active, .btn-primary:focus{
-  padding:15px;
-  color:#ffffff;
-  background-color: #2086bf;
+/*
+* Clase para el menu desplegable, cuando se pone el mouse encima de una celda
+*/
+.d-menu:hover li a:hover{
+  background-color:#e6e6e6!important;
+  color:#727272!important;
 }
+.menu-heuristicas{
+  width:500px!important;
+  max-width:500px!important;
+}
+
+
+
+/*
+* Esta clase CSS esta muy parchada. Hay que refactorizar los CSS en alguna iteracion ;)
+*/
+
+.btn-primary, .btn-primary:visited, .btn-primary:active, .btn-primary:focus{
+  padding:15px!important;
+  color:#ffffff!important;
+  background-color: #2086bf!important;
+  border:0!important;
+  height:40px!important;
+  vertical-align: middle!important;
+  line-height:5px!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
 
 .btn-primary:hover{
   color:#ffffff!important;
-  background-color:#1b6eae;
+  background-color:#1b6eae!important;
 }
 
 
@@ -707,3 +732,29 @@ fieldset.step:target ~ .intro {
 }
 
 .clear { clear:both; }
+
+
+/* Banners */
+
+.greetings-container {
+
+  background-color: #337ab7!important;
+  color:#fff!important;
+  padding:20px 15px;
+  text-align:center;
+
+}
+.greetings-container p{
+  color:#fff!important;
+}
+
+.button-banner-cover{
+  color:#fff!important;
+  font-weight: bold;
+  font-size:18px;
+  border: 1px solid #fff;
+  padding:10px;
+  width: 200px;
+  margin: 0 auto;
+  display:block;
+}

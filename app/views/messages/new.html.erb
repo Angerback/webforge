@@ -17,7 +17,7 @@
         <%= text_area_tag :body, "", :class => "tinymce", :rows => 10, :cols => 30 %>
 	 	<%= tinymce %>
 		
-		<%= submit_tag "Publicar mensaje", data: { disable_with: "Guardando mensaje..." }, class: "btn btn-primary square" %>
-		<%= link_to 'Cancelar', {action: "show", controller: "chats", id: params[:id]}, class: "btn btn-primary square" %>
+		<%= submit_tag "Publicar mensaje", data: { disable_with: "Guardando mensaje..." }, class: "btn btn-primary square square" %>
+		<%= link_to 'Cancelar', {action: "show", controller: "chats", id: params[:id]}, class: "btn btn-primary square square" %>
 	<% end %>
 </div>

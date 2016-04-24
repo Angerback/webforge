@@ -62,18 +62,18 @@
 									<% if current_user %>
 										<% if @exercises[practice.id] %>
 											<div class="btns">
-												<%= link_to @actions[practice.id], @exercises[practice.id].plunk, :target => "_blank", class: "btn btn-primary square" %>
-												<%= link_to "Ver práctica", { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+												<%= link_to @actions[practice.id], @exercises[practice.id].plunk, :target => "_blank", class: "btn btn-primary square square" %>
+												<%= link_to "Ver práctica", { action: "show", id: practice.id }, class: "btn btn-primary square square" %>
 												
 											</div>
 										<% else %>
 											<div class="btns">
-												<%= link_to @actions[practice.id], { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+												<%= link_to @actions[practice.id], { action: "show", id: practice.id }, class: "btn btn-primary square square" %>
 											</div>
 										<% end %>
 									<% else %>
 										<div class="btns">
-											<%= link_to "Comenzar práctica", { action: "show", id: practice.id }, class: "btn btn-primary square" %>
+											<%= link_to "Comenzar práctica", { action: "show", id: practice.id }, class: "btn btn-primary square square" %>
 										</div>
 									<% end %>
 								</div>		

@@ -16,7 +16,7 @@
     			</h2>			
 				<p><%= @authors[chat.id] %> dice:</p>
 				<div class="well"><%= @messages[chat.id].body.html_safe %></div>
-				<%= link_to 'Ver conversación completa', {action: "show", id: chat.id}, class: "btn btn-primary square" %>
+				<%= link_to 'Ver conversación completa', {action: "show", id: chat.id}, class: "btn btn-primary square square" %>
 			</div>
 		</div>		
 	<% end %>

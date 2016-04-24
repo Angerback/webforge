@@ -4,7 +4,7 @@
 $ ->
 	footerIsVisible = false;
 	$(".footer-arrow").click ->
-		footerIsVisible = !footerIsVisible
+		footerIsVisible ^= true
 		$("html, body").animate({ 
 			scrollTop: $(document).height() 
 			}, 500) if footerIsVisible
