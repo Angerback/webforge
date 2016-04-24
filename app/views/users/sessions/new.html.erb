@@ -10,8 +10,8 @@
             <%= image_tag "happiness.jpg", alt: "Happy users", class: "welcome-img" %>
         
             <div class="greetings-container">
-               <h1>Bienvenido a WebForge</h1>
-               <p>
+               <h1 class="jumbotron-header">Bienvenido a WebForge</h1>
+               <p class="random-message">
                   ¡Si tu Software fuera un helado esta debería ser la cara de tu cliente! El secreto: ¡Software fácil de usar!
                </p>
             </div>
@@ -48,7 +48,6 @@
                <div class="actions">
                   <%= f.submit "Iniciar sesión", class: "btn btn-primary square" %>
                   <%= link_to "Volver a página principal", root_path, class: "btn btn-primary square" %>
-
                </div>
             <% end %>
 
