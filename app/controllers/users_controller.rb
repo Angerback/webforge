@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 		#LOS LLENE MANUALMENTE EN LA BASE DE DATOS MIENTRAS
 		#INTENTE CREAR UN ARREGLO ALTIRO EN EL CODIGO PERO ME TIRABA UN ERROR
 		#SOLO ME PODIA CREAR UN TEST CON VALORES DETERMINADOS POR MI, NO UN ARRAY =/
-		@tests = Test.all
+	
 
 		##DEFINO MEJOR NOTA, PEOR NOTA y PROMEDIO
 		@mejorNota = 0
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
 		##RECORRO EL ARRAY PARA OBTENER LA MEJOR PEOR Y PROMEDIO DE NOTA
 
-		@tests.each do |test|
+		@userTests.each do |test|
 			if test.grade
 				if test.grade > @mejorNota
 					@mejorNota = test.grade
