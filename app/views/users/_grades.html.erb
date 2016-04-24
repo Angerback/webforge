@@ -1,57 +1,7 @@
-
-<!-- Este contenido aparece siempre en la ventana emergente -->
-
-	<div class="row">
-		<div class="col-xs-6">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<h2 class="ms-h2">Información básica</h2>
-					<p>
-						<strong>Rut:</strong> <%= @user.rut %>
-					</p>		
-					<p>
-						<strong>Correo:</strong> <%= @user.email %>
-					</p>	
-					<p>
-						<strong>Rol:</strong> <%= @user.user_type %>
-					</p>	
-				</div>
-			</div>	
-		</div>
-		<div class="col-xs-6">
-			<% if @lastTest %>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h2 class="ms-h2">Últimas evaluaciones</h2>
-						<p>
-							<strong>Calificación en <%= @evaluation.name %>:</strong> 
-
-							
-								<!-- RECORRO CADA UNO DE LOS TEST HECHO POR EL USUARIO
-								LOS TUVE QUE RELLENAR MANUALMENTE EN LA BASE DE DATOS -->
-								<br>
-								La ultima nota es 
-								<%=number_with_precision(@lastTest.grade, :precision=>2) %><br>
-								La mejor nota es
-								<%=number_with_precision(@mejorNota, :precision=>2) %><br>
-								La peor nota es
-								<%=number_with_precision(@peorNota, :precision=>2) %><br>
-								El promedio es
-								<%=number_with_precision(@promedioNota, :precision=>2) %><br>
-
-
-
-						</p>	
-					</div>
-				</div>
-			<% end %>			
-		</div>
-	</div>
-	
-<!-- Este div se esconde y aparece al apretar el boton -->
+<%# Contiene el listado de calificaciones (historial) solamente. %>
 
 <div id="user-info-extra" style="display:none">
-<table class="table" id>
+<table class="table">
 
 			<div align="center"><%= @evaluation.name %></div>
 			<tr>
@@ -70,5 +20,3 @@
 			<% end %>
 </table>
 </div>
-
-<%= link_to 'Ver mas', 'javascript:;', :onclick => "verMasUser.verMas();", class: "btn btn-primary square", id: "boton-user-info-extra" %>

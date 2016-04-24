@@ -32,3 +32,16 @@
 			$("#boton-user-info-extra").html 'Ocultar'
 		# En caso contrario, cambiarlo al texto original
 		else $("#boton-user-info-extra").html @.textoOriginalBtn
+
+	# Muestra el dialogo con la informacion del usuario
+	# Carga la vista users/id la cual NO debe tener layout (sin footer, ni header)
+	verUsuario: (user_id) ->
+		$.ajax({
+			method: "GET"
+			url: "/users/#{user_id}"
+			})
+		.done (resultado) -> 
+			$("#dialog-user-info").html resultado
+			$("#dialog-user-info").data('dialog').open()
+
+		

@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 		@evaluation = Evaluation.find(1)
 		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
 
-    #Solicitado: Objeto test con todos los tests realizados:
-    @userTests = Test.where( :user_id => @user.id )
+    		#Solicitado: Objeto test con todos los tests realizados:
+    		@userTests = Test.where( :user_id => @user.id )
 
 		#ME RETORNA TODOS LOS DATOS DEL USUARIO RESPECTIVO
 		#LOS LLENE MANUALMENTE EN LA BASE DE DATOS MIENTRAS
@@ -54,13 +54,13 @@ class UsersController < ApplicationController
 		end
 
 
-		#if Test.where( :user_id => current_user.id, :grade =>  0.9..7.1 ).last
-		#	@evaluations.each do |evaluation|
-		#		@tests[evaluation.id] = Test.where( :user_id => current_user.id,
-  		#	                     		  			:evaluation_id => evaluation.id,
-  		#	                      		  			:grade =>  0.9..7.1 ).last
-		#	end
-		#end
+		# Esto sirve para enviar la HTML sin layout. Dado que esta vista
+		# se carga como ventana emergente dentro de otra, no necesita tener
+		# el header, footer, cargar los scripts, etc. Solo carga el contenido del body.
+		respond_to do |format|
+			format.html { render :layout => false }
+		end
+
 	end
 
 	# GET /users/new
