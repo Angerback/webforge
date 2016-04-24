@@ -22,10 +22,7 @@
 					<td><%= user.name %></td>
 					<td><%= user.rut %></td>
 					<td><%= user.email %></td>
-					<td><%= link_to 'Ver', user %></td>
-					<td><%= link_to 'Editar', edit_user_path(user) %></td>
-					<%# Boton de eliminar comentado hasta realizar bien la eliminacion%>					
-					<!--td><%= link_to 'Eliminar', 'javascript:;', :onclick => 'deleteUserCourseDialog.showDialog("'+user.name+'", '+String(user.id)+');' %></td!-->
+					<td><%= link_to 'Ver', 'javascript:;', :onclick => "verMasUser.verUsuario(#{user.id})" %></td>
 				</tr>
 			<% end %>
 		</table>
@@ -44,4 +41,10 @@
             </p>
             <%= link_to 'Eliminar', '', method: :delete, class: "btn btn-primary", id: 'delete-user-course-button' %></td>
             <%= button_tag 'Cancelar', :onclick => "deleteUserCourseDialog.hideDialog()", class: "btn btn-primary" %>
+</div>
+
+
+<%# Este dialogo contiene la informacion del usuario %>
+<div data-role="dialog" id="dialog-user-info" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;">
+<%# Se carga dinamicamente usando el script users.coffee %>
 </div>
