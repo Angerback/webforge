@@ -23,6 +23,7 @@ RSpec.feature "Creación de un nuevo usuario desde el panel de administrador", :
       click_button "Crear usuario"
     end
 
+    within('#notificaciones')
     expect(page).to have_content('Usuario creado exitosamente')
 
   end

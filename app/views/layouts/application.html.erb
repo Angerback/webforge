@@ -19,10 +19,11 @@
   <%# La vista METRO no tiene footer %>
   <% if (controller.controller_name != 'metro')%>
     <%= render "layouts/footer" %>
-  <% end %>  
+  <% end %>
 
   <%# Notificaciones %>
+  <div id="notificaciones">
   <%= render "layouts/notif" %>
-
+  </div>
 </body>
 </html>
