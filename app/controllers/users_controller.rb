@@ -80,7 +80,13 @@ class UsersController < ApplicationController
 			flash[:success] = "Usuario actualizado exitosamente"
 			redirect_to(users_path)
 		else
-			render :edit
+			redirect_to(users_path)
+				if @user.errors.any?
+					@user.errors.full_messages.each do |msg| 
+					flash[:error] = msg
+				end
+
+			end
 		end
 	end
 
