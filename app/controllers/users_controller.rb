@@ -32,6 +32,44 @@ class UsersController < ApplicationController
 		@evaluation = Evaluation.find(1)
 		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
 
+    #Solicitado: Objeto test con todos los tests realizados:
+    @userTests = Test.where( :user_id => @user.id )
+
+		#ME RETORNA TODOS LOS DATOS DEL USUARIO RESPECTIVO
+		#LOS LLENE MANUALMENTE EN LA BASE DE DATOS MIENTRAS
+		#INTENTE CREAR UN ARREGLO ALTIRO EN EL CODIGO PERO ME TIRABA UN ERROR
+		#SOLO ME PODIA CREAR UN TEST CON VALORES DETERMINADOS POR MI, NO UN ARRAY =/
+		@tests = Test.all
+
+		##DEFINO MEJOR NOTA, PEOR NOTA y PROMEDIO
+		@mejorNota = 0
+		@peorNota = 7.0
+		@promedioNota = 0
+		sumadorNotas = 0
+		cantidadNotas = 0 
+
+		##RECORRO EL ARRAY PARA OBTENER LA MEJOR PEOR Y PROMEDIO DE NOTA
+
+		@tests.each do |test|
+			if test.grade
+				if test.grade > @mejorNota
+					@mejorNota = test.grade
+				end
+	
+				if test.grade < @peorNota
+					@peorNota = test.grade
+				end
+	
+				sumadorNotas = sumadorNotas + test.grade
+				cantidadNotas = cantidadNotas + 1
+			end
+		end
+		
+		if cantidadNotas != 0
+			@promedioNota = sumadorNotas / cantidadNotas
+		end
+
+
 		#if Test.where( :user_id => current_user.id, :grade =>  0.9..7.1 ).last
 		#	@evaluations.each do |evaluation|
 		#		@tests[evaluation.id] = Test.where( :user_id => current_user.id,

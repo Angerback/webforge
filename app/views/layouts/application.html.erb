@@ -10,14 +10,19 @@
 </head>
 <body>
 
-  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'registrations') %>
-    <%= render 'layouts/header2' %>
-  <% end %>
+  <%# Todas las vistas tienen header %>
+  <%= render 'layouts/header2' %>
 
+  <%# Contenido de la pagina %>
   <%= yield %>
-  
-  <% if (controller.controller_name != 'sessions') && (controller.controller_name != 'home') && (controller.controller_name != 'registrations') && (controller.controller_name != 'metro')%>
-    <%= render 'layouts/footer' %>
+
+  <%# La vista METRO no tiene footer %>
+  <% if (controller.controller_name != 'metro')%>
+    <%= render "layouts/footer" %>
   <% end %>  
+
+  <%# Notificaciones %>
+  <%= render "layouts/notif" %>
+
 </body>
 </html>

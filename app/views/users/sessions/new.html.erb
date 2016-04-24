@@ -1,17 +1,22 @@
 <% provide(:title, "Iniciar sesión") %>
+
+
 <div class="container login-box">
    <div class="row">
       <div class="col-xs-7">
+
+
          <div class="image-container">
             <%= image_tag "happiness.jpg", alt: "Happy users", class: "welcome-img" %>
 
             <div class="greetings-container">
-               <h1 class="jumbotron-header">Bienvenido a WebForge</h1>
-               <p class="random-message">
+               <h1>Bienvenido a WebForge</h1>
+               <p>
                   ¡Si tu Software fuera un helado esta debería ser la cara de tu cliente! El secreto: ¡Software fácil de usar!
                </p>
             </div>
-         </div>
+         </div>  
+
       </div>
 
       <div class="col-xs-5 login-right-container">
@@ -21,12 +26,7 @@
             <div class="login-text">
                Cuenta WebForge
             </div>
-
-            <div>
-               <% flash.each do |message_type, message| %>
-                  <div><%= message %></div>
-               <% end %>
-            </div>
+            
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                <%= devise_error_messages! %>
@@ -46,7 +46,9 @@
                <% end -%>
 
                <div class="actions">
-                  <%= f.submit "Iniciar sesión", class: "btn btn-primary btn-login square" %>
+                  <%= f.submit "Iniciar sesión", class: "btn btn-primary square" %>
+                  <%= link_to "Volver a página principal", root_path, class: "btn btn-primary square" %>
+
                </div>
             <% end %>
 
@@ -62,3 +64,4 @@
       </div>
    </div>
 </div>
+
