@@ -17,6 +17,9 @@ body {
 
 /* Images */
 
+div.last-grade {
+  float: right;
+}
 
 a {
 
@@ -82,8 +85,10 @@ a:hover{
   padding:0;
 }
 
-
-
+div.btns {
+  float: left;
+  margin-right: 5px;
+}
 
 /* Text */
 
