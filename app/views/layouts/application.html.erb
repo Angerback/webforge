@@ -12,7 +12,13 @@
 
   <%# Todas las vistas tienen header %>
   <%= render 'layouts/header2' %>
+  <br>
 
+  <div class="container">
+    <div class="row">
+      <%= flash_messages %>
+    </div>
+  </div>
   <%# Contenido de la pagina %>
   <%= yield %>
 
@@ -23,7 +29,8 @@
 
   <%# Notificaciones %>
   <div id="notificaciones">
-  <%= render "layouts/notif" %>
+
+
   </div>
 </body>
 </html>
