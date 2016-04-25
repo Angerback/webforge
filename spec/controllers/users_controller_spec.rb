@@ -46,7 +46,7 @@ RSpec.describe UsersController do
   describe "PATCH or PUT #update" do
     it "Actualización exitosa de usuario" do
       put :update, id: 2, user: { name: "Vladimir" }
-      expect(response).to redirect_to :index
+      expect(response).to render_template(:index)
     end
   end
 
