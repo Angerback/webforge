@@ -10,104 +10,144 @@
   src:font-url('segoeui.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Roboto Light';
-  src:font-url('Roboto-Light.ttf') format('truetype');
-}
 
-@font-face {
-  font-family: 'Roboto Regular';
-  src:font-url('Roboto-Regular.ttf') format('truetype');
-}
-
-/* Universal */
-body { 
-	padding-top: 50px; 
-}
-
-.anchor {
-	display: block; 
-	position: relative; 
-	top: -52px;
+body {
+  padding-top: 50px!important;
 }
 
 /* Images */
 
-img {
-	margin-bottom: 20px;
-  	margin-top: 20px;
+
+a {
+
+  font-family: 'Segoi UI Regular';
+  font-size: 16px;
+  color: #1e75bb;
+  font-weight: 300;
+  line-height: 1.42857;
+  /*pendiente division*/
 }
+
+a:hover{
+  text-decoration: none!important;
+  color: #2EB8E6!important;
+}
+
+
+/*
+* Clase para el menu desplegable, cuando se pone el mouse encima de una celda
+*/
+.d-menu:hover li a:hover{
+  background-color:#e6e6e6!important;
+  color:#727272!important;
+}
+.menu-heuristicas{
+  width:500px!important;
+  max-width:500px!important;
+}
+
+
+
+/*
+* Esta clase CSS esta muy parchada. Hay que refactorizar los CSS en alguna iteracion ;)
+*/
+
+.btn-primary, .btn-primary:visited, .btn-primary:active, .btn-primary:focus{
+  padding:15px!important;
+  color:#ffffff!important;
+  background-color: #2086bf!important;
+  border:0!important;
+  height:40px!important;
+  vertical-align: middle!important;
+  line-height:5px!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
+
+.btn-primary:hover{
+  color:#ffffff!important;
+  background-color:#1b6eae!important;
+}
+
+
+.app-bar-menu a:hover {
+  color:#ffffff!important;
+}
+
+.app-logo {
+  height: 20px;
+  width: auto;
+  margin: 0px;
+  padding:0;
+}
+
+
+
 
 /* Text */
 
 h1.topic-title {
-	padding: 0 0 84px 0;
-  	margin: 0 0 0 -3px;
-  	color: #454545;
-  	font-size: 3em;
-  	font-weight: normal;
-  	line-height: 1.2em;
-  	font-family: 'Segoi UI Light';
-  	clear: both;
+  padding: 0 0 84px 0;
+    margin: 0 0 0 -3px;
+    color: #454545;
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 1.2em;
+    font-family: 'Segoi UI Light';
+    clear: both;
 }
 
 h2.ms-h2 {
-	font-size: 1.45em;
-  	line-height: 1.24em;
-  	font-family: 'Segoi UI Regular';
-  	color: #454545;
-  	margin-bottom: 15px;
-  	margin-left: -1px;
-  	padding-top: 0;
-  	padding-bottom: 0;
+  font-size: 1.45em;
+    line-height: 1.24em;
+    font-family: 'Segoi UI Regular';
+    color: #454545;
+    margin-bottom: 15px;
+    margin-left: -1px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-p {
-	font-family: 'Roboto Regular';
-	font-size: 17px;
-	font-weight: 300;
-	color: #454545;
-  	margin: 0;
-  	line-height: 1.42857;
-  	padding-bottom: 5px;
-}
-
-li {
-	font-family: 'Roboto Regular';
-	font-size: 17px;
-	font-weight: 300;
-	color: #454545;
-  	margin: 0;
-  	line-height: 1.42857;	
+p, li {
+  font-family: 'Segoi UI Regular';
+  font-size: 17px;
+  font-weight: 300;
+  color: #454545;
+    margin: 0;
+    line-height: 1.42857;
+    padding-bottom: 5px;
 }
 
 a {
-	font-family: 'Roboto Regular';
-	font-size: 16px;
-	color: #1e75bb;
-	font-weight: 300;
-	line-height: 1.42857;
-	/*pendiente division*/
+  font-family: 'Segoi UI Regular';
+  font-size: 16px;
+  color: #1e75bb;
+  font-weight: 300;
+  line-height: 1.42857;
+  /*pendiente division*/
 }
 
 a:hover{
- 	text-decoration: none!important;
- 	color: #2EB8E6!important;
+  text-decoration: none!important;
+  color: #2EB8E6!important;
 }
+
+
 
 /* Forms */
 
 .form-control.ms-input {
-	border-radius:0;
-  	font-family: 'Segoi UI Light';
-  	font-size: 1.1em;
-  	margin-bottom: 6px;
-  	margin-top: 6px;
+  border-radius:0;
+    font-family: 'Segoi UI Light';
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    margin-top: 6px;
 
 }
 
 .btn.square {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 /* Lists */
@@ -117,6 +157,7 @@ ol, ul {
   padding: 0 0 0 1px;
   list-style-position: inside;
 }
+
 
 /* Breadcrumbs */
 
@@ -135,7 +176,7 @@ ol, ul {
 .breadcrumb.ms a {
      color: #656565;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 .breadcrumb.ms a:hover {
@@ -146,7 +187,7 @@ ol, ul {
 .breadcrumb.ms > .active {
      color: #00188f;
      font-size: 16px;
-     font-family: 'Roboto Light';
+     font-family: 'Segoi UI Light';
 }
 
 /* Change breadcrumb separator to raquo symbol*/
@@ -156,537 +197,165 @@ ol, ul {
      font-size: 15px;
 }
 
+
 /* Buttons */
 
 .glyphicon.page-nav-btn {
-	font-size: 3em;
-	margin-top: 25px;
-	margin-bottom: 25px;
+  font-size: 3em;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .next-box {
-	text-align: right;
-	float: right;
-	width: 50%;
+  text-align: right;
+  float: right;
+  width: 50%;
 }
 
 .back-box {
-	text-align: left;
-	float: left;
-	width: 50%;
+  text-align: left;
+  float: left;
+  width: 50%;
 }
 
-/* Header */
 
-.navbar-nav > li > a {
-	font-family: 'Roboto Regular';
-} 
 
-.app-logo {
-	height: 20px;
-	width: auto;
-	margin: 0px;
-
-}
-
-.app-name {
-	font-size: 1.45em;
-  	line-height: 1.24em;
-  	font-family: 'Segoi UI Regular';
-  	color: #656565;
-  	font-weight: bold;
-  	display: inline-block;
-}
-
-li.user-name {
-	color: #777;
-	padding-top: 15px;
-  	padding-bottom: 15px;
-  	line-height: 20px;
-  	font-family: 'Roboto Regular';
-  	font-size: 16px;
-  	font-weight: bold;
-	line-height: 1.42857;
-}
-
-li.user-icon {
-	color: #777;
-	padding-top: 15px;
-  	padding-bottom: 15px;
-  	margin-left: 10px;
-  	line-height: 20px;  	
-}
-
-nav.wf-nav {
-	background-color: #e6e6e6;
- }
-
-ul.multi-col {
-	background-color: #e6e6e6; 
-}
-
-ul.nav li a {
-	color: #333
-}
-
-ul.nav li a:hover {
-	color:#0078D7;
-	background-color: transparent; 
-}
-
-/* Home */
-
-.hero-banner {
-	background-color: #0078d7;
-}
-
-.hero-btn {
-  	background-color: transparent;
-  	border: thin solid #fff;
-  	color: #fff;
-  	display: inline-block;
-	min-width: 120px;
-	padding: 4px 12px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	position: relative;
-	max-width: 100%;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	vertical-align: middle;
-	text-overflow: clip;
-	touch-action: manipulation;
-}
-
-.jumbotron-content {
-	padding-top: 40px;
-}
-
-h1.jumbotron-header {
-  	font-weight: 200;
-  	font-size: 2.875em;
-  	padding-bottom: 3.36px;
-  	padding-top: 3.36px;
-  	margin: 15px 0;
-  	color: #fff;
-  	font-family: 'Segoi UI Light';
-}
-
-p.jumbotron-subheader {
-	font-weight: 300;
-  	font-size: 1.5em;
-  	padding-bottom: 2.36px;
-  	padding-top: 2.36px;
-  	margin: 15px 0;
-  	color: #fff;
-  	font-family: 'Segoi UI Light';
-}
-
-.home-footer {
-	text-align: right;
-}
-
-.text-anchor {
-	font-size: 22px;
-}
-
-.icon-anchor {
-	margin-bottom: 10px;
-}
-
-.section-title {
-	margin-bottom: 5px;
-}
 
 /* Heuristic */
 
 .side-bar {
-	background-color: #ebeff0;
+  background-color: #ebeff0;
     padding: 12px 15px;
-	margin-left: 24px;
-	margin-bottom: 15px;
-	margin-top: 15px;
-  	width: 188px;
-  	word-wrap: break-word;
-	float: right;
-  	display: block;
+  margin-left: 24px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+    width: 188px;
+    word-wrap: break-word;
+  float: right;
+    display: block;
 }
 
 .side-bar h2 {
-	margin-top: 0px;
+  margin-top: 0px;
 }
 
 .side-bar ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .side-bar li {
-	padding-top: 11px;
+  padding-top: 11px;
+  .dropdown-menu {
+		min-width: 325px;
+        white-space: normal;
+	}
+  .dropdown-menu li a {
+      padding: 5px 15px;
+      font-weight: 300;
+  }
 }
-
-/* Dropdown 3 col */
 
 .dropdown-menu {
-	min-width: 225px;
-}
-
-.dropdown-menu.columns-2 {
-	min-width: 450px;
-}
-
-.dropdown-menu.columns-3 {
-	min-width: 675px;
-}
-
+      min-width: 325px;
+      white-space: normal;
+  }
 .dropdown-menu li a {
-	padding: 5px 15px;
-	font-weight: 300;
+    padding: 5px 15px;
+    font-weight: 300;
 }
 
-.multi-column-dropdown {
-	list-style: none;
+
+/* Breadcrumbs */
+
+/* Change breadcrumb background color */
+.breadcrumb.ms {
+     background-color: transparent;
+     border-radius: 0;
+     -moz-border-radius: 0;
+     -webkit-border-radius: 0;
+     -o-border-radius: 0;
+     padding-left: 0px;
+     margin-top: 25px;
 }
 
-.multi-column-dropdown li.dropdown.open > a {
-	background-color: green;
+/* Change breadcrumb links color */
+.breadcrumb.ms a {
+     color: #656565;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
 }
 
-.multi-column-dropdown li a {
-	display: block;
-	clear: both;
-	line-height: 1.428571429;
-	color: #333;
-	white-space: normal;
-}
- 
-@media (max-width: 767px) {
-	.dropdown-menu.multi-column {
-		min-width: 240px !important;
-		overflow-x: hidden;
-	}
+.breadcrumb.ms a:hover {
+     text-decoration: none;
 }
 
-.nav.navbar-custom > li > a:focus {
-    background-color:transparent;
-    color:#2EB8E6;
+/* Change active color*/
+.breadcrumb.ms > .active {
+     color: #00188f;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
 }
 
-/* Footer */
-
-.footerSock {
-	background-color: #1e75bb;
-	height: 171px;
-	margin-top: 50px;
+/* Change breadcrumb separator to raquo symbol*/
+.breadcrumb.ms > li + li:before {
+     content: "\003E\00a0";
+     color: #656565;
+     font-size: 15px;
 }
 
-.footerContainer {
-	background-color: #e6e6e6;
-}
 
-.fourColumnFooter {
-	margin-top: 40px;
-}
 
-.footerTitle {
-	margin-bottom: 15px;
-  	line-height: 18px;
-  	font-family: 'Segoi UI Regular';
-  	font-size: 14px;
-  	font-weight: 600;
-  	color: #666;
-}
 
-ul.footerList {
-	list-style-type: none;
-	margin-bottom: 86px;
-}
-
-ul.footerList li {
-	margin-bottom: 5px;
-}
-
-a.footerLink {
-	color: #666;
-	font-size: 14px;
-  	line-height: 18px;
-  	font-weight: normal;
-  	font-family: 'Segoi UI Regular',
-
-}
-
-a.footerLink:hover {
-	color: #666!important;
-	opacity: .7;
-}
-
-/* Sessions */
-
-.login-box {
-	top: 40px;
-	left: 50%;
-	position: fixed;
-  width: 1120px!important;
-  margin-left: -535px!important;
-}
-
-.welcome-img {
-	margin: 0px;
-}
-
-.image-container {
-	background-color: #2672ec;
-	width: 630px;
-	height: 540px;
-}
-
-.login-right-container {
-	height: 540px;
-}
-
-.greetings-container {
-	padding-left: 31px;
-}
-
-.random-message {
-	color: #fff;
-  	font-family: 'Segoi UI Light';
-  	font-weight: bold;
-  	font-size: 15px;
-}
-
-h1.login-head {
-	font-family: 'Segoi UI Regular';
-	font-size: 250%;
-  	line-height: 50px;
-  	color: #666;
-  	margin-top: 40px;
-  	margin-bottom: 30px;
-}
-
-.login-form-container {
-	width: 320px;
-}
-
-.login-text {
-	font-family: 'Segoi UI Regular';
-	color: #000;
-	font-size: 15px;
-	line-height: 1.428571429;
-	font-weight: normal;
-}
-
-.square.btn-login {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-.bottom-message {
-	position: absolute;
-	bottom: 0;
-}
-
-/* Tests */
-/* Questions */
-
-h1.question-instructions {
-	padding: 20px 0 40px 0;
-  	margin: 0 0 0 -3px;
-  	color: #454545;
-  	font-size: 3em;
-  	font-weight: normal;
-  	line-height: 1.2em;
-  	font-family: 'Segoi UI Light';
-  	clear: both;
-}
-
-p.question {
-	font-size: 1.45em;
-  	line-height: 1.24em;
-  	font-family: 'Segoi UI Regular';
-  	color: #454545;
-  	margin-left: -1px;
-  	padding-top: 0;
-  	padding-bottom: 0;
-}
-
-.arrow-container {
-	text-align: center;
-}
-
-.arrow {
-	padding-top: 15px;
-	font-size: 4em;
-	color: #1e75bb;
-}
-
-label.alternative {
-	font-size: 16px;
-  	font-family: 'Segoi UI Regular';
-  	color: #454545;
-}
-
-.btn-exit {
-	font-size: 3em;
-	padding-top: 30px;
-	float: right;
-}
-
-.question-img-container {
-	text-align: center;
-}
-
-.evaluation-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Results */
-
-.img-container {
-	text-align: center;
-}
-
-.results-titles {
-	font-size: 16px;
-  	line-height: 1.24em;
-  	font-family: 'Segoi UI Regular';
-  	color: #454545;
-  	margin-left: -1px;
-  	padding-top: 0;
-  	padding-bottom: 0;
-}
-
-.results-numbers {
-  	color: #AAACAD;
-  	font-weight: bold;
-}
-
-.results-grade {
-  	color: #1e75bb;
-  	font-weight: bold;
-}
-
-.recomendations {
-	min-height: 219px;
-}
-
-/* Index */
-
-img.mini-grade {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-right: 5px;
-}
-
-div.last-grade {
-	float: right;
-}
-
-div.btns {
-	float: left;
-	margin-right: 5px;
-}
-
-/* Wizard */
-
-fieldset {
-    position: relative;
-    display: none;
-    padding: 20px;
-    label, input, select {
-        display: block;
-        width: auto;
-    }
-}
-
-.magic-anchor {
-	top: -52px;
-}
-
-fieldset.step {
-    &:target {
-        display: block;
-    }
-}
-
-fieldset.step:target ~ .intro {
-    display: none;
-}
-
-.exercise-form {
-  margin-top: 15px;
-}
-
-.field {
-  margin-bottom: 10px;
-} 
-
-/* Chat */
-
-.my-message {
-	display: block;
-	float: right;
-	max-width: 50%;
-}
-
-.their-message {
-	display: block;
-	float: left;
-	max-width: 50%;
-}
-
-.clear { clear:both; }
 
 /* Metro */
 
 /* GENERAL */
 /* Buttons*/
 
-.btn-inverse { 
-  color: #ffffff; 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:hover, 
-.btn-inverse:focus, 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  color: #ffffff; 
-  background-color: #999999; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  background-image: none; 
-} 
- 
-.btn-inverse.disabled, 
-.btn-inverse[disabled], 
-fieldset[disabled] .btn-inverse, 
-.btn-inverse.disabled:hover, 
-.btn-inverse[disabled]:hover, 
-fieldset[disabled] .btn-inverse:hover, 
-.btn-inverse.disabled:focus, 
-.btn-inverse[disabled]:focus, 
-fieldset[disabled] .btn-inverse:focus, 
-.btn-inverse.disabled:active, 
-.btn-inverse[disabled]:active, 
-fieldset[disabled] .btn-inverse:active, 
-.btn-inverse.disabled.active, 
-.btn-inverse[disabled].active, 
-fieldset[disabled] .btn-inverse.active { 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse .badge { 
-  color: #1D1D1D; 
-  background-color: #ffffff; 
+.btn-inverse {
+  color: #ffffff;
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  background-image: none;
+}
+
+.btn-inverse.disabled,
+.btn-inverse[disabled],
+fieldset[disabled] .btn-inverse,
+.btn-inverse.disabled:hover,
+.btn-inverse[disabled]:hover,
+fieldset[disabled] .btn-inverse:hover,
+.btn-inverse.disabled:focus,
+.btn-inverse[disabled]:focus,
+fieldset[disabled] .btn-inverse:focus,
+.btn-inverse.disabled:active,
+.btn-inverse[disabled]:active,
+fieldset[disabled] .btn-inverse:active,
+.btn-inverse.disabled.active,
+.btn-inverse[disabled].active,
+fieldset[disabled] .btn-inverse.active {
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse .badge {
+  color: #1D1D1D;
+  background-color: #ffffff;
 }
 
 .btn.m-square {
@@ -702,7 +371,7 @@ fieldset[disabled] .btn-inverse.active {
 
 .btn.back{
   font-size: 28px;
-  padding-bottom: 0px; 
+  padding-bottom: 0px;
   padding-top: 7px;
   padding-right: 7px;
   padding-left: 7px;
@@ -728,25 +397,25 @@ fieldset[disabled] .btn-inverse.active {
 
 /* Text and messages */
 .error {
-  font-family: 'Segoi UI Regular'; 
+  font-family: 'Segoi UI Regular';
   color: #c85305;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
 .success {
-  font-family: 'Segoi UI Regular'; 
+  font-family: 'Segoi UI Regular';
   color: green;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
 h1.metro-h1 {
-  font-family: 'Segoi UI Light'; 
+  font-family: 'Segoi UI Light';
 }
 
 h3.metro-h3 {
-  font-family: 'Segoi UI Light';  
+  font-family: 'Segoi UI Light';
 }
 
 .metro-regular-text {
@@ -755,6 +424,9 @@ h3.metro-h3 {
   margin-top: 3px;
   margin-bottom: 3px;
 }
+
+
+
 
 /* Forms and inputs */
 
@@ -776,18 +448,18 @@ h1.metro-h1.gray {
 }
 
 #login-container {
-	position: absolute;
-	top: 0;
-  	left: 0;
-	width: 100%;
-	height: 100%;
-  	background-color: #004050;
+  position: absolute;
+  top: 0;
+    left: 0;
+  width: 100%;
+  height: 100%;
+    background-color: #004050;
 }
 
 .centered-box.login {
   width: 350px;
   height: 350px;
-  margin-top:-175px; 
+  margin-top:-175px;
   margin-left:-175px;
   background-color: white;
   padding: 20px;
@@ -820,7 +492,7 @@ h1.metro-h1.gray {
   background-color: #999999;
   height: 32px;
   width: 40px;
-  padding-top: 6px; 
+  padding-top: 6px;
 }
 
 .header-buttons {
@@ -840,7 +512,7 @@ h1.metro-h1.gray {
   top: 35%;
   width: 670px;
   height: 304px;
-  margin-top:-152px; 
+  margin-top:-152px;
   margin-left:-335px;
 }
 
@@ -851,7 +523,7 @@ h1.metro-h1.gray {
 }
 
 h1.metro-h1.white {
-  color: white; 
+  color: white;
 }
 
 .subtitle {
@@ -880,7 +552,7 @@ h1.metro-h1.white {
 .btn.btn-xxxlg {
   display: block;
   border-radius:0;
-  font-size: 42px; 
+  font-size: 42px;
   line-height: normal;
   width: 125px;
   height: 125px;
@@ -918,7 +590,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 325px;
-  margin-top:-162.5px; 
+  margin-top:-162.5px;
   margin-left:-175px;
   background-color: white;
 }
@@ -937,7 +609,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 325px;
-  margin-top:-162.5px; 
+  margin-top:-162.5px;
   margin-left:-175px;
   background-color: white;
 }
@@ -956,7 +628,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 390px;
-  margin-top:-195px; 
+  margin-top:-195px;
   margin-left:-175px;
   background-color: white;
 }
@@ -975,7 +647,7 @@ h1.metro-h1.white {
   top: 30%;
   width:450px;
   height: 220px;
-  margin-top:-110px; 
+  margin-top:-110px;
   margin-left:-225px;
   background-color: white;
 }
@@ -985,8 +657,151 @@ h1.metro-h1.white {
   top: 10%;
   width:450px;
   height: 450px;
-  margin-top:-225x; 
+  margin-top:-225x;
   margin-left:-225px;
-  background-color: white;   
+  background-color: white;
 }
 
+/*boton para deshabilitar*/
+
+    .onoffswitch {
+        position: relative; width: 130px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "     Habilitado";
+        padding-left: 16px;
+        background-color: #008000; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Deshabilitado";
+        padding-right: 16px;
+        background-color: #E6E6E6; color: #777;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 20px; margin: 5px;
+        background: #EBEFF0;
+        position: absolute; top: 0; bottom: 0;
+        right: 96px;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+    }
+
+
+
+
+
+.greetings-container {
+  padding-left: 31px;
+
+}
+
+.random-message {
+  color: #fff;
+    font-family: 'Segoi UI Light';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+
+/* Wizard */
+
+fieldset {
+    position: relative;
+    display: none;
+    padding: 20px;
+    label, input, select {
+        display: block;
+        width: auto;
+    }
+}
+
+.magic-anchor {
+  top: -52px;
+}
+
+fieldset.step {
+    &:target {
+        display: block;
+    }
+}
+
+fieldset.step:target ~ .intro {
+    display: none;
+}
+
+.exercise-form {
+  margin-top: 15px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+
+
+/* Chat */
+
+.my-message {
+  display: block;
+  float: right;
+  max-width: 50%;
+}
+
+.their-message {
+  display: block;
+  float: left;
+  max-width: 50%;
+}
+
+.clear { clear:both; }
+
+
+/* Banners */
+
+.greetings-container {
+
+  background-color: #337ab7!important;
+  color:#fff!important;
+  padding:20px 15px;
+  text-align:center;
+
+}
+.greetings-container p{
+  color:#fff!important;
+}
+
+.button-banner-cover{
+  color:#fff!important;
+  font-weight: bold;
+  font-size:18px;
+  border: 1px solid #fff;
+  padding:10px;
+  width: 200px;
+  margin: 0 auto;
+  display:block;}

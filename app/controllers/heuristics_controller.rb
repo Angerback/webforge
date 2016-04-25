@@ -5,10 +5,29 @@ class HeuristicsController < ApplicationController
   end
 
   def show
-  	@heuristic = Heuristic.find(params[:heuristic_id])
-  	@dos = Do.where(heuristic_id: params[:heuristic_id])
-  	@donts = Dont.where(heuristic_id: params[:heuristic_id])
-  	@examples = Example.where(heuristic_id: params[:heuristic_id])
-  	@references = Reference.where(heuristic_id: params[:heuristic_id])
+
+    heuristic_id = Integer(params[:heuristic_id])
+
+  	@heuristic = Heuristic.find(heuristic_id)
+  	@dos = Do.where(heuristic_id: heuristic_id)
+  	@donts = Dont.where(heuristic_id: heuristic_id)
+  	@examples = Example.where(heuristic_id: heuristic_id)
+  	@references = Reference.where(heuristic_id: heuristic_id)
+
+    # Esto sirve para encontrar el nombre de las heuristicas anterior y siguiente
+    # para mostrarlo como etiqueta de texto en el menu de navegacion inferior
+
+    if heuristic_id < 10
+      @heuristica_siguiente = Heuristic.find(heuristic_id+1)
+    else
+      @heuristica_siguiente = nil
+    end
+
+      if heuristic_id > 1
+      @heuristica_anterior = Heuristic.find(heuristic_id-1)
+    else
+      @heuristica_anterior = nil
+    end
+
   end
 end
