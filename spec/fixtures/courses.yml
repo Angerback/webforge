@@ -6,18 +6,18 @@
 #
 IHC:
  name: Interfaz Humano Computador
- students: 12 
+ year: 2012
  semester: 1
  id: 1
 
 Fingeso:
  name: FINGESO
- students: 12 
+ year: 2012
  semester: 1
  id: 2
 
 SISTOPE:
  name: Sistemas Operativos
- students: 12 
+ year: 2012 
  semester: 1
  id: 3

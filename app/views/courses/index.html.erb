@@ -7,7 +7,7 @@
     </ol>
   </div>
   <div>
-    <h1 class="question-instructions">Cursos Inscritos</h1>    
+    <h1 class="question-instructions">Cursos Inscritos</h1>
 
     <table class="table">
       <tr>
@@ -20,9 +20,9 @@
       <% @courses.each do |course| %>
         <tr>
           <td><%= course.name %></td>
-          <td><%=  %></td>
+          <td><%= course.year %></td>
           <td><%= course.semester %></td>
-          <td><%= course.students %></td>
+          <td><%= course.users.size %></td>
           <td><%= link_to 'Ver', course %></td>
           <!--td><%= link_to 'Editar', edit_course_path(course) %></td!-->
           <!--td><%= link_to 'Eliminar', 'javascript:;', :onclick => 'deleteCourseDialog.showDialog("'+course.name+'", '+String(course.id)+');' %></td!-->
