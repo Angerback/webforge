@@ -116,9 +116,15 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if @user.update(user_params)
 			flash[:success] = "Usuario actualizado exitosamente"
-			redirect_to @user
+			redirect_to(users_path)
 		else
-			render :edit
+			redirect_to(users_path)
+				if @user.errors.any?
+					@user.errors.full_messages.each do |msg| 
+					flash[:error] = msg
+				end
+
+			end
 		end
 	end
 

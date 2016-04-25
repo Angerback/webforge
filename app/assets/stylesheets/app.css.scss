@@ -11,8 +11,8 @@
 }
 
 
-body { 
-  padding-top: 50px!important; 
+body {
+  padding-top: 50px!important;
 }
 
 /* Images */
@@ -130,7 +130,7 @@ a {
 
 a:hover{
   text-decoration: none!important;
-  color: #2EB8E6!important;  
+  color: #2EB8E6!important;
 }
 
 
@@ -245,23 +245,23 @@ ol, ul {
 
 .side-bar li {
   padding-top: 11px;
-  .dropdown-menu {		
+  .dropdown-menu {
 		min-width: 325px;
         white-space: normal;
 	}
-  .dropdown-menu li a {		
-      padding: 5px 15px;		
-      font-weight: 300;		
+  .dropdown-menu li a {
+      padding: 5px 15px;
+      font-weight: 300;
   }
 }
 
-.dropdown-menu {		
+.dropdown-menu {
       min-width: 325px;
       white-space: normal;
   }
-.dropdown-menu li a {		
-    padding: 5px 15px;		
-    font-weight: 300;		
+.dropdown-menu li a {
+    padding: 5px 15px;
+    font-weight: 300;
 }
 
 
@@ -312,50 +312,50 @@ ol, ul {
 /* GENERAL */
 /* Buttons*/
 
-.btn-inverse { 
-  color: #ffffff; 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:hover, 
-.btn-inverse:focus, 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  color: #ffffff; 
-  background-color: #999999; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  background-image: none; 
-} 
- 
-.btn-inverse.disabled, 
-.btn-inverse[disabled], 
-fieldset[disabled] .btn-inverse, 
-.btn-inverse.disabled:hover, 
-.btn-inverse[disabled]:hover, 
-fieldset[disabled] .btn-inverse:hover, 
-.btn-inverse.disabled:focus, 
-.btn-inverse[disabled]:focus, 
-fieldset[disabled] .btn-inverse:focus, 
-.btn-inverse.disabled:active, 
-.btn-inverse[disabled]:active, 
-fieldset[disabled] .btn-inverse:active, 
-.btn-inverse.disabled.active, 
-.btn-inverse[disabled].active, 
-fieldset[disabled] .btn-inverse.active { 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse .badge { 
-  color: #1D1D1D; 
-  background-color: #ffffff; 
+.btn-inverse {
+  color: #ffffff;
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  background-image: none;
+}
+
+.btn-inverse.disabled,
+.btn-inverse[disabled],
+fieldset[disabled] .btn-inverse,
+.btn-inverse.disabled:hover,
+.btn-inverse[disabled]:hover,
+fieldset[disabled] .btn-inverse:hover,
+.btn-inverse.disabled:focus,
+.btn-inverse[disabled]:focus,
+fieldset[disabled] .btn-inverse:focus,
+.btn-inverse.disabled:active,
+.btn-inverse[disabled]:active,
+fieldset[disabled] .btn-inverse:active,
+.btn-inverse.disabled.active,
+.btn-inverse[disabled].active,
+fieldset[disabled] .btn-inverse.active {
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse .badge {
+  color: #1D1D1D;
+  background-color: #ffffff;
 }
 
 .btn.m-square {
@@ -371,7 +371,7 @@ fieldset[disabled] .btn-inverse.active {
 
 .btn.back{
   font-size: 28px;
-  padding-bottom: 0px; 
+  padding-bottom: 0px;
   padding-top: 7px;
   padding-right: 7px;
   padding-left: 7px;
@@ -397,25 +397,25 @@ fieldset[disabled] .btn-inverse.active {
 
 /* Text and messages */
 .error {
-  font-family: 'Segoi UI Regular'; 
+  font-family: 'Segoi UI Regular';
   color: #c85305;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
 .success {
-  font-family: 'Segoi UI Regular'; 
+  font-family: 'Segoi UI Regular';
   color: green;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
 h1.metro-h1 {
-  font-family: 'Segoi UI Light'; 
+  font-family: 'Segoi UI Light';
 }
 
 h3.metro-h3 {
-  font-family: 'Segoi UI Light';  
+  font-family: 'Segoi UI Light';
 }
 
 .metro-regular-text {
@@ -459,7 +459,7 @@ h1.metro-h1.gray {
 .centered-box.login {
   width: 350px;
   height: 350px;
-  margin-top:-175px; 
+  margin-top:-175px;
   margin-left:-175px;
   background-color: white;
   padding: 20px;
@@ -492,7 +492,7 @@ h1.metro-h1.gray {
   background-color: #999999;
   height: 32px;
   width: 40px;
-  padding-top: 6px; 
+  padding-top: 6px;
 }
 
 .header-buttons {
@@ -512,7 +512,7 @@ h1.metro-h1.gray {
   top: 35%;
   width: 670px;
   height: 304px;
-  margin-top:-152px; 
+  margin-top:-152px;
   margin-left:-335px;
 }
 
@@ -523,7 +523,7 @@ h1.metro-h1.gray {
 }
 
 h1.metro-h1.white {
-  color: white; 
+  color: white;
 }
 
 .subtitle {
@@ -552,7 +552,7 @@ h1.metro-h1.white {
 .btn.btn-xxxlg {
   display: block;
   border-radius:0;
-  font-size: 42px; 
+  font-size: 42px;
   line-height: normal;
   width: 125px;
   height: 125px;
@@ -590,7 +590,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 325px;
-  margin-top:-162.5px; 
+  margin-top:-162.5px;
   margin-left:-175px;
   background-color: white;
 }
@@ -609,7 +609,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 325px;
-  margin-top:-162.5px; 
+  margin-top:-162.5px;
   margin-left:-175px;
   background-color: white;
 }
@@ -628,7 +628,7 @@ h1.metro-h1.white {
   top: 40%;
   width:350px;
   height: 390px;
-  margin-top:-195px; 
+  margin-top:-195px;
   margin-left:-175px;
   background-color: white;
 }
@@ -647,7 +647,7 @@ h1.metro-h1.white {
   top: 30%;
   width:450px;
   height: 220px;
-  margin-top:-110px; 
+  margin-top:-110px;
   margin-left:-225px;
   background-color: white;
 }
@@ -657,10 +657,58 @@ h1.metro-h1.white {
   top: 10%;
   width:450px;
   height: 450px;
-  margin-top:-225x; 
+  margin-top:-225x;
   margin-left:-225px;
-  background-color: white;   
+  background-color: white;
 }
+
+/*boton para deshabilitar*/
+
+    .onoffswitch {
+        position: relative; width: 130px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "     Habilitado";
+        padding-left: 16px;
+        background-color: #008000; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Deshabilitado";
+        padding-right: 16px;
+        background-color: #E6E6E6; color: #777;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 20px; margin: 5px;
+        background: #EBEFF0;
+        position: absolute; top: 0; bottom: 0;
+        right: 96px;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+    }
 
 
 
@@ -713,7 +761,7 @@ fieldset.step:target ~ .intro {
 
 .field {
   margin-bottom: 10px;
-} 
+}
 
 
 
@@ -756,5 +804,4 @@ fieldset.step:target ~ .intro {
   padding:10px;
   width: 200px;
   margin: 0 auto;
-  display:block;
-}
+  display:block;}
