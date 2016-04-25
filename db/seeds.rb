@@ -601,7 +601,9 @@ Practice.create(name: "Transferencia",
 
 Course.create(
 	name: 'Curso nuevo',
-	semester: 1)
+	semester: 1,
+	year: 2014
+	)
 
 User.find(2).user_courses.create(course: Course.find(1))
 User.find(3).user_courses.create(course: Course.find(1))

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421171249) do
+ActiveRecord::Schema.define(version: 20160425014714) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160421171249) do
     t.integer  "semester"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "students"
+    t.integer  "year"
   end
 
   create_table "donts", force: :cascade do |t|
