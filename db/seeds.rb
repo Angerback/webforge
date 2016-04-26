@@ -607,3 +607,8 @@ Course.create(
 
 User.find(2).user_courses.create(course: Course.find(1))
 User.find(3).user_courses.create(course: Course.find(1))
+
+Test.create(user_id: User.find(2).id,evaluation_id: Evaluation.all.first.id, grade: 4.0)
+Test.create(user_id: User.find(2).id,evaluation_id: Evaluation.all.first.id, grade: 5.1)
+Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 6.0)
+Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 2.4)
