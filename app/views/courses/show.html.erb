@@ -32,18 +32,6 @@
 	</div>
 </div>
 
-<%# Este div contiene el dialogo de confirmacion de los estandares frontend %>
-<%# Editar esto y usercourse.coffe para que eliminar funcione bien %>
-<div data-role="dialog" id="dialog" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;">
-            <h1>¿Eliminar alumno del curso <%= @course.name %>?</h1>
-            <p>
-                ¿Esta seguro que desea eliminar al alumno <b id="delete-user-course-name"></b>?
-            </p>
-            <%= link_to 'Eliminar', '', method: :delete, class: "btn btn-primary", id: 'delete-user-course-button' %></td>
-            <%= button_tag 'Cancelar', :onclick => "deleteUserCourseDialog.hideDialog()", class: "btn btn-primary" %>
-</div>
-
-
 <%# Este dialogo contiene la informacion del usuario %>
-<div data-role="dialog" id="dialog-user-info" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;">
+<div data-role="dialog" id="dialog-user-info" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;"></div>>
 <%# Se carga dinamicamente usando el script users.coffee %>
