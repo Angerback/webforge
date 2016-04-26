@@ -15,13 +15,13 @@ class UsersController < ApplicationController
     @evaluation = Evaluation.find(1)
     @user = User.new
     @searching = false
-		@users = User.all
 		if params[:search]
       @searching = true
-			@users = User.search(params[:search])
-		#else
-			#@users = User.all.order("created_at DESC")
+			@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+		else
+			@users =  User.paginate(:page => params[:page], :per_page => 10)
 		end
+
 	end
 
 	# GET /users/:id
@@ -39,14 +39,14 @@ class UsersController < ApplicationController
 		#LOS LLENE MANUALMENTE EN LA BASE DE DATOS MIENTRAS
 		#INTENTE CREAR UN ARREGLO ALTIRO EN EL CODIGO PERO ME TIRABA UN ERROR
 		#SOLO ME PODIA CREAR UN TEST CON VALORES DETERMINADOS POR MI, NO UN ARRAY =/
-	
+
 
 		##DEFINO MEJOR NOTA, PEOR NOTA y PROMEDIO
 		@mejorNota = 0
 		@peorNota = 7.0
 		@promedioNota = 0
 		sumadorNotas = 0
-		cantidadNotas = 0 
+		cantidadNotas = 0
 
 		##RECORRO EL ARRAY PARA OBTENER LA MEJOR PEOR Y PROMEDIO DE NOTA
 
@@ -55,16 +55,16 @@ class UsersController < ApplicationController
 				if test.grade > @mejorNota
 					@mejorNota = test.grade
 				end
-	
+
 				if test.grade < @peorNota
 					@peorNota = test.grade
 				end
-	
+
 				sumadorNotas = sumadorNotas + test.grade
 				cantidadNotas = cantidadNotas + 1
 			end
 		end
-		
+
 		if cantidadNotas != 0
 			@promedioNota = sumadorNotas / cantidadNotas
 		end
@@ -120,7 +120,7 @@ class UsersController < ApplicationController
 		else
 			redirect_to(users_path)
 				if @user.errors.any?
-					@user.errors.full_messages.each do |msg| 
+					@user.errors.full_messages.each do |msg|
 					flash[:error] = msg
 				end
 
