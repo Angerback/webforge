@@ -10,13 +10,19 @@
   src:font-url('segoeui.ttf') format('truetype');
 }
 
+body { 
+  padding-top: 50px!important; 
+}
 
-body {
-  padding-top: 50px!important;
+#bar {
+ background-color: #0078D7;
 }
 
 /* Images */
 
+div.last-grade {
+  float: right;
+}
 
 a {
 
@@ -82,6 +88,11 @@ a:hover{
   padding:0;
 }
 
+div.btns {
+  float: left;
+  margin-right: 5px;
+}
+
 
 
 
@@ -130,7 +141,7 @@ a {
 
 a:hover{
   text-decoration: none!important;
-  color: #2EB8E6!important;
+  color: #2EB8E6!important;  
 }
 
 
@@ -245,23 +256,23 @@ ol, ul {
 
 .side-bar li {
   padding-top: 11px;
-  .dropdown-menu {
+  .dropdown-menu {		
 		min-width: 325px;
         white-space: normal;
 	}
-  .dropdown-menu li a {
-      padding: 5px 15px;
-      font-weight: 300;
+  .dropdown-menu li a {		
+      padding: 5px 15px;		
+      font-weight: 300;		
   }
 }
 
-.dropdown-menu {
+.dropdown-menu {		
       min-width: 325px;
       white-space: normal;
   }
-.dropdown-menu li a {
-    padding: 5px 15px;
-    font-weight: 300;
+.dropdown-menu li a {		
+    padding: 5px 15px;		
+    font-weight: 300;		
 }
 
 
@@ -312,50 +323,50 @@ ol, ul {
 /* GENERAL */
 /* Buttons*/
 
-.btn-inverse {
-  color: #ffffff;
-  background-color: #1D1D1D;
-  border-color: #1D1D1D;
-}
-
-.btn-inverse:hover,
-.btn-inverse:focus,
-.btn-inverse:active,
-.btn-inverse.active,
-.open .dropdown-toggle.btn-inverse {
-  color: #ffffff;
-  background-color: #999999;
-  border-color: #1D1D1D;
-}
-
-.btn-inverse:active,
-.btn-inverse.active,
-.open .dropdown-toggle.btn-inverse {
-  background-image: none;
-}
-
-.btn-inverse.disabled,
-.btn-inverse[disabled],
-fieldset[disabled] .btn-inverse,
-.btn-inverse.disabled:hover,
-.btn-inverse[disabled]:hover,
-fieldset[disabled] .btn-inverse:hover,
-.btn-inverse.disabled:focus,
-.btn-inverse[disabled]:focus,
-fieldset[disabled] .btn-inverse:focus,
-.btn-inverse.disabled:active,
-.btn-inverse[disabled]:active,
-fieldset[disabled] .btn-inverse:active,
-.btn-inverse.disabled.active,
-.btn-inverse[disabled].active,
-fieldset[disabled] .btn-inverse.active {
-  background-color: #1D1D1D;
-  border-color: #1D1D1D;
-}
-
-.btn-inverse .badge {
-  color: #1D1D1D;
-  background-color: #ffffff;
+.btn-inverse { 
+  color: #ffffff; 
+  background-color: #1D1D1D; 
+  border-color: #1D1D1D; 
+} 
+ 
+.btn-inverse:hover, 
+.btn-inverse:focus, 
+.btn-inverse:active, 
+.btn-inverse.active, 
+.open .dropdown-toggle.btn-inverse { 
+  color: #ffffff; 
+  background-color: #999999; 
+  border-color: #1D1D1D; 
+} 
+ 
+.btn-inverse:active, 
+.btn-inverse.active, 
+.open .dropdown-toggle.btn-inverse { 
+  background-image: none; 
+} 
+ 
+.btn-inverse.disabled, 
+.btn-inverse[disabled], 
+fieldset[disabled] .btn-inverse, 
+.btn-inverse.disabled:hover, 
+.btn-inverse[disabled]:hover, 
+fieldset[disabled] .btn-inverse:hover, 
+.btn-inverse.disabled:focus, 
+.btn-inverse[disabled]:focus, 
+fieldset[disabled] .btn-inverse:focus, 
+.btn-inverse.disabled:active, 
+.btn-inverse[disabled]:active, 
+fieldset[disabled] .btn-inverse:active, 
+.btn-inverse.disabled.active, 
+.btn-inverse[disabled].active, 
+fieldset[disabled] .btn-inverse.active { 
+  background-color: #1D1D1D; 
+  border-color: #1D1D1D; 
+} 
+ 
+.btn-inverse .badge { 
+  color: #1D1D1D; 
+  background-color: #ffffff; 
 }
 
 .btn.m-square {
@@ -796,6 +807,92 @@ fieldset.step:target ~ .intro {
   color:#fff!important;
 }
 
+
+
+
+
+.greetings-container {
+  padding-left: 31px;
+
+}
+
+.random-message {
+  color: #fff;
+    font-family: 'Segoi UI Light';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+
+/* Wizard */
+
+fieldset {
+    position: relative;
+    display: none;
+    padding: 20px;
+    label, input, select {
+        display: block;
+        width: auto;
+    }
+}
+
+.magic-anchor {
+  top: -52px;
+}
+
+fieldset.step {
+    &:target {
+        display: block;
+    }
+}
+
+fieldset.step:target ~ .intro {
+    display: none;
+}
+
+.exercise-form {
+  margin-top: 15px;
+}
+
+.field {
+  margin-bottom: 10px;
+} 
+
+
+
+/* Chat */
+
+.my-message {
+  display: block;
+  float: right;
+  max-width: 50%;
+}
+
+.their-message {
+  display: block;
+  float: left;
+  max-width: 50%;
+}
+
+.clear { clear:both; }
+
+
+/* Banners */
+
+.greetings-container {
+
+  background-color: #337ab7!important;
+  color:#fff!important;
+  padding:20px 15px;
+  text-align:center;
+
+}
+.greetings-container p{
+  color:#fff!important;
+}
+
 .button-banner-cover{
   color:#fff!important;
   font-weight: bold;
@@ -804,4 +901,5 @@ fieldset.step:target ~ .intro {
   padding:10px;
   width: 200px;
   margin: 0 auto;
-  display:block;}
+  display:block;
+}

@@ -173,7 +173,7 @@
 													  </div>
 													  <div class="field">
 													    <%= label :user_type, "Tipo de Usuario" %>
-													    <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"]]), class: "form-control" %>
+													    <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]), class: "form-control" %>
 												    </div>
 												    <!-- switch para deshabilitar -->
 												    <div class="onoffswitch">
@@ -204,7 +204,7 @@
 					<td><%= user.email %></td>
 					<td><%= user.user_type %></td>
 					<td class="text-center"><a href="#verUsuario<%= user.id%>" data-toggle="modal">
-					<span class="glyphicon glyphicon-eye-open"></span>		
+					<span class="glyphicon glyphicon-eye-open"></span>
 					</a></td>
 					<!-- <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + user.name + '?' } %></td> -->
 				</tr>
@@ -217,10 +217,4 @@
 	</div>
 <!--
 1) es necesario que en el modal ver este el boton editar y eliminar si ya esta en la misma vista?
-2) es necesario que en el modal editar este el boton eliminar? 
-
-
-
-
-
--->
+2) es necesario que en el modal editar este el boton eliminar?

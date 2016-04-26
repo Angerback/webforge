@@ -11,3 +11,7 @@
     		
 	hideDialog: ->
 		hideMetroDialog("#dialog")
+
+
+
+        
