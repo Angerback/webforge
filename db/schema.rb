@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425014714) do
+ActiveRecord::Schema.define(version: 20160426152812) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -215,6 +215,7 @@ ActiveRecord::Schema.define(version: 20160425014714) do
     t.string   "rut"
     t.string   "user_type"
     t.boolean  "admin",                  default: false
+    t.boolean  "suspended",              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
