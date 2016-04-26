@@ -15,12 +15,11 @@ class UsersController < ApplicationController
     @evaluation = Evaluation.find(1)
     @user = User.new
     @searching = false
-		@users =  User.paginate(:page => params[:page], :per_page => 10)
 		if params[:search]
       @searching = true
-			@users = User.search(params[:search])
-		#else
-			#@users = User.all.order("created_at DESC")
+			@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+		else
+			@users =  User.paginate(:page => params[:page], :per_page => 10)
 		end
 
 	end
