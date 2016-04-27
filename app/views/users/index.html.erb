@@ -26,13 +26,14 @@
 		  <div class="modal-dialog">
 
 		    <!-- Modal content-->
-		    <div class="modal-content">
+		    <div class="modal-content" style ="border-radius: 0 !important;">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        <h4 id="nuevoUsuarioTag">Nuevo usuario</h4>
 		      </div>
 		      <div class="modal-body">
 		        <%= render 'new' %>
+
 		      </div>
 		    </div>
 
@@ -63,7 +64,13 @@
 					<%if @users.present? %>
 					<!-- Generic search form -->
 					<!-- A form_tag se le pasa el PATH y el método que por defecto POST -->
-			  		<%= text_field_tag :search, params[:search], class:"form-control ms-input", placeholder: "Nombre, Rut, Rol, Email" %>
+					<span>Usuarios por página: </span>
+					<div class="form-group has-feedback has-feedback-right">
+						<%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+				       :onchange => "if(this.value){window.location='?per_page='+this.value;}"%>
+			  		<%= text_field_tag :search, params[:search], class:"form-control", placeholder: "", style: "border-radius: 0 !important;" %>
+						<i class="form-control-feedback glyphicon glyphicon-search"></i>
+					</div>
 			  		<%= submit_tag "Buscar", class: "btn btn-primary square"%>
 			  		<%end%>
 					</div>
