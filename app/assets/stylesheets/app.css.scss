@@ -10,8 +10,8 @@
   src:font-url('segoeui.ttf') format('truetype');
 }
 
-body { 
-  padding-top: 50px!important; 
+body {
+  padding-top: 50px!important;
 }
 
 #bar {
@@ -141,7 +141,7 @@ a {
 
 a:hover{
   text-decoration: none!important;
-  color: #2EB8E6!important;  
+  color: #2EB8E6!important;
 }
 
 
@@ -256,23 +256,23 @@ ol, ul {
 
 .side-bar li {
   padding-top: 11px;
-  .dropdown-menu {		
+  .dropdown-menu {
 		min-width: 325px;
         white-space: normal;
 	}
-  .dropdown-menu li a {		
-      padding: 5px 15px;		
-      font-weight: 300;		
+  .dropdown-menu li a {
+      padding: 5px 15px;
+      font-weight: 300;
   }
 }
 
-.dropdown-menu {		
+.dropdown-menu {
       min-width: 325px;
       white-space: normal;
   }
-.dropdown-menu li a {		
-    padding: 5px 15px;		
-    font-weight: 300;		
+.dropdown-menu li a {
+    padding: 5px 15px;
+    font-weight: 300;
 }
 
 
@@ -323,50 +323,50 @@ ol, ul {
 /* GENERAL */
 /* Buttons*/
 
-.btn-inverse { 
-  color: #ffffff; 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:hover, 
-.btn-inverse:focus, 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  color: #ffffff; 
-  background-color: #999999; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse:active, 
-.btn-inverse.active, 
-.open .dropdown-toggle.btn-inverse { 
-  background-image: none; 
-} 
- 
-.btn-inverse.disabled, 
-.btn-inverse[disabled], 
-fieldset[disabled] .btn-inverse, 
-.btn-inverse.disabled:hover, 
-.btn-inverse[disabled]:hover, 
-fieldset[disabled] .btn-inverse:hover, 
-.btn-inverse.disabled:focus, 
-.btn-inverse[disabled]:focus, 
-fieldset[disabled] .btn-inverse:focus, 
-.btn-inverse.disabled:active, 
-.btn-inverse[disabled]:active, 
-fieldset[disabled] .btn-inverse:active, 
-.btn-inverse.disabled.active, 
-.btn-inverse[disabled].active, 
-fieldset[disabled] .btn-inverse.active { 
-  background-color: #1D1D1D; 
-  border-color: #1D1D1D; 
-} 
- 
-.btn-inverse .badge { 
-  color: #1D1D1D; 
-  background-color: #ffffff; 
+.btn-inverse {
+  color: #ffffff;
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  background-image: none;
+}
+
+.btn-inverse.disabled,
+.btn-inverse[disabled],
+fieldset[disabled] .btn-inverse,
+.btn-inverse.disabled:hover,
+.btn-inverse[disabled]:hover,
+fieldset[disabled] .btn-inverse:hover,
+.btn-inverse.disabled:focus,
+.btn-inverse[disabled]:focus,
+fieldset[disabled] .btn-inverse:focus,
+.btn-inverse.disabled:active,
+.btn-inverse[disabled]:active,
+fieldset[disabled] .btn-inverse:active,
+.btn-inverse.disabled.active,
+.btn-inverse[disabled].active,
+fieldset[disabled] .btn-inverse.active {
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse .badge {
+  color: #1D1D1D;
+  background-color: #ffffff;
 }
 
 .btn.m-square {
@@ -858,7 +858,7 @@ fieldset.step:target ~ .intro {
 
 .field {
   margin-bottom: 10px;
-} 
+}
 
 
 
