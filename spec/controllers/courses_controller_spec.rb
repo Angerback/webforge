@@ -19,7 +19,7 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe CoursesController, type: :controller do
-
+  fixtures :users
   # This should return the minimal set of attributes required to create a valid
   # Course. As you add validations to Course, be sure to
   # adjust the attributes here as well.
@@ -31,10 +31,16 @@ RSpec.describe CoursesController, type: :controller do
     skip("Add a hash of attributes invalid for your model")
   }
 
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # CoursesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  before(:each) do
+    @user = User.find(3)
+    sign_in @user
+  end
 
   describe "GET #index" do
     it "assigns all courses as @courses" do
