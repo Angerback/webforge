@@ -38,7 +38,7 @@ RSpec.describe UsersController do
 
   describe "POST #create" do
     it "Creación exitosa de usuario" do
-      post :create, user: { name: "Jacinto", email: "a@z.com", rut: "8.464.946-5", 
+      post :create, user: { name: "Jacinto", email: "a@z.com", rut: "8.464.946-5",
       user_type: "Alumno", password: "entrar05" }
     end
   end
@@ -46,13 +46,13 @@ RSpec.describe UsersController do
   describe "PATCH or PUT #update" do
     it "Actualización exitosa de usuario" do
       put :update, id: 2, user: { name: "Vladimir" }
-      expect(response).to redirect_to :user
+      expect(response).to redirect_to('/users')
     end
   end
 
   describe "DELETE #destroy" do
     it "Eliminación exitosa de usuario" do
-      expect{ 
+      expect{
         delete :destroy, :id => 2
      }.to change(User, :count).by(-1)
     end

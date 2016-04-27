@@ -1,13 +1,7 @@
-<% provide(:title, @user.name) %>
 <div class="container">
-	<ol class="breadcrumb ms">
-        <li><%= link_to "Inicio", root_path %></li>
-        <li><%= link_to "Usuarios", users_path %></li>
-        <li class="active"> Cuenta de  <%= @user.name %></li>
-    </ol>
 	<h1 class="question-instructions"><%= @user.name %></h1>
 	<% flash.each do |message_type, message| %>
-  		<div class=""><%= message %></div>
+	<div class=""><%= message %></div>
 	<% end %>
 	<div class="row">
 		<div class="col-xs-6">
@@ -28,20 +22,39 @@
 		</div>
 		<div class="col-xs-6">
 			<% if @lastTest %>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h2 class="ms-h2">Últimas evaluaciones</h2>
-						<p>
-							<strong>Calificación en <%= @evaluation.name %>:</strong> <%= @lastTest.grade %>
-						</p>	
-					</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2 class="ms-h2">Últimas evaluaciones</h2>
+					<p>
+						<strong>Calificación en <%= @evaluation.name %>:</strong> 
+
+
+								<!-- RECORRO CADA UNO DE LOS TEST HECHO POR EL USUARIO
+								LOS TUVE QUE RELLENAR MANUALMENTE EN LA BASE DE DATOS -->
+								
+								<table class="table">
+									<tr><td>Ultima nota:</td><td><%=number_with_precision(@lastTest.grade, :precision=>2) %></td></tr>
+									<tr><td>Mejor nota:</td><td><%=number_with_precision(@mejorNota, :precision=>2) %></td></tr>
+									<tr><td>Peor nota:</td><td><%=number_with_precision(@peorNota, :precision=>2) %></td></tr>
+									<tr><td>Promedio:</td><td><%=number_with_precision(@promedioNota, :precision=>2) %></td></tr>
+								</table>
+
+
+								<%= link_to 'Ver historial de calificaciones', 'javascript:;', :onclick => "verMasUser.verMas();", class: "btn btn-primary square", id: "boton-user-info-extra" %>
+
+								<%= render 'grades' %>
+
+							</div>
+						</div>
+
+					</p>	
 				</div>
+			</div>
 			<% end %>			
 		</div>
 	</div>
 	
 	<div>
-		<%= link_to 'Volver', users_path, class: "btn btn-primary square" %>
 		<%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary square" %></td>
 		<%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar a ' + @user.name + '?' }, class: "btn btn-primary square" %>
 	</div>
@@ -52,3 +65,4 @@
 		
 	</div>
 </div>
+

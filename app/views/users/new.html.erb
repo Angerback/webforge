@@ -30,17 +30,16 @@
       <%= f.label :rut %><br>
       <%= f.text_field :rut, class: "form-control ms-input" %>
     </div>
-    <div class="field"> 
+    <div class="field">
       <%= f.label :password, "Contraseña" %><br />
       <%= f.password_field :password, autocomplete: "off", class: "form-control ms-input" %>
     </div>
     <div class="field">
       <%= label :user_type, "Tipo de Usuario" %>
-      <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"]]) %>
+      <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]) %>
       </div>
       <%= f.submit 'Crear usuario', :class  => "btn btn-primary square" %>
       <%= link_to 'Cancelar', users_path, class: "btn btn-primary square" %>
     </div>
-  <% end %>    
+  <% end %>
 </div>
-

@@ -17,6 +17,9 @@ gem 'devise',				        '>= 3.0'
 gem 'tinymce-rails'
 gem 'sdoc',                 '0.4.0', group: :doc
 gem 'therubyracer', platforms: :ruby
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

@@ -1,0 +1,26 @@
+<%# Se crean dialogos de alerta para los mensajes Flash (mensaje pasado de una vista a otra) %>
+<% unless flash.blank? %>
+  <script>
+    $(document).ready(function(){
+      <%
+      # Los codigos usados aca no son los mismos que en metro, por eso hay que hacer este mapeo:
+      map = {
+        'error' => 'alert',
+        'success' => 'success',
+        'alert' => 'warning',
+        'danger' => 'alert'
+      }
+      map.default = 'info'
+      %>
+      <% flash.each do |message_type, message| %>
+
+        $.Notify({
+      content: "<%= message %>",
+      type: "<%= map[message_type] %>",
+      height:50
+      });
+         
+      <% end %>
+    });
+  </script>
+<% end %>

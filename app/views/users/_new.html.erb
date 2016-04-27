@@ -1,0 +1,35 @@
+<div>
+  <%= form_for(@user) do |f| %>
+    <div>
+      <% if @user.errors.any? %>
+      <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+      </ul>
+    <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: "form-control ms-input", required: "true"  %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control ms-input", required: "true"  %>
+    </div>
+    <div class="field">
+      <%= f.label :rut %><br>
+      <%= f.text_field :rut, class: "form-control ms-input", placeholder:"12.345.678-9", required: "true" %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "Contraseña" %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", 'style'=>'border-radius: 0 !important;', required: "true", placeholder:"Ocho caracteres mínimo." %>
+    </div>
+    <div class="field" id="tipoUsuarioSelect">
+      <%= label :user_type, "Tipo de Usuario" %>
+      <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]) %>
+      </div>
+      <%= f.submit 'Crear usuario', :class  => "btn btn-primary square" %>
+    </div>
+  <% end %>
+</div>
