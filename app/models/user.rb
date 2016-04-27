@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
     validates :name, presence: true
    	validates :rut, presence: true, rut: true, uniqueness: true
    	validates :user_type, presence: true, inclusion: { in: %w( Alumno Ayudante Profesor Administrador ) }
+		validates_confirmation_of :password
 
 
    	# Método de busquedad

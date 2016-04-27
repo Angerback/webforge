@@ -10,12 +10,12 @@
     <% end %>
     </div>
     <div class="field">
-      <%= f.label :email %><br>
-      <%= f.text_field :email, class: "form-control ms-input", required: "true"  %>
+      <%= f.label :email, "Correo" %><br>
+      <%= f.text_field :email, class: "form-control ms-input", required: "true", placeholder:"ejemplo@correo.cl"  %>
     </div>
     <div class="field">
       <%= f.label :name, "Nombre" %><br>
-      <%= f.text_field :name, class: "form-control ms-input", required: "true"  %>
+      <%= f.text_field :name, class: "form-control ms-input", required: "true", placeholder:"Juanito Pérez"  %>
     </div>
     <div class="field">
       <%= f.label :rut %><br>
@@ -25,10 +25,15 @@
       <%= f.label :password, "Contraseña" %><br />
       <%= f.password_field :password, autocomplete: "off", class: "form-control", 'style'=>'border-radius: 0 !important;', required: "true", placeholder:"Ocho caracteres mínimo." %>
     </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", 'style'=>'border-radius: 0 !important;', required: "true", placeholder:"Vuelva a ingresar la contraseña." %>
+    </div>
     <div class="field" id="tipoUsuarioSelect">
       <%= label :user_type, "Tipo de Usuario" %>
       <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]) %>
       </div>
+      <p><b><small>Atención: Todos los campos requeridos.</small></b></p>
       <%= f.submit 'Crear usuario', :class  => "btn btn-primary square" %>
       <a href="" data-dismiss="modal" data-target="#nuevoUsuario">Volver</a>
     </div>
