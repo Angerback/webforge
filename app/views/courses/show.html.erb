@@ -15,14 +15,14 @@
 				<th>Alumno</th>
 				<th>Rut</th>
 				<th>Correo</th>
-				<th colspan="3">Operaciones</th>
+				<th class="text-center" colspan="3">Operaciones</th>
 			</tr>
 			<% @course.users.each do |user| %>
 				<tr>
 					<td><%= user.name %></td>
 					<td><%= user.rut %></td>
 					<td><%= user.email %></td>
-					<td><%= link_to 'Ver', 'javascript:;', :onclick => "verMasUser.verUsuario(#{user.id})" %></td>
+					<td class="text-center"><%= link_to '', 'javascript:;', :onclick => "verMasUser.verUsuario(#{user.id})" , class: "glyphicon glyphicon-eye-open"%></td>
 				</tr>
 			<% end %>
 		</table>
@@ -33,5 +33,7 @@
 </div>
 
 <%# Este dialogo contiene la informacion del usuario %>
-<div data-role="dialog" id="dialog-user-info" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;"></div>>
+<div data-role="dialog" id="dialog-user-info" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; max-height: 70%; visibility: visible; left: 817.5px; top: 404.5px; overflow-y:auto;"></div>
 <%# Se carga dinamicamente usando el script users.coffee %>
+
+

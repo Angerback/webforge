@@ -15,11 +15,16 @@ class UsersController < ApplicationController
     @evaluation = Evaluation.find(1)
     @user = User.new
     @searching = false
+    per_page = 10
+    if params[:per_page]
+      per_page = params[:per_page].to_i
+    end
+
 		if params[:search]
       @searching = true
-			@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+			@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => per_page)
 		else
-			@users =  User.paginate(:page => params[:page], :per_page => 10)
+			@users =  User.paginate(:page => params[:page], :per_page => per_page)
 		end
 
 	end
@@ -144,5 +149,5 @@ end
 private
       # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :rut, :user_type, :password, :suspended)
+      params.require(:user).permit(:name, :email, :rut, :user_type, :password, :suspended,:password_confirmation)
     end

@@ -22,12 +22,13 @@ class User < ActiveRecord::Base
     validates :name, presence: true
    	validates :rut, presence: true, rut: true, uniqueness: true
    	validates :user_type, presence: true, inclusion: { in: %w( Alumno Ayudante Profesor Administrador ) }
+		validates_confirmation_of :password
 
 
    	# Método de busquedad
    	def self.search(search)
    		#Declarar los campos donde buscar al realizar una consulta
-   		where("name LIKE ? OR rut LIKE ? OR email LIKE ? OR user_type LIKE ?",
+   		where("name LIKE ?  OR rut LIKE ? OR email LIKE ? OR user_type LIKE ?",
    			"%#{search}%",
    			"%#{search}%",
    			"%#{search}%",
