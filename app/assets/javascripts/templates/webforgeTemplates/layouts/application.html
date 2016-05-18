@@ -1,0 +1,45 @@
+<header class="header">
+	<div class="container" style="background-color: #1d1d1d;">
+		<div class="row">
+			<div class="col-xs-6"> 
+				<h1 class="metro-h1 white welcome">
+					Bienvenido
+				</h1>
+			</div>
+			
+			<div class="col-xs-6 menu-col">
+				<div class="subtitle m-user-name">
+					{{userSession.name}}
+				</div>
+
+				<div class="m-user-icon">
+					<span class="glyphicon glyphicon-user" 
+						  aria-hidden="true">
+					</span>
+				</div>						
+				
+				<form name="loginForm" ng-controller="login#destroy" 
+					  ng-submit="destroy()" class="btn-group header-buttons">
+
+					<button id="metro-opt" ui-sref="app.accounts-edit-lock({ id: userAccount.id })" 
+			        		class="btn btn-inverse m-square">
+						<span class="glyphicon glyphicon-cog" 
+							  aria-hidden="true"
+						  	  title="Opciones">
+						</span>
+					</button>
+					  
+					<button id="metro-logout" class="btn btn-inverse m-square first-elm-right" type="submit">
+						<span class="glyphicon glyphicon-off" 
+							  aria-hidden="true"
+							  title="Cerrar sesión">
+						</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<div ui-view="mainView"></div>
+</div>  
+	

@@ -107,5 +107,45 @@ metro.config([ '$stateProvider', '$urlRouterProvider',
 		}
 	})
 
-})])
+})]);
 
+var webforge = angular.module('webforge',[
+	'templates',
+	'ui.router',
+	'ngCookies',
+	'ngResource',
+	'ngMask',	
+	'utils',
+	'customCurrency',
+	'flash',
+	
+	'ngLatamInt',
+	'validators',
+
+	'WebforgeUsersController',	
+
+	'WebforgeUser',
+
+]);
+
+webforge.config([ '$stateProvider', '$urlRouterProvider', 
+  (function ( $stateProvider, $urlRouterProvider ) {
+
+  	$stateProvider
+
+  	// Login
+	.state('users', {
+		abstract: true,
+		templateUrl: 'webforgeTemplates/layouts/no-header.html',
+		controller: 'WebforgeUsersController'
+	})
+	.state('users.index', {
+		url: '/users',
+		views: {
+			'mainView': {
+				templateUrl: 'webforgeTemplates/users/index.html',
+				controller: 'users#index'
+			}
+		}
+	})
+})]);

@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   get 'bank_terminals' => 'bank_terminals#index'
   get 'metro'          => 'metro#index'
 
+	#Webforge angular
+	get 'webforge'          => 'webforge#index'
+
   #Recursos
 
   get 'references' => 'references#index'
@@ -68,6 +71,17 @@ Rails.application.routes.draw do
       # Exercises
       post 'users/:user_id/practices/:practice_id', to: 'exercises#create'
 
+      get 'courses', to: 'courses#index'
+
+    end
+  end
+
+ # API RESTful
+  namespace :api, defaults: { format: :json } do
+    namespace :v2 do
+	get 'users', to: 'users#index'
+	get 'users/:id', to: 'users#show'
+	get 'users/create', to: 'users#create'
     end
   end
 

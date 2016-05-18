@@ -1,7 +1,7 @@
-class UsersController < ApplicationController
+class Api::V2::UsersController < API::V2::ApiController
 
   	before_action :authenticate_user!
-	before_filter :authorize_admin, except: [:edit]
+	#before_filter :authorize_admin, except: [:edit]
 
   def get_user(id)
     @user = User.find(params[:id])
@@ -26,61 +26,13 @@ class UsersController < ApplicationController
 		else
 			@users =  User.paginate(:page => params[:page], :per_page => per_page)
 		end
-	render json: @users
+	
 	end
 
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
-		#@tests = Array.new
-		#@evaluations = Evaluation.all
-		@evaluation = Evaluation.find(1)
-		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
-
-    		#Solicitado: Objeto test con todos los tests realizados:
-    		@userTests = Test.where( :user_id => @user.id )
-
-		#ME RETORNA TODOS LOS DATOS DEL USUARIO RESPECTIVO
-		#LOS LLENE MANUALMENTE EN LA BASE DE DATOS MIENTRAS
-		#INTENTE CREAR UN ARREGLO ALTIRO EN EL CODIGO PERO ME TIRABA UN ERROR
-		#SOLO ME PODIA CREAR UN TEST CON VALORES DETERMINADOS POR MI, NO UN ARRAY =/
-
-
-		##DEFINO MEJOR NOTA, PEOR NOTA y PROMEDIO
-		@mejorNota = 0
-		@peorNota = 7.0
-		@promedioNota = 0
-		sumadorNotas = 0
-		cantidadNotas = 0
-
-		##RECORRO EL ARRAY PARA OBTENER LA MEJOR PEOR Y PROMEDIO DE NOTA
-
-		@userTests.each do |test|
-			if test.grade
-				if test.grade > @mejorNota
-					@mejorNota = test.grade
-				end
-
-				if test.grade < @peorNota
-					@peorNota = test.grade
-				end
-
-				sumadorNotas = sumadorNotas + test.grade
-				cantidadNotas = cantidadNotas + 1
-			end
-		end
-
-		if cantidadNotas != 0
-			@promedioNota = sumadorNotas / cantidadNotas
-		end
-
-
-		# Esto sirve para enviar la HTML sin layout. Dado que esta vista
-		# se carga como ventana emergente dentro de otra, no necesita tener
-		# el header, footer, cargar los scripts, etc. Solo carga el contenido del body.
-		respond_to do |format|
-			format.html { render :layout => false }
-		end
+		
 
 	end
 
@@ -103,15 +55,15 @@ class UsersController < ApplicationController
 			flash[:success] = "Usuario creado exitosamente"
 		else
 			redirect_to users_path
-      if @user.errors.any?
-        errors = @user.errors.full_messages.first
-        @user.errors.full_messages.each do |msg|
-          if errors != msg
-            errors = errors + ", " + msg
-          end
-        end
-        flash[:error] = errors
-      end
+	      if @user.errors.any?
+		errors = @user.errors.full_messages.first
+		@user.errors.full_messages.each do |msg|
+		  if errors != msg
+		    errors = errors + ", " + msg
+		  end
+		end
+		flash[:error] = errors
+	      end
 		end
 
 	end
