@@ -6,11 +6,16 @@ var webForgeApp = angular.module('webforge', ['ui.router', 'templates'])
 		templateUrl: 'home.html',
 		controller: 'HomeCtrl',
 		title : 'Inicio'
+	}).state('users', {
+		url: '/users',
+		templateUrl: 'users/index.html',
+		controller: 'UsersCtrl',
+		title : 'Usuarios del sistema'
 	});
 
 	$urlRouterProvider.otherwise('/');
 
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 });
 
 
