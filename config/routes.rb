@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   #    :sign_up => 'register'
   #  } 
 
-  resourcesx :records
+  resources :users, :records
 
   # API RESTful
   namespace :api, defaults: { format: :json } do
@@ -68,6 +68,15 @@ Rails.application.routes.draw do
       # Exercises
       post 'users/:user_id/practices/:practice_id', to: 'exercises#create'
 
+    end
+  end
+
+ # API RESTful webforge
+  namespace :api, defaults: { format: :json } do
+    namespace :v2 do
+			get 'users', to: 'users#index'
+			get 'users/:id', to: 'users#show'
+			get 'users/create', to: 'users#create'
     end
   end
 
