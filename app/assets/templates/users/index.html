@@ -1,1 +1,32 @@
-<p>Los usuarios</p>
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><a href="/#/">Inicio</a></li>
+		  	<li class="active"> Usuarios</li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">Usuarios de la aplicación</h1>
+		
+		<table class="table" id="tabla_resultado">
+			<tr>
+				<th>Nombre</th>
+				<th>Rut</th>
+				<th>Correo</th>
+				<th>Rol</th>
+				<th class="text-center" colspan="1">Operación</th>
+			</tr>
+			<tr ng-repeat="user in users">
+				<td>{{user.name}}</td>
+				<td>{{user.rut}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.user_type}}</td>
+				<td class="text-center">
+					<a href="#verUsuario{{user.id}}" data-toggle="modal">
+					<span class="glyphicon glyphicon-eye-open"></span>
+					</a>
+				</td>
+			</tr>	
+		</table>
+	</div>	
+</div>
