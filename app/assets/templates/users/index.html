@@ -141,9 +141,9 @@
 									</div>
 									<div>
 
-										<%= f.submit 'Actualizar usuario', :onclick => "return confirm('¿Estás seguro que deseas cambiar los datos de " + user.name + "? ')",class: "btn btn-primary square" %>
-										<a href="" data-dismiss="modal" data-target="#editarUsuario<%= user.id %>">Volver</a>
-													<%end%> <!-- termino del form-->
+										<button type="button" class="btn btn-primary square" onclick="return confirm('¿Estás seguro que deseas cambiar los datos?')" data-toggle="modal">Actualizar usuario</button>
+
+										<a href="" data-dismiss="modal" data-target="#editarUsuario{{user.id}}">Volver</a>
 									</div>
 					    </div>
 					  </div>
