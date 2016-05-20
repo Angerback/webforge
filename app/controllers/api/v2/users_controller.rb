@@ -26,13 +26,13 @@ class Api::V2::UsersController < API::V2::ApiController
 		else
 			@users =  User.paginate(:page => params[:page], :per_page => per_page)
 		end
-	
+
 	end
 
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
-		
+
 
 	end
 
@@ -51,19 +51,20 @@ class Api::V2::UsersController < API::V2::ApiController
 		@user = User.new(user_params,
 			             password_confirmation: params[:password])
 		if @user.save
-			redirect_to users_path
-			flash[:success] = "Usuario creado exitosamente"
+			#redirect_to users_path
+			#flash[:success] = "Usuario creado exitosamente"
+      head :created
 		else
-			redirect_to users_path
-	      if @user.errors.any?
-		errors = @user.errors.full_messages.first
-		@user.errors.full_messages.each do |msg|
-		  if errors != msg
-		    errors = errors + ", " + msg
-		  end
-		end
-		flash[:error] = errors
-	      end
+      if @user.errors.any?
+        errors = @user.errors.full_messages.first
+        @user.errors.full_messages.each do |msg|
+          if errors != msg
+            errors = errors + ", " + msg
+            puts errors
+          end
+        end
+      end
+      head :unprocessable_entity
 		end
 
 	end
@@ -72,13 +73,16 @@ class Api::V2::UsersController < API::V2::ApiController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			flash[:success] = "Usuario actualizado exitosamente"
-			redirect_to(users_path)
+			#flash[:success] = "Usuario actualizado exitosamente"
+			#redirect_to(users_path)
+      head :created
 		else
-			redirect_to(users_path)
+			#redirect_to(users_path)
+      head :unprocessable_entity
 				if @user.errors.any?
 					@user.errors.full_messages.each do |msg|
-					flash[:error] = msg
+					#flash[:error] = msg
+          puts msg
 				end
 
 			end

@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   resources :courses
 
   root                'home#index'
-      
+
   # Academic contents
-  get 'introduction'   => 'intro#index' 
+  get 'introduction'   => 'intro#index'
   get 'heuristics' => 'heuristics#index'
   get 'heuristics/:heuristic_id' => 'heuristics#show'
-  get 'heuristic_evaluation' => 'heuristic_evaluations#index' 
+  get 'heuristic_evaluation' => 'heuristic_evaluations#index'
 
   # Evaluation
   get 'evaluations' => 'evaluations#index'
-  get 'evaluations/:evaluation_id' => 'evaluations#show' 
+  get 'evaluations/:evaluation_id' => 'evaluations#show'
   get 'begin/:evaluation_id' => 'evaluations#begin'
   get 'continue/:evaluation_id' => 'evaluations#continue'
   get 'evaluations/:evaluation_id/questions/:question_id' => 'questions#show'
@@ -35,21 +35,21 @@ Rails.application.routes.draw do
   #Recursos
 
   get 'references' => 'references#index'
-	
-  # Devise  
-  #devise_for :users, :path => '', 
+
+  # Devise
+  #devise_for :users, :path => '',
   #  :path_names => {
-  #    :sign_in => 'login', 
-  #    :sign_out => 'logout', 
+  #    :sign_in => 'login',
+  #    :sign_out => 'logout',
   #    :sign_up => 'register'
-  #  } 
+  #  }
 
   resources :users, :records
 
   # API RESTful
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      
+
       # Users
       get 'users/:rut', to: 'users#show'
       get 'users', to: 'users#index'
@@ -76,7 +76,8 @@ Rails.application.routes.draw do
     namespace :v2 do
 			get 'users', to: 'users#index'
 			get 'users/:id', to: 'users#show'
-			get 'users/create', to: 'users#create'
+
+      post 'users', to: 'users#create'
     end
   end
 
