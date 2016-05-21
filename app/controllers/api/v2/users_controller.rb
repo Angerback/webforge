@@ -15,7 +15,7 @@ class Api::V2::UsersController < API::V2::ApiController
     @evaluation = Evaluation.find(1)
     @user = User.new
     @searching = false
-    per_page = 10
+    per_page = 100
     if params[:per_page]
       per_page = params[:per_page].to_i
     end
@@ -26,13 +26,13 @@ class Api::V2::UsersController < API::V2::ApiController
 		else
 			@users =  User.paginate(:page => params[:page], :per_page => per_page)
 		end
-
+	
 	end
 
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
-
+		
 
 	end
 
@@ -51,20 +51,25 @@ class Api::V2::UsersController < API::V2::ApiController
 		@user = User.new(user_params,
 			             password_confirmation: params[:password])
 		if @user.save
-			#redirect_to users_path
+			render json: {
+				success: :created
+			}
+			#redirect_to '/api/v2/users/'
 			#flash[:success] = "Usuario creado exitosamente"
-      head :created
 		else
-      if @user.errors.any?
-        errors = @user.errors.full_messages.first
-        @user.errors.full_messages.each do |msg|
-          if errors != msg
-            errors = errors + ", " + msg
-            puts errors
-          end
-        end
-      end
-      head :unprocessable_entity
+			#redirect_to '/api/v2/users/'
+	      if @user.errors.any?
+		errors = @user.errors.full_messages.first
+		@user.errors.full_messages.each do |msg|
+		  if errors != msg
+		    errors = errors + ", " + msg
+		  end
+		end
+		render json: {
+			success: errors
+		} 
+		#flash[:error] = errors
+	      end
 		end
 
 	end
@@ -73,16 +78,13 @@ class Api::V2::UsersController < API::V2::ApiController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			#flash[:success] = "Usuario actualizado exitosamente"
-			#redirect_to(users_path)
-      head :created
+			flash[:success] = "Usuario actualizado exitosamente"
+			redirect_to(users_path)
 		else
-			#redirect_to(users_path)
-      head :unprocessable_entity
+			redirect_to(users_path)
 				if @user.errors.any?
 					@user.errors.full_messages.each do |msg|
-					#flash[:error] = msg
-          puts msg
+					flash[:error] = msg
 				end
 
 			end
