@@ -79,35 +79,32 @@ class Api::V2::UsersController < API::V2::ApiController
 	 # PATCH/PUT /users/:id
 	def update
 		@user = User.find(params[:id])
-		if @user.update(user_params)
-			flash[:success] = "Usuario actualizado exitosamente"
-			redirect_to(users_path)
-		else
-			redirect_to(users_path)
-				if @user.errors.any?
-					@user.errors.full_messages.each do |msg|
-					flash[:error] = msg
-				end
-
+  		if @user.update(user_params)
+  			#flash[:success] = "Usuario actualizado exitosamente"
+  			#redirect_to(users_path)
+        render :show, status: :ok, location: @user
+  		else
+  			#redirect_to(users_path)
+        render json: @user.errors, status: :unprocessable_entity
 			end
-		end
 	end
+
 
 	# DELETE /users/:id
-	def destroy
-		@user = User.find(params[:id])
-		if @user.admin
-			flash[:danger] = "El usuario es administrador del sistema y no puede ser eliminado"
-		else
-			@user.destroy
-			flash[:success] = "Usuario eliminado exitosamente"
-		end
-		redirect_to(users_path)
-	end
+def destroy
+	@user = User.find(params[:id])
+  if @user
+    @user.destroy
+    head :ok
+  else
+    head :no_content
+  end
 end
+
 
 private
       # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :rut, :user_type, :password, :suspended,:password_confirmation)
     end
+end
