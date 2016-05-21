@@ -26,13 +26,13 @@ class Api::V2::UsersController < API::V2::ApiController
 		else
 			@users =  User.paginate(:page => params[:page], :per_page => per_page)
 		end
-	
+
 	end
 
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
-		
+
 
 	end
 
@@ -54,22 +54,24 @@ class Api::V2::UsersController < API::V2::ApiController
 			render json: {
 				success: :created
 			}
+      head :created
 			#redirect_to '/api/v2/users/'
 			#flash[:success] = "Usuario creado exitosamente"
 		else
 			#redirect_to '/api/v2/users/'
-	      if @user.errors.any?
-		errors = @user.errors.full_messages.first
-		@user.errors.full_messages.each do |msg|
-		  if errors != msg
-		    errors = errors + ", " + msg
-		  end
-		end
-		render json: {
-			success: errors
-		} 
-		#flash[:error] = errors
-	      end
+      if @user.errors.any?
+	        errors = @user.errors.full_messages.first
+	        @user.errors.full_messages.each do |msg|
+	        if errors != msg
+	            errors = errors + ", " + msg
+    		  end
+    		end
+    		render json: {
+    			success: errors
+    		}
+    		#flash[:error] = errors
+      end
+      head :unprocessable_entity
 		end
 
 	end

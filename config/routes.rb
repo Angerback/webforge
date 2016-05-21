@@ -74,10 +74,19 @@ Rails.application.routes.draw do
  # API RESTful webforge
   namespace :api, defaults: { format: :json } do
     namespace :v2 do
+
+      # Users
 			get 'users', to: 'users#index'
 			get 'users/:id', to: 'users#show'
-
       post 'users', to: 'users#create'
+
+      # Courses
+      get 'courses', to: 'courses#index'
+      get 'courses/:id', to: 'courses#show'
+      post 'courses', to: 'courses#create'
+      delete 'courses/:id', to: 'courses#destroy'
+      put 'courses/:id', to: 'courses#update'
+      
     end
   end
 
