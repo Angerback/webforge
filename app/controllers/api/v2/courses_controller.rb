@@ -14,6 +14,8 @@ class Api::V2::CoursesController < API::V2::ApiController
   def show
     @course = Course.find(params[:id])
     #Para acceder a los usuarios, basta con hacer @course.users
+    rescue ActiveRecord::RecordNotFound
+      head :not_found
   end
 
   # GET /courses/new
@@ -81,6 +83,40 @@ class Api::V2::CoursesController < API::V2::ApiController
       head :no_content
     end
   end
+
+  # GET /courses/1/users
+  def users
+    @course = Course.find(params[:id])
+    @users = @course.users
+
+    if @course
+      render json: @users
+    else
+      head :not_found
+    end
+    rescue ActiveRecord::RecordNotFound
+      head :not_found
+  end
+
+  # POST /courses/1/users/1
+  def addUser
+    @course = Course.where(id: params[:id])
+
+    @user = User.find(params[:userId])
+
+    if @course && @user
+      if !(@user.courses.include? @course)
+        @user.user_courses.create(course: @course.first)
+      end
+    else
+      head :not_found
+
+    end
+
+    rescue ActiveRecord::RecordNotFound
+      head :not_found
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

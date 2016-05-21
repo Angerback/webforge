@@ -89,6 +89,9 @@ Rails.application.routes.draw do
       delete 'courses/:id', to: 'courses#destroy'
       put 'courses/:id', to: 'courses#update'
 
+      get 'courses/:id/users', to: 'courses#users'
+      post 'courses/:id/users/:userId', to: 'courses#addUser'
+
     end
   end
 

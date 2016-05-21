@@ -33,7 +33,8 @@ class Api::V2::UsersController < API::V2::ApiController
 	def show
 		@user = User.find(params[:id])
 
-
+    rescue ActiveRecord::RecordNotFound
+      head :not_found
 	end
 
 	# GET /users/new
@@ -99,6 +100,8 @@ def destroy
   else
     head :no_content
   end
+  rescue ActiveRecord::RecordNotFound
+    head :not_found
 end
 
 
