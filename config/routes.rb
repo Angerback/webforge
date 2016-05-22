@@ -89,8 +89,16 @@ Rails.application.routes.draw do
       delete 'courses/:id', to: 'courses#destroy'
       put 'courses/:id', to: 'courses#update'
 
+
       get 'courses/:id/users', to: 'courses#users'
       post 'courses/:id/users/:userId', to: 'courses#addUser'
+
+      # Evaluations
+      get 'evaluations', to: 'evaluations#index'
+      get 'evaluations/:id', to: 'evaluations#show'
+
+      # Grades
+      get 'users/:id/grades', to: 'users#show_grades'
 
     end
   end

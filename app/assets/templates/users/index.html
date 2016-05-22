@@ -105,14 +105,14 @@
 										  </div>
 										</div>
 									</div>
-									<div class="col-xs-6" ng-if="user.tests.last">
+									<div class="col-xs-6" ng-if="user.name_test!=''">
 										<div class="panel panel-default">
 										  <div class="panel-body">
 										    <h2 class="ms-h2">Últimas evaluaciones</h2>
 										      <p>
 										      <!--Revisar esto:pasarlo a angular--> 
-										      <strong>Calificación en {{evaluation.name}}:</strong>
-										      <%= number_with_precision(user.tests.last.grade, :precision => 1 ) %>
+										      <strong>Calificación en {{user.name_test}}:</strong>
+										      {{user.grade | number:1}}
 										      <!--Fin de objeto a revisar-->
 										      </p>
 										  </div>

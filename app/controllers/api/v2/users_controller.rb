@@ -6,13 +6,15 @@ class Api::V2::UsersController < API::V2::ApiController
   def get_user(id)
     @user = User.find(params[:id])
     @evaluation = Evaluation.find(1)
-		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
+	@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
+
   end
   helper_method :get_user
 
 	# GET /users
 	def index
     @evaluation = Evaluation.find(1)
+    @lastTest = Test.where( :grade =>  0.9..7.1 ).last
     @user = User.new
     @searching = false
     per_page = 100
@@ -32,9 +34,17 @@ class Api::V2::UsersController < API::V2::ApiController
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
+		@evaluation = Evaluation.find(1)
+		@lastTest = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 ).last
 
     rescue ActiveRecord::RecordNotFound
       head :not_found
+	end
+
+	# GET /users/:id/grades
+	def  show_grades
+		@user = User.find(params[:id])
+		@test = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 )
 	end
 
 	# GET /users/new
