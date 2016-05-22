@@ -105,15 +105,13 @@
 										  </div>
 										</div>
 									</div>
-									<div class="col-xs-6" ng-if="user.name_test!=''">
+									<div class="col-xs-6" ng-if="user.test!=null">
 										<div class="panel panel-default">
 										  <div class="panel-body">
 										    <h2 class="ms-h2">Últimas evaluaciones</h2>
 										      <p>
-										      <!--Revisar esto:pasarlo a angular--> 
 										      <strong>Calificación en {{user.name_test}}:</strong>
-										      {{user.grade | number:1}}
-										      <!--Fin de objeto a revisar-->
+										      {{user.test.grade | number:1}}
 										      </p>
 										  </div>
 										</div>
@@ -217,5 +215,4 @@
 		</table>
 	</div>	
 </div>
-
 

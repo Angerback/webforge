@@ -14,7 +14,6 @@ class Api::V2::UsersController < API::V2::ApiController
 	# GET /users
 	def index
     @evaluation = Evaluation.find(1)
-    @lastTest = Test.where( :grade =>  0.9..7.1 ).last
     @user = User.new
     @searching = false
     per_page = 100
@@ -45,6 +44,11 @@ class Api::V2::UsersController < API::V2::ApiController
 	def  show_grades
 		@user = User.find(params[:id])
 		@test = Test.where( :user_id => @user.id, :grade =>  0.9..7.1 )
+	end
+
+	# GET /users/grades
+	def  show_grades_last
+		@test = Test.where( :grade =>  0.9..7.1 ).last
 	end
 
 	# GET /users/new
