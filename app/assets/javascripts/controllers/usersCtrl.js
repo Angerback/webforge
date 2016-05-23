@@ -31,4 +31,24 @@ function($scope, $http, $rootScope, usersService){
 
 		console.log($scope.emailUserNew + ' ' + $scope.nameUserNew+ ' ' + $scope.rutUserNew + ' ' + $scope.passwordUserNew + ' ' + $scope.user_typeUserNew + ' ' + $scope.password_confirmationUser)
 	};
+
+	$scope.setSelectedUser = function(idd) {
+	    $scope.selectedUserId = idd;
+	    console.log($scope.selectedUserId);
+	};
+	$scope.submit_edit = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit){
+		usersService.editUser(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, $scope.selectedUserId)
+		.success(function(data){	
+
+			$scope.users = data;
+			console.log(data);
+
+
+
+		})
+	};
+
+
+
+
 });

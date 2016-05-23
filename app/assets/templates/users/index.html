@@ -26,8 +26,8 @@
 			        
 			     		<form>
 								<div class="field col-xs-12">
-									<label class="active" for="NewCorreo">Correo</label><br>
-									<input ng-model="emailUserNew" value="email" id="NewCorreo", type="email" class ="form-control ms-input" required>
+									<label class="active" for="editCorreo">Correo</label><br>
+									<input ng-model="emailUserNew" value="email" id="editCorreo", type="email" class ="form-control ms-input" required>
 								</div>
 
 								<div class="field col-xs-12">
@@ -141,9 +141,45 @@
 					    <div class="modal-body" ng-if="user.id!=''">
 									<div class="row">
 										<div class="col-xs-12">
-										  <div class="panel panel-default">
+										
 										    <div class="panel-body">
-													<%= form_for(user) do |f| %>
+										   
+										    	
+										 
+										    	
+									     		<form>
+
+														<div class="field col-xs-12">
+															<label class="active" for="EditCorreo">Correo</label><br>
+															<input ng-init="emailUserEdit=user.email"  ng-model="emailUserEdit"  id="EditCorreo" type="email" class ="form-control ms-input" required> 
+														</div>
+
+														<div class="field col-xs-12">
+															<br>
+															<label class="active" for="EditNombre">Nombre</label><br>
+															<input ng-init="nameUserEdit=user.name" ng-model="nameUserEdit"  id="EditNombre" type="text" class ="form-control ms-input">
+														</div>
+
+														<div class="field col-xs-12">
+															<label class="active" for="EditRut">Rut</label><br>
+															<input ng-init="rutUserEdit=user.rut" ng-model="rutUserEdit"  id="EditRut" type="text" class ="form-control ms-input">
+														</div>
+
+														<div class="field col-xs-12">
+															 <label for="singleSelect"> Tipo de usuario </label>
+													    <select name="singleSelect" ng-init="user_typeUserEdit = user.user_type" ng-model="user_typeUserEdit">
+
+													      <option value="Alumno"> Alumno </option>
+													      <option value="Ayudante">Ayudante</option>
+													      <option value="Profesor">Profesor</option>
+													    </select>
+														</div>
+													
+															<button type="button" class="btn btn-primary square" ng-click="submit_edit(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit)">Actualizar Usuario</button>
+															<a href="" data-dismiss="modal" data-target="users#verUsuario{{user.id}}">Volver</a>
+												</form>
+
+<!-- 													<%= form_for(user) do |f| %>
 
 													  <div class="field">
 													    <%= f.label :name %><br>
@@ -166,25 +202,18 @@
 														<div class="field onoffswitch">
 													    <%= f.label :suspended, "Deshabilitar" %>
 													    <%= f.check_box :suspended, checked: check_if_true(user.suspended)%>
-												    </div>
-												    <!-- switch para deshabilitar -->
-												    <!--div class="onoffswitch">
-        												<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-        												<label class="onoffswitch-label" for="myonoffswitch">
-            												<span class="onoffswitch-inner"></span>
-            												<span class="onoffswitch-switch"></span>
-        												</label>
-    												</div-->
+												    </div> -->
+
 										    </div>
-										  </div>
+										
 										</div>
 									</div>
-									<div>
+<!-- 									<div>
 
 										<button type="button" class="btn btn-primary square" onclick="return confirm('¿Estás seguro que deseas cambiar los datos?')" data-toggle="modal">Actualizar usuario</button>
 
 										<a href="" data-dismiss="modal" data-target="#editarUsuario{{user.id}}">Volver</a>
-									</div>
+									</div> -->
 					    </div>
 					  </div>
 					</div>
@@ -207,7 +236,7 @@
 				<td>{{user.email}}</td>
 				<td>{{user.user_type}}</td>
 				<td class="text-center">
-					<a href="users#verUsuario{{user.id}}" data-toggle="modal">
+					<a href="users#verUsuario{{user.id}}" ng-click="setSelectedUser(user.id)" data-toggle="modal">
 					<span class="glyphicon glyphicon-eye-open"></span>
 					</a>
 				</td>

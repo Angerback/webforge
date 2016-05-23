@@ -97,7 +97,7 @@ class Api::V2::UsersController < API::V2::ApiController
   		if @user.update(user_params)
   			#flash[:success] = "Usuario actualizado exitosamente"
   			#redirect_to(users_path)
-        render :show, status: :ok, location: @user
+        	
   		else
   			#redirect_to(users_path)
         render json: @user.errors, status: :unprocessable_entity

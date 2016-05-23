@@ -17,7 +17,13 @@ angular.module('webforge')
 			
         s.postUser = function(userName,emailUser,rutUser,passwordUser,user_typeUser,password_confirmationUser){
             return $http.post(urlBase + "/",{"user": {"name":userName,"email":emailUser,"rut":rutUser, "password": passwordUser, "user_type":user_typeUser, "password_confirmation":password_confirmationUser}});
-        };    			 
+        };   
+
+        s.editUser = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, selectedUserId){
+            var obj = {"user":{"name":nameUserEdit,"email":emailUserEdit,"rut":rutUserEdit, "user_type":user_typeUserEdit}};
+            console.log(obj);
+            return $http.put(urlBase + "/"  + selectedUserId, obj);
+        };		 
             
             return s
     });
