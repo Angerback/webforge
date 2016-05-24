@@ -174,8 +174,15 @@
 													      <option value="Profesor">Profesor</option>
 													    </select>
 														</div>
+
+														<div class="field col-xs-12">
+															<label class="active" for="dUser" > Deshabilitar</label>
+															<input type="checkbox"  ng-model="suspendedUserEdit" id="dUser"
+																 ng-true-value="'true'" ng-false-value="'false'" >
+
+														</div> 
 													
-															<button type="button" class="btn btn-primary square" ng-click="submit_edit(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit)">Actualizar Usuario</button>
+															<button type="button" class="btn btn-primary square" ng-click="submit_edit(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit,suspendedUserEdit)">Actualizar Usuario</button>
 															<a href="" data-dismiss="modal" data-target="users#verUsuario{{user.id}}">Volver</a>
 												</form>
 
