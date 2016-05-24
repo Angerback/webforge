@@ -100,6 +100,13 @@ Rails.application.routes.draw do
       # Grades
       get 'users/:id/grades', to: 'users#show_grades'
 
+      # Chats
+      get 'chats', to: 'chats#index'
+      get 'chats/:id', to: 'chats#show'
+
+      # Messages
+      post 'chats/:id/messages', to: 'messages#create'
+
     end
   end
 

@@ -612,3 +612,8 @@ Test.create(user_id: User.find(2).id,evaluation_id: Evaluation.all.first.id, gra
 Test.create(user_id: User.find(2).id,evaluation_id: Evaluation.all.first.id, grade: 5.1)
 Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 6.0)
 Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 2.4)
+
+
+Chat.create(title: "Problemas con plnkr", user_id: 2 , practice_id: 2)
+Message.create(body: "hola, tengo problemas con plnkr, es fome", user_id: 2, chat_id: 1)
+Message.create(body: "que problemas tienes aparte de ser fome?", user_id: 1, chat_id: 1)
