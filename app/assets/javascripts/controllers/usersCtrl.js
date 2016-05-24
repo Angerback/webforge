@@ -35,13 +35,18 @@ function($scope, $http, $rootScope, usersService){
 	$scope.setSelectedUser = function(idd) {
 	    $scope.selectedUserId = idd;
 	    console.log($scope.selectedUserId);
+
+
 	};
-	$scope.submit_edit = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit){
-		usersService.editUser(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, $scope.selectedUserId)
+	$scope.submit_edit = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit,suspendedUserEdit){
+		usersService.editUser(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, suspendedUserEdit,$scope.selectedUserId)
 		.success(function(data){	
 
 			$scope.users = data;
 			console.log(data);
+			if(data.success = 'created'){
+				window.location.reload();
+			}
 
 
 
