@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="webforge">
 <head>
-  <title> <%= yield(:title) %> | WebForge </title>
+  <title ng-bind="tituloPagina + ' | WebForge'"></title>
   <link href="/favicon.ico" rel="shortcut icon">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+  <base href="/">
 </head>
 <body>
 
