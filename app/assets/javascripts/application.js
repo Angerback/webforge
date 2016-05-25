@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require angular-devise/lib/devise
-//= require angular-ui-router/release/angular-ui-router
+//= require angular-ui-router
 //= require angular-resource/angular-resource
 //= require angular-cookies/angular-cookies
 //= require angular-rails-templates
@@ -25,4 +25,5 @@
 //= require tinymce
 //= require metroui
 //= require_tree .
+//= require_tree ../templates
 

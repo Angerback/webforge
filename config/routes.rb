@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   resources :courses
 
   root                'home#index'
-      
+
   # Academic contents
-  get 'introduction'   => 'intro#index' 
+  get 'introduction'   => 'intro#index'
   get 'heuristics' => 'heuristics#index'
   get 'heuristics/:heuristic_id' => 'heuristics#show'
-  get 'heuristic_evaluation' => 'heuristic_evaluations#index' 
+  get 'heuristic_evaluation' => 'heuristic_evaluations#index'
 
   # Evaluation
   get 'evaluations' => 'evaluations#index'
-  get 'evaluations/:evaluation_id' => 'evaluations#show' 
+  get 'evaluations/:evaluation_id' => 'evaluations#show'
   get 'begin/:evaluation_id' => 'evaluations#begin'
   get 'continue/:evaluation_id' => 'evaluations#continue'
   get 'evaluations/:evaluation_id/questions/:question_id' => 'questions#show'
@@ -36,20 +36,20 @@ Rails.application.routes.draw do
 
   get 'references' => 'references#index'
 
-  # Devise  
-  devise_for :users, :path => '', 
-    :path_names => {
-      :sign_in => 'login', 
-      :sign_out => 'logout', 
-      :sign_up => 'register'
-    } 
+  # Devise
+  #devise_for :users, :path => '',
+  #  :path_names => {
+  #    :sign_in => 'login',
+  #    :sign_out => 'logout',
+  #    :sign_up => 'register'
+  #  }
 
   resources :users, :records
 
   # API RESTful
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      
+
       # Users
       get 'users/:rut', to: 'users#show'
       get 'users', to: 'users#index'
@@ -67,6 +67,45 @@ Rails.application.routes.draw do
 
       # Exercises
       post 'users/:user_id/practices/:practice_id', to: 'exercises#create'
+
+    end
+  end
+
+ # API RESTful webforge
+  namespace :api, defaults: { format: :json } do
+    namespace :v2 do
+
+      # Users
+			get 'users', to: 'users#index'
+			get 'users/:id', to: 'users#show'
+      post 'users', to: 'users#create'
+      delete 'users/:id', to: 'users#destroy'
+      put 'users/:id', to: 'users#update'
+
+      # Courses
+      get 'courses', to: 'courses#index'
+      get 'courses/:id', to: 'courses#show'
+      post 'courses', to: 'courses#create'
+      delete 'courses/:id', to: 'courses#destroy'
+      put 'courses/:id', to: 'courses#update'
+
+
+      get 'courses/:id/users', to: 'courses#users'
+      post 'courses/:id/users/:userId', to: 'courses#addUser'
+
+      # Evaluations
+      get 'evaluations', to: 'evaluations#index'
+      get 'evaluations/:id', to: 'evaluations#show'
+
+      # Grades
+      get 'users/:id/grades', to: 'users#show_grades'
+
+      # Chats
+      get 'chats', to: 'chats#index'
+      get 'chats/:id', to: 'chats#show'
+
+      # Messages
+      post 'chats/:id/messages', to: 'messages#create'
 
     end
   end

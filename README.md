@@ -1,9 +1,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/angerback/webforge/branches/master/badge.svg)](https://semaphoreci.com/angerback/webforge)
-# Recurso de Aprendizaje de usabilidad Web: Una aproximación desde la cuarta heurística de Nielsen
+#Nota:
 
-Esta aplicación será desarrollada por Javier Cáceres para objetener el título de Ingeniero Civil en Informática en el marco de su trabajo de titulación.
-
-Actualmente, esta aplicación se encuentra en fase de modificación y extensión por el curso de Interacción Humano Computador de la Universidad de Santiago de Chile, a cargo del profesor Edmundo Leiva.
+Actualmente muestra como pasar la vista "Home" a Angular, sin embargo en el proyecto real solo se pasaran algunas vistas a Angular, y no se puede mezclar un proyecto que use el routing de Rails con el de Angular (se producen muchos conflictos, como que por ejemplo los links .com/heuristics no funciona). Asi que se debe hacer que cada vista implemente Angular de manera separada (sin angular-routing) o buscar otra manera de incorporarlo.
 
 Instalación
 ===========
