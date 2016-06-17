@@ -107,6 +107,11 @@ Rails.application.routes.draw do
       # Messages
       post 'chats/:id/messages', to: 'messages#create'
 
+      #Exercises
+      post 'exercises', to: 'exercises#create'
+      put 'exercises', to: 'exercises#update'
+      get 'users/:user_id/exercises', to: 'exercises#index'
+
     end
   end
 
