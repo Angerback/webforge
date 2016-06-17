@@ -110,6 +110,7 @@ Rails.application.routes.draw do
       #Exercises
       post 'exercises', to: 'exercises#create'
       put 'exercises', to: 'exercises#update'
+      put 'exercises/:id', to: 'exercises#update'
       get 'users/:user_id/exercises', to: 'exercises#index'
 
     end
