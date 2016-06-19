@@ -113,6 +113,9 @@ Rails.application.routes.draw do
       put 'exercises/:id', to: 'exercises#update'
       get 'users/:user_id/exercises', to: 'exercises#index'
 
+      #Topics
+      get 'topics', to: 'topics#index'
+
     end
   end
 
