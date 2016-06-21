@@ -1,5 +1,6 @@
 class Api::V2::UsersController < API::V2::ApiController
 
+  @@tokens = Hash.new
   #	before_action :authenticate_user!
 	#before_filter :authorize_admin, except: [:edit]
 
@@ -97,7 +98,7 @@ class Api::V2::UsersController < API::V2::ApiController
   		if @user.update(user_params)
   			#flash[:success] = "Usuario actualizado exitosamente"
   			#redirect_to(users_path)
-        	
+
   		else
   			#redirect_to(users_path)
         render json: @user.errors, status: :unprocessable_entity
@@ -116,6 +117,45 @@ def destroy
   end
   rescue ActiveRecord::RecordNotFound
     head :not_found
+end
+
+# POST /users/start_session
+def start_session
+  if @@tokens[params[:token]]
+    #Si existe el email en el Hash de tokens, es porque el usuario ya se logueo
+    render json: {
+        outcome: "Ya está logueado."
+     }
+  else
+    #Busca al usuario por su correo para ver si se puede loguear
+    user = User.where(email: params[:email])
+    if user.size() > 0
+      @@tokens[params[:token]] = params[:email]
+      render json: {
+          outcome: "Login exitoso."
+       }
+    else
+      render json: {
+          outcome: "Usuario no existe."
+       }
+    end
+
+  end
+end
+
+# POST /users/end_session
+def end_session
+  if @@tokens[params[:token]]
+    #Si existe el email en el Hash de tokens, es porque el usuario ya se logueo
+    @@tokens.delete(params[:token])
+    render json: {
+        outcome: "Sesión cerrada."
+     }
+  else
+    render json: {
+        outcome: "Sesión no existe."
+     }
+  end
 end
 
 
