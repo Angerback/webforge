@@ -119,6 +119,9 @@ Rails.application.routes.draw do
       #practices
       get 'practices', to: 'practices#index'
 
+      #Questions
+      get 'questions', to: 'questions#index'
+
     end
   end
 
