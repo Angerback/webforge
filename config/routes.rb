@@ -128,6 +128,9 @@ Rails.application.routes.draw do
       #Compositions
       get 'compositions', to: 'compositions#index'
 
+      #Test
+      post 'users/:user_id/tests', to: 'tests#create'
+
     end
   end
 
