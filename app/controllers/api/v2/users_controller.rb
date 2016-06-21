@@ -121,7 +121,7 @@ end
 
 # POST /users/start_session
 def start_session
-  if @@tokens[params[:token]]
+  if @@tokens[params[:token]] or @@tokens.has_value?(params[:email])
     #Si existe el email en el Hash de tokens, es porque el usuario ya se logueo
     render json: {
         outcome: "Ya está logueado."
