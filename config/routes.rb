@@ -116,6 +116,9 @@ Rails.application.routes.draw do
       #Topics
       get 'topics', to: 'topics#index'
 
+      #practices
+      get 'practices', to: 'practices#index'
+
     end
   end
 
