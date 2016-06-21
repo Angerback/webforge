@@ -122,8 +122,11 @@ Rails.application.routes.draw do
       #Questions
       get 'questions', to: 'questions#index'
 
-      #Alternatives 
+      #Alternatives
       get 'alternatives', to: 'alternatives#index'
+
+      #Compositions
+      get 'compositions', to: 'compositions#index'
 
     end
   end
