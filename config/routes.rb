@@ -131,6 +131,9 @@ Rails.application.routes.draw do
       #Test
       post 'users/:user_id/tests', to: 'tests#create'
 
+      #Answers
+      post 'tests/:test_id/answers', to: 'answers#create'
+
     end
   end
 
