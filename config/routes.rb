@@ -143,7 +143,7 @@ Rails.application.routes.draw do
 
       #Foro
       get 'forum', to: 'themes#index'
-      get 'comments', to: 'comments#index'
+      get 'forum/:id', to: 'themes#show'
 
     end
   end
