@@ -141,6 +141,10 @@ Rails.application.routes.draw do
       get 'heuristics', to: 'heuristics#index'
       get 'heuristics/:heuristic_id', to: 'heuristics#show'
 
+      #Foro
+      get 'forum', to: 'themes#index'
+      get 'comments', to: 'comments#index'
+
     end
   end
 
