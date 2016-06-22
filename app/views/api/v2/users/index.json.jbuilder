@@ -4,5 +4,3 @@ json.array!(@users) do |user|
 	json.set! :test, Test.where( :user_id => user.id, :grade =>  0.9..7.1 ).last
 	json.url user_url(user, format: :json)
 end
-
-

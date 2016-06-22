@@ -84,7 +84,7 @@ Rails.application.routes.draw do
 
       post 'users/start_session', to: 'users#start_session'
       post 'users/end_session', to: 'users#end_session'
-      
+
       # Courses
       get 'courses', to: 'courses#index'
       get 'courses/:id', to: 'courses#show'
@@ -136,6 +136,10 @@ Rails.application.routes.draw do
 
       #Answers
       post 'tests/:test_id/answers', to: 'answers#create'
+
+      #Heuristics
+      get 'heuristics', to: 'heuristics#index'
+      get 'heuristics/:heuristic_id', to: 'heuristics#show'
 
     end
   end
