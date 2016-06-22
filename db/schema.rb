@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622161315) do
+ActiveRecord::Schema.define(version: 20160622172627) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -58,7 +58,10 @@ ActiveRecord::Schema.define(version: 20160622161315) do
     t.datetime "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "theme_id"
   end
+
+  add_index "comments", ["theme_id"], name: "index_comments_on_theme_id"
 
   create_table "compositions", force: :cascade do |t|
     t.integer  "evaluation_id"
