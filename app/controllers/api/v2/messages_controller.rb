@@ -8,7 +8,9 @@ class Api::V2::MessagesController < API::V2::ApiController
   	if @message.save
       render json: @message
   		#redirect_to({controller: "chats", action: "show", id: params[:id]})
-      Notifier.msgNotify().deliver_now
+      @message.each do |m|
+        Notifier.msgNotify(m.find(params[:user_id]), Chat.find(params[:id])).deliver_now
+      end
       #User.find(params[:receiver_id]),
        #         Chat.find(params[:owner_id])
   	else
