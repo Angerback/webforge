@@ -7,9 +7,9 @@ class Notifier < ApplicationMailer
 		@amount = amount
 		mail( to: @receiver.email, subject: 'WebForge: Transferencia Bancaria')
 	end
-	def msgNotify (receiver,sender)
+	def msgNotify (receiver,chat)
 		@receiver = receiver
-		@sender = sender
-		mail(to: @receiver.email, subject: "WebForge: Nuevo Mensaje de #{@sender.name}")
+		@chat = chat
+		mail(to: receiver.email, subject: "WebForge: Nuevo Mensaje en la conversación #{chat.id}")
 	end
 end
