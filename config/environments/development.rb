@@ -41,16 +41,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  config.action_mailer.raise_delivery_errors = true
   #Envío de mails
-  #config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
-  #config.action_mailer.smtp_settings = {
-  #  :address              => "smtp.gmail.com",
-  #  :port                 => 587,
-  #  :user_name            => "webforge.usach@gmail.com",
-  #  :password             => "entrar00",
-  #  :authentication       => "plain",
-  #  :enable_starttls_auto => true
-  #}
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => "webforge.usach@gmail.com",
+    :password             => "entrar00",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
