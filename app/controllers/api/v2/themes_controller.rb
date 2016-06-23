@@ -11,7 +11,14 @@ class Api::V2::ThemesController < API::V2::ApiController
 	def show
 		@tema = Theme.find(params[:id])
 		@autor = User.find(@tema.user_id)
+		@autor_c = Hash.new
+		@comentarios = Comment.where(theme_id: params[:id])
+		@comentarios.each do |item|
+			@autor_c[item.id]  = User.find(item.user_id)
+		end
 	end
+
+      	
 end
 
 
