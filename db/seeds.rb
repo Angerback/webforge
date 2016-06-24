@@ -53,6 +53,10 @@ User.create(name: "Carolina Vásquez ", rut: "17.958.228-7", email: "caro.vh@liv
 #15
 User.create(name: "Vasco Vergara", rut: "18.210.538-4", email: "vasco_esteban@hotmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
 
+#16
+User.create(name: "Edmundo Leiva", rut: "13.148.932-3", email: "epleiva@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Profesor")
+
+
 #H1
 Heuristic.create(name:"Visibilidad del Estado del Sistema", description:"El sistema siempre debe mantener a los usuarios informados acerca de su estado, con una retroalimentación apropiada y en un tiempo razonable.")
 
@@ -622,17 +626,17 @@ Theme.create(title:"Bienvenido al foro", user_id: User.find(2).id, open:true ,co
  quis aliquam sem tincidunt id. Sed pulvinar mi auctor auctor lobortis. Etiam vel quam ornare,
   vulputate lectus at, efficitur metus. Quisque ultrices mi lacus. In rhoncus sagittis interdum.
    Donec eu lorem nec ipsum dapibus molestie. Curabitur lobortis tincidunt mollis. Aliquam erat
-    volutpat. Sed at dictum ligula. Suspendisse erat velit, rutrum a convallis vel, 
-    finibus nec dui. Sed fermentum augue vitae maximus lobortis. Sed aliquet ullamcorper mi, 
+    volutpat. Sed at dictum ligula. Suspendisse erat velit, rutrum a convallis vel,
+    finibus nec dui. Sed fermentum augue vitae maximus lobortis. Sed aliquet ullamcorper mi,
     quis fringilla justo pulvinar vulputate.")
 Theme.create(title:"Como entender al cliente?", user_id: User.find(3).id, open:true, content:"Más allá de
- llevar una relación amistosa con los clientes, no importando el servicio que ofrezcas, 
- se le debe educar en términos de tiempos, entregas, peticiones, y pagos. 
+ llevar una relación amistosa con los clientes, no importando el servicio que ofrezcas,
+ se le debe educar en términos de tiempos, entregas, peticiones, y pagos.
  El cliente siempre tiene la razón es una frase que en la actualidad,
   y tal vez en el pasado, no debe aplicar del todo, si es que en realidad queremos ofrecerle
    un servicio destacado y que satisfaga las necesidades por las cuales nos contratan.")
 
-Comment.create(user_id: User.find(5).id, theme_id: Theme.find(1).id, 
+Comment.create(user_id: User.find(5).id, theme_id: Theme.find(1).id,
 	contenido:"Nulla maximus mattis lorem. Ut semper magna sit amet libero condimentum convallis.
 	 Vestibulum euismod dui a lectus consequat molestie. Integer ornare tincidunt elementum.
 	  Suspendisse potenti. Nam quam lorem, convallis eu malesuada sit amet, varius at dui.
