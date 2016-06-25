@@ -31,8 +31,20 @@ class Api::V2::ThemesController < API::V2::ApiController
       			outcome: "Falta especificar por lo menos el usuario y titulo"
       		}
       	end
-      
+	end
 
+	def create_comment
+		if params[:user_id] && params[:contenido]
+			Comment.create(user_id: params[:user_id], theme_id: params[:id_tema], contenido: params[:contenido])
+
+			render json: {
+				outcome: "Comentario publicado"
+			}
+		else
+			render json: {
+				outcome: "Error, no se a creado el comentario"
+			}
+		end
 
 	end
 
