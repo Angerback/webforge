@@ -618,8 +618,8 @@ Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, gra
 Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 2.4)
 
 
-Chat.create(title: "Problemas con plnkr", user_id: 15 , practice_id: 2)
-Message.create(body: "hola, tengo problemas con plnkr", user_id: 15, chat_id: 1)
-Message.create(body: "que problemas tienes?", user_id: 16, chat_id: 1)
-Message.create(body: "muchos problemas", user_id: 15, chat_id: 1)
-Message.create(body: "que interesante...", user_id: 16, chat_id: 1)
+Chat.create(title: "Problemas con plnkr", user_id: 1 , practice_id: 2)
+Message.create(body: "hola, tengo problemas con plnkr", user_id: 10, chat_id: 1)
+Message.create(body: "que problemas tienes?", user_id: 1, chat_id: 1)
+Message.create(body: "muchos problemas", user_id: 10, chat_id: 1)
+Message.create(body: "que interesante...", user_id: 1, chat_id: 1)
