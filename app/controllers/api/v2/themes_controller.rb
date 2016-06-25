@@ -18,6 +18,32 @@ class Api::V2::ThemesController < API::V2::ApiController
 		end
 	end
 
+	
+	def create
+		if params[:user_id] && params[:titulo]
+			@tema = Theme.create(title: params[:titulo], content: params[:contenido], user_id: params[:user_id], open: true)
+		
+		 	render json: {
+      		    outcome: "Tema creado exitosamente"
+      		 }
+      	else
+      		render json:{
+      			outcome: "Falta especificar por lo menos el usuario y titulo"
+      		}
+      	end
+      
+
+
+	end
+
+
+
+
+
+
+
+
+
       	
 end
 

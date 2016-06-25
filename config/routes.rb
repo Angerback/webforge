@@ -144,6 +144,7 @@ Rails.application.routes.draw do
       #Foro
       get 'forum', to: 'themes#index'
       get 'forum/:id', to: 'themes#show'
+      post 'forum', to: 'themes#create'
 
     end
   end
