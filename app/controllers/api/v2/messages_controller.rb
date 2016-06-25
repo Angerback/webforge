@@ -2,17 +2,26 @@ class Api::V2::MessagesController < API::V2::ApiController
 
   def create
     @chat = Chat.find(params[:id])
-    @owner = User.find(@chat.user_id)
-  	
+    @emails = Chat.all
+    @owner = User.find(@chat.user_id)  	
     @message = Message.new(chat_id: params[:id], user_id: params[:user_id], body: params[:body])
+    @messages = Message.where(chat_id: params[:id])
+
   	if @message.save
       render json: @message
   		#redirect_to({controller: "chats", action: "show", id: params[:id]})
-      @message.each do |m|
-        Notifier.msgNotify(m.find(params[:user_id]), Chat.find(params[:id])).deliver_now
-      end
-      #User.find(params[:receiver_id]),
-       #         Chat.find(params[:owner_id])
+
+      #lista de correos de los participantes del chat sin repetición
+      emails = @messages.map {|message| User.find(message.user_id).email}
+      Notifier.msgNotify(emails.uniq, @chat.title, @message.body).deliver_now
+      
+      #@messages.each do |messages|
+        #puts messages.name 
+        #Notifier.msgNotify(messages, )
+      #end
+      
+    
+
   	else
       head :unprocessable_entity
   		#flash[:danger] = "Problemas con las publicación del mensaje"
