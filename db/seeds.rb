@@ -52,6 +52,18 @@ User.create(name: "Carolina Vásquez ", rut: "17.958.228-7", email: "caro.vh@liv
 
 #15
 User.create(name: "Vasco Vergara", rut: "18.210.538-4", email: "vasco_esteban@hotmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
+#15
+User.create(name: "daniel brown", rut: "16.925.057-k", email: "daniel1108@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
+#16
+User.create(name: "felipe rivera", rut: "11.348.401-2", email: "felipe.rm64@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
+
+User.create(name: "Edmundo Leiva", rut: "13.148.932-3", email: "epleiva@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Profesor")
+
+User.create(name: "PROFESOR", rut: "19.432.923-7", email: "profesormanuelapp@gmail.com", password: "manprofesor", password_confirmation: "manprofesor", admin: false, user_type: "Profesor")
+
+User.create(name: "ALUMNO", rut: "12.459.199-6", email: "alumnomanuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
+
+User.create(name: "ADMINISTRADOR", rut: "23.365.908-8", email: "directormanuelapp@gmail.com", password: "mandirector", password_confirmation: "mandirector", admin: true, user_type: "Administrador")
 
 #H1
 Heuristic.create(name:"Visibilidad del Estado del Sistema", description:"El sistema siempre debe mantener a los usuarios informados acerca de su estado, con una retroalimentación apropiada y en un tiempo razonable.")
@@ -614,6 +626,38 @@ Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, gra
 Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 2.4)
 
 
-Chat.create(title: "Problemas con plnkr", user_id: 2 , practice_id: 2)
-Message.create(body: "hola, tengo problemas con plnkr, es fome", user_id: 2, chat_id: 1)
-Message.create(body: "que problemas tienes aparte de ser fome?", user_id: 1, chat_id: 1)
+Chat.create(title: "Problemas con plnkr", user_id: 1 , practice_id: 2)
+Message.create(body: "hola, tengo problemas con plnkr", user_id: 10, chat_id: 1)
+Message.create(body: "que problemas tienes?", user_id: 1, chat_id: 1)
+Message.create(body: "muchos problemas", user_id: 10, chat_id: 1)
+Message.create(body: "que interesante...", user_id: 1, chat_id: 1)
+
+Theme.create(title:"Bienvenido al foro", user_id: User.find(2).id, open:true ,content:"Phasellus consequat nunc mauris,
+ quis aliquam sem tincidunt id. Sed pulvinar mi auctor auctor lobortis. Etiam vel quam ornare,
+  vulputate lectus at, efficitur metus. Quisque ultrices mi lacus. In rhoncus sagittis interdum.
+   Donec eu lorem nec ipsum dapibus molestie. Curabitur lobortis tincidunt mollis. Aliquam erat
+    volutpat. Sed at dictum ligula. Suspendisse erat velit, rutrum a convallis vel,
+    finibus nec dui. Sed fermentum augue vitae maximus lobortis. Sed aliquet ullamcorper mi,
+    quis fringilla justo pulvinar vulputate.")
+Theme.create(title:"Como entender al cliente?", user_id: User.find(3).id, open:true, content:"Más allá de
+ llevar una relación amistosa con los clientes, no importando el servicio que ofrezcas,
+ se le debe educar en términos de tiempos, entregas, peticiones, y pagos.
+ El cliente siempre tiene la razón es una frase que en la actualidad,
+  y tal vez en el pasado, no debe aplicar del todo, si es que en realidad queremos ofrecerle
+   un servicio destacado y que satisfaga las necesidades por las cuales nos contratan.")
+
+Comment.create(user_id: User.find(5).id, theme_id: Theme.find(1).id,
+	contenido:"Nulla maximus mattis lorem. Ut semper magna sit amet libero condimentum convallis.
+	 Vestibulum euismod dui a lectus consequat molestie. Integer ornare tincidunt elementum.
+	  Suspendisse potenti. Nam quam lorem, convallis eu malesuada sit amet, varius at dui.
+	   Fusce in leo pharetra, tincidunt nunc at, sollicitudin ligula. Duis suscipit at quam id auctor.
+	    Nunc quis quam metus. Pellentesque sit amet leo vel est molestie pharetra.
+	     Aliquam lorem ipsum, fermentum pellentesque nulla at, euismod tempor nulla.")
+
+Comment.create(user_id: User.find(6).id, theme_id: Theme.find(1).id,
+	contenido:"Ut eget justo ac odio laoreet luctus. Vivamus in blandit dolor.
+	 Vestibulum sit amet convallis arcu, at aliquet mauris. Aliquam blandit faucibus arcu
+	  et lobortis. Vivamus et sem justo. Ut in interdum neque. Aliquam vitae ligula diam.
+	   Sed eget lectus blandit, efficitur enim feugiat, rutrum lacus. Morbi convallis diam turpis,
+	   vel efficitur arcu ullamcorper id. Donec congue et purus a pellentesque.
+	    Quisque eu felis sem.")

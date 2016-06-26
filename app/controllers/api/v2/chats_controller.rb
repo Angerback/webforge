@@ -18,9 +18,11 @@ class Api::V2::ChatsController < API::V2::ApiController
       	@owner = User.find(@chat.user_id)
 	  	@messages = Message.where(chat_id: params[:id])
 	  	@authors = Hash.new
+      
 	  	@messages.each do |message|
-	  		@authors[message.id] = User.find(message.user_id).name 
+	  		@authors[message.id] = User.find(message.user_id).name        
   		end 
+      
   		rescue ActiveRecord::RecordNotFound
       	head :not_found
 	end

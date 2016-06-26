@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426152812) do
+ActiveRecord::Schema.define(version: 20160622183251) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 20160426152812) do
   end
 
   add_index "chats", ["user_id"], name: "index_chats_on_user_id"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "contenido"
+    t.datetime "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "theme_id"
+    t.integer  "user_id"
+  end
+
+  add_index "comments", ["theme_id"], name: "index_comments_on_theme_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "compositions", force: :cascade do |t|
     t.integer  "evaluation_id"
@@ -180,6 +192,18 @@ ActiveRecord::Schema.define(version: 20160426152812) do
 
   add_index "tests", ["evaluation_id"], name: "index_tests_on_evaluation_id"
   add_index "tests", ["user_id"], name: "index_tests_on_user_id"
+
+  create_table "themes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "open"
+    t.datetime "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "themes", ["user_id"], name: "index_themes_on_user_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
