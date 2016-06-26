@@ -14,7 +14,7 @@ User.create(name: "Ismael Vicencio", rut: "17.680.797-0", email: "ismael.vicenci
 
 # Alumnos
 
-#3
+#3| m
 User.create(name: "Francisco Avello", rut: "18.189.568-3", email: "francisco.avello@usach.cl", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
 
 #4
