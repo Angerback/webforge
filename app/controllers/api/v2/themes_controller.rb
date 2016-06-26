@@ -20,8 +20,10 @@ class Api::V2::ThemesController < API::V2::ApiController
 
 	
 	def create
-		if params[:user_id] && params[:titulo]
-			@tema = Theme.create(title: params[:titulo], content: params[:contenido], user_id: params[:user_id], open: true)
+		if params[:email] && params[:titulo]
+
+			usuario = User.find_by email: params[:email]
+			Theme.create(title: params[:titulo], content: params[:contenido], user_id: usuario.id, open: true)
 		
 		 	render json: {
       		    outcome: "Tema creado exitosamente"
@@ -34,8 +36,10 @@ class Api::V2::ThemesController < API::V2::ApiController
 	end
 
 	def create_comment
-		if params[:user_id] && params[:contenido]
-			Comment.create(user_id: params[:user_id], theme_id: params[:id_tema], contenido: params[:contenido])
+		if params[:email] && params[:contenido]
+
+			usuario = User.find_by email: params[:email]
+			Comment.create(theme_id: params[:id_tema], user_id: usuario.id, contenido: params[:contenido])
 
 			render json: {
 				outcome: "Comentario publicado"
