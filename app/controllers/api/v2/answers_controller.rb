@@ -24,7 +24,8 @@ class Api::V2::AnswersController < API::V2::ApiController
   def update
 	if @answer = Answer.find_by(question_id: params[:question_id], test_id: params[:test_id])
 
-	  if @answer.update(answer_params)
+	  if @answer.update(question_id: params[:question_id], test_id: params[:test_id], )
+	  	if @test.update(grade: params[:grade])
 		render json: {
 		  outcome: "Respuesta actualizada."
 		}
@@ -42,7 +43,7 @@ class Api::V2::AnswersController < API::V2::ApiController
 
   def show
 	if params[:question_id]
-	  if @answer = Answer.find_by(question_id: params[:question_id], test_id: params[:test_id])
+	  if @answer = Answer.find_by(question_id: params[:question_id], test_id: params[:test_id], alternative: params[:alternative])
 		render json: {
 		  outcome: "Ya existe respuesta"
 		}
