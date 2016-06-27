@@ -134,12 +134,13 @@ Rails.application.routes.draw do
       #Test
       post 'users/:user_id/tests', to: 'tests#create'
       delete 'tests/:id', to: 'tests#destroy'
+      put 'tests/:id' , to: 'tests#update'
 
       #Answers
       post 'tests/:test_id/answers', to: 'answers#create'
       put 'tests/:test_id/answers', to: 'answers#update'
       get 'tests/:test_id/:question_id', to: 'answers#show'
-      get 'tests/:test_id' , to: 'answers#showTest'
+      get 'tests/:test_id' , to: 'answers#showTest'      
 
       #Heuristics
       get 'heuristics', to: 'heuristics#index'
