@@ -38,8 +38,8 @@ function($scope, $http, $rootScope, usersService){
 
 
 	};
-	$scope.submit_edit = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit,suspendedUserEdit){
-		usersService.editUser(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, suspendedUserEdit,$scope.selectedUserId)
+	$scope.submit_edit = function(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit,suspendedUserEdit,notifyUserEdit){
+		usersService.editUser(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit, suspendedUserEdit, notifyUserEdit, $scope.selectedUserId)
 		.success(function(data){	
 
 			$scope.users = data;
