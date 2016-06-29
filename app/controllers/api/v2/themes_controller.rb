@@ -18,6 +18,48 @@ class Api::V2::ThemesController < API::V2::ApiController
 		end
 	end
 
+	
+	def create
+		if params[:email] && params[:titulo]
+
+			usuario = User.find_by email: params[:email]
+			Theme.create(title: params[:titulo], content: params[:contenido], user_id: usuario.id, open: true)
+		
+		 	render json: {
+      		    outcome: "Tema creado exitosamente"
+      		 }
+      	else
+      		render json:{
+      			outcome: "Falta especificar por lo menos el usuario y titulo"
+      		}
+      	end
+	end
+
+	def create_comment
+		if params[:email] && params[:contenido]
+
+			usuario = User.find_by email: params[:email]
+			Comment.create(theme_id: params[:id_tema], user_id: usuario.id, contenido: params[:contenido])
+
+			render json: {
+				outcome: "Comentario publicado"
+			}
+		else
+			render json: {
+				outcome: "Error, no se a creado el comentario"
+			}
+		end
+
+	end
+
+
+
+
+
+
+
+
+
       	
 end
 
