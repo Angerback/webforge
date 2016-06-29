@@ -5,7 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   #especifico para el dominio
-  config.action_mailer.default_url_options = { :host => 'webforge-express.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'webforge-staging.herokuapp.com' }
 
 
   # Eager load code on boot. This eager loads most of Rails and
