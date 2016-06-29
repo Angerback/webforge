@@ -18,6 +18,37 @@ class Api::V2::TestsController < API::V2::ApiController
             outcome: "Falta especificar evaluación."
          }
        end
-       
+
   end
+  def destroy
+      @test = Test.find(params[:id])
+        if @test
+            @test.destroy
+            render json: {
+                outcome: "Test borrado exitosamente."
+            }
+        else
+            render json: {
+                outcome: "Test no borrado."
+            }
+        end
+        rescue ActiveRecord::RecordNotFound
+            render json: {
+                outcome: "Test no encontrado."
+            }
+    end
+
+    def update
+        @test = Test.find(params[:id])
+        # if @test.update_attributes(test_param)
+        if @test.update(grade: params[:grade])
+            render json: {
+                outcome: "Nota test actualizada."
+            }
+        else
+            render json: {
+                outcome: "Nota test no actualizada."
+            }
+        end
+    end
 end

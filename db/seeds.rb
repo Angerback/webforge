@@ -52,10 +52,18 @@ User.create(name: "Carolina Vásquez ", rut: "17.958.228-7", email: "caro.vh@liv
 
 #15
 User.create(name: "Vasco Vergara", rut: "18.210.538-4", email: "vasco_esteban@hotmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
-
+#15
+User.create(name: "daniel brown", rut: "16.925.057-k", email: "daniel1108@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
 #16
+User.create(name: "felipe rivera", rut: "11.348.401-2", email: "felipe.rm64@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
+
 User.create(name: "Edmundo Leiva", rut: "13.148.932-3", email: "epleiva@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Profesor")
 
+User.create(name: "PROFESOR", rut: "19.432.923-7", email: "profesormanuelapp@gmail.com", password: "manprofesor", password_confirmation: "manprofesor", admin: false, user_type: "Profesor")
+
+User.create(name: "ALUMNO", rut: "12.459.199-6", email: "alumnomanuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
+
+User.create(name: "ADMINISTRADOR", rut: "23.365.908-8", email: "directormanuelapp@gmail.com", password: "mandirector", password_confirmation: "mandirector", admin: true, user_type: "Administrador")
 
 #H1
 Heuristic.create(name:"Visibilidad del Estado del Sistema", description:"El sistema siempre debe mantener a los usuarios informados acerca de su estado, con una retroalimentación apropiada y en un tiempo razonable.")
@@ -618,9 +626,11 @@ Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, gra
 Test.create(user_id: User.find(3).id,evaluation_id: Evaluation.all.first.id, grade: 2.4)
 
 
-Chat.create(title: "Problemas con plnkr", user_id: 2 , practice_id: 2)
-Message.create(body: "hola, tengo problemas con plnkr, es fome", user_id: 2, chat_id: 1)
-Message.create(body: "que problemas tienes aparte de ser fome?", user_id: 1, chat_id: 1)
+Chat.create(title: "Problemas con plnkr", user_id: 1 , practice_id: 2)
+Message.create(body: "hola, tengo problemas con plnkr", user_id: 10, chat_id: 1)
+Message.create(body: "que problemas tienes?", user_id: 1, chat_id: 1)
+Message.create(body: "muchos problemas", user_id: 10, chat_id: 1)
+Message.create(body: "que interesante...", user_id: 1, chat_id: 1)
 
 Theme.create(title:"Bienvenido al foro", user_id: User.find(2).id, open:true ,content:"Phasellus consequat nunc mauris,
  quis aliquam sem tincidunt id. Sed pulvinar mi auctor auctor lobortis. Etiam vel quam ornare,
