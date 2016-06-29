@@ -12,6 +12,6 @@ class Notifier < ApplicationMailer
 		
 		@body = body
 		@chat = chat
-		mail(to: emails , subject: "WebForge: Nuevo Mensaje en el chat: #{@chat}")		
+		mail(to: emails , subject: "WebForge: Nuevo Mensaje en el chat: #{@chat}", "Access-Control-Allow-Origin" => true)		
 	end
 end
