@@ -130,6 +130,7 @@ def start_session
     #Busca al usuario por su correo para ver si se puede loguear
     user = User.where(email: params[:email])
     if user.size() > 0
+      user.sign_in_count = user.sign_in_count + 1
       @@tokens[params[:token]] = params[:email]
       render json: {
           outcome: "Login exitoso."
