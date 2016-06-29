@@ -131,6 +131,7 @@ def start_session
     user = User.where(email: params[:email]).first
     if user
       user.sign_in_count = user.sign_in_count + 1
+      user.save
       @@tokens[params[:token]] = params[:email]
       render json: {
           outcome: "Login exitoso."
