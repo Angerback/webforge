@@ -32,6 +32,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner', '1.4.1'
   gem "codeclimate-test-reporter", require: nil
+  gem "letter_opener"
 end
 
 group :test do
