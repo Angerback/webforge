@@ -22,21 +22,22 @@ class Api::V2::AnswersController < API::V2::ApiController
   end
 
     def update
-    if @answer = Answer.find_by(question_id: params[:question_id], test_id: params[:test_id])
-      if @answer.update(question_id: params[:question_id], test_id: params[:test_id], )
-        if @test.update(grade: params[:grade])
-        render json: {
-          outcome: "Respuesta actualizada."
-        }
+      if @answer = Answer.find_by(question_id: params[:question_id], test_id: params[:test_id])
+        if @answer.update(question_id: params[:question_id], test_id: params[:test_id], )
+          if @test.update(grade: params[:grade])
+          render json: {
+            outcome: "Respuesta actualizada."
+          }
+        else
+          render json: {
+            outcome: "Respuesta no actualizada."
+          }
+        end
       else
         render json: {
-          outcome: "Respuesta no actualizada."
+          outcome: "Error en respuesta."
         }
       end
-    else
-      render json: {
-        outcome: "Error en respuesta."
-      }
     end
   end
 
