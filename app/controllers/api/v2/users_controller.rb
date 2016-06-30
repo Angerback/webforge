@@ -126,7 +126,9 @@ def start_session
     user = User.where(email: params[:email]).first
     render json: {
         outcome: "Ya está logueado.",
-        idUser: user.id
+        idUser: user.id,
+        rol: user.user_type
+
      }
   else
     #Busca al usuario por su correo para ver si se puede loguear
@@ -137,7 +139,8 @@ def start_session
       @@tokens[params[:token]] = params[:email]
       render json: {
           outcome: "Login exitoso.",
-          idUser: user.id
+          idUser: user.id,
+          rol: user.user_type
        }
     else
       render json: {
