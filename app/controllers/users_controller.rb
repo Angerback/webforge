@@ -14,18 +14,21 @@ class UsersController < ApplicationController
 	def index
     @evaluation = Evaluation.find(1)
     @user = User.new
-    @searching = false
-    per_page = 10
-    if params[:per_page]
-      per_page = params[:per_page].to_i
-    end
+    #@searching = false
+    #per_page = 10
+    #if params[:per_page]
+    #  per_page = params[:per_page].to_i
+    #end
 
-		if params[:search]
-      @searching = true
-			@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => per_page)
-		else
-			@users =  User.paginate(:page => params[:page], :per_page => per_page)
-		end
+    @users = User.all
+
+
+	#	if params[:search]
+    #  @searching = true
+	#		@users = User.search(params[:search]).paginate(:page => params[:page], :per_page => per_page)
+	#	else
+	#		@users =  User.paginate(:page => params[:page], :per_page => per_page)
+	#	end
 
 	end
 
