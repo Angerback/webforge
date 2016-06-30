@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-sass'
+gem 'rails-api'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
