@@ -123,8 +123,10 @@ end
 def start_session
   if @@tokens[params[:token]] or @@tokens.has_value?(params[:email])
     #Si existe el email en el Hash de tokens, es porque el usuario ya se logueo
+    user = User.where(email: params[:email]).first
     render json: {
-        outcome: "Ya está logueado."
+        outcome: "Ya está logueado.",
+        idUser: user.id
      }
   else
     #Busca al usuario por su correo para ver si se puede loguear
@@ -134,7 +136,8 @@ def start_session
       user.save
       @@tokens[params[:token]] = params[:email]
       render json: {
-          outcome: "Login exitoso."
+          outcome: "Login exitoso.",
+          idUser: user.id
        }
     else
       render json: {
