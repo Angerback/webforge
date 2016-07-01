@@ -85,7 +85,7 @@ Rails.application.configure do
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
-   :port                 => 465,
+   :port                 => 587,
    :domain => 'webforge-staging.herokuapp.com:80',
    :user_name            => "webforge.usach@gmail.com",
    :password             => "entrar00",
