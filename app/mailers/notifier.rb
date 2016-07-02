@@ -14,4 +14,10 @@ class Notifier < ApplicationMailer
 		@chat = chat
 		mail(to: emails , subject: "WebForge: Nuevo Mensaje en el chat: #{@chat}", "Access-Control-Allow-Origin" => true)		
 	end
+
+	def commentNotify(emails, theme, content)
+		@theme = theme
+		@content = content
+		mail(to: emails, subject: "WebForge: nuevo mensaje en el foro: #{@theme.title}", "Access-Control-Allow-Origin" => true)
+	end
 end
