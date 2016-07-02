@@ -65,6 +65,13 @@ User.create(name: "ALUMNO", rut: "12.459.199-6", email: "alumnomanuelapp@gmail.c
 
 User.create(name: "ADMINISTRADOR", rut: "23.365.908-8", email: "directormanuelapp@gmail.com", password: "mandirector", password_confirmation: "mandirector", admin: true, user_type: "Administrador")
 
+User.create(name: "AYUDANTE", rut: "22.741.568-1", email: "ayudantemanuelapp@gmail.com", password: "manayudante", password_confirmation: "manayudante", admin: false, user_type: "Ayudante")
+
+User.create(name: "ALUMNO2", rut: "14.566.776-3", email: "alumno2manuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
+
+User.create(name: "ALUMNO3", rut: "12.891.168-5", email: "alumno3manuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
+
+
 #H1
 Heuristic.create(name:"Visibilidad del Estado del Sistema", description:"El sistema siempre debe mantener a los usuarios informados acerca de su estado, con una retroalimentación apropiada y en un tiempo razonable.")
 
