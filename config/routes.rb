@@ -106,6 +106,7 @@ Rails.application.routes.draw do
       # Chats
       get 'chats', to: 'chats#index'
       get 'chats/:id', to: 'chats#show'
+      get 'users/:user_id/chats', to: 'chats#user_chats'
 
       # Messages
       post 'chats/:id/messages', to: 'messages#create'
