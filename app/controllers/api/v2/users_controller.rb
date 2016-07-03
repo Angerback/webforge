@@ -166,6 +166,47 @@ def end_session
   end
 end
 
+# GET /users/:user_id/evaluations/:evaluation_id/compare
+def compare
+  @user = User.where(id: params[:user_id]).last
+  if @user
+   @companions = []
+   @tests = Hash.new
+   @sum = 0
+   @userLastEval = Test.where(user_id: params[:user_id], evaluation_id: params[:evaluation_id], :grade =>  0.9..7.1).last
+   @cantidadCompanerosNotaMenor = 0
+    @user.courses.each do |course|
+      course.users.each do |companion|
+        if companion.id != @user.id
+          if ! (@companions.include? companion)
+            lastEval= Test.where(user_id: companion.id, evaluation_id: params[:evaluation_id], :grade =>  0.9..7.1).last
+            if lastEval
+              @companions.push(companion)
+              @tests[companion.id] = lastEval
+              @sum = @sum + lastEval.grade
+              if @userLastEval.grade > lastEval.grade
+                @cantidadCompanerosNotaMenor = @cantidadCompanerosNotaMenor + 1
+              end
+            end
+          end
+        end
+      end
+    end
+    @avg = @sum / @companions.length
+    render json: {
+        promedioCurso: @avg,
+        cantidadCompaneros: @companions.length,
+        cantidadCompanerosNotaMenor: @cantidadCompanerosNotaMenor
+     }
+  else
+    render json: {
+        outcome: "Usuario no existe."
+     }
+  end
+
+end
+
+
 
 private
       # Never trust parameters from the scary internet, only allow the white list through.

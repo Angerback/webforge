@@ -85,6 +85,8 @@ Rails.application.routes.draw do
       post 'users/start_session', to: 'users#start_session'
       post 'users/end_session', to: 'users#end_session'
 
+      get '/users/:user_id/evaluations/:evaluation_id/compare', to: 'users#compare'
+
       # Courses
       get 'courses', to: 'courses#index'
       get 'courses/:id', to: 'courses#show'
