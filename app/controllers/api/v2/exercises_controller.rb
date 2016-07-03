@@ -4,9 +4,14 @@ class Api::V2::ExercisesController < API::V2::ApiController
 		@practice = Practice.find(params[:practice_id])
 		@exercise = Exercise.new(exercises_params)
 		if @exercise.save
-			Chat.create(user_id: params[:user_id],
-				         title:"Práctica " + @practice.id.to_s + ": " + @practice.name,
-				         practice_id: @practice.id)
+			@ChatTest = Chat.where(user_id: params[:user_id], practice_id: @practice.id).last
+			if @ChatTest
+				
+			else
+				Chat.create(user_id: params[:user_id],
+					         title:"Práctica " + @practice.id.to_s + ": " + @practice.name,
+					         practice_id: @practice.id)
+			end
 			Message.create(user_id: params[:user_id],
 						   chat_id: Chat.find_by(user_id: params[:user_id],
 						   	                     practice_id: @practice.id).id,
