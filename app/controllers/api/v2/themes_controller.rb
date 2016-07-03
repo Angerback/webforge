@@ -41,6 +41,12 @@ class Api::V2::ThemesController < API::V2::ApiController
 			usuario = User.find_by email: params[:email]
 			Comment.create(theme_id: params[:id_tema], user_id: usuario.id, contenido: params[:contenido])
 
+			#funcionalidad de notificar via email
+      		@theme = Theme.find(params[:id_tema])
+      		@comments = Comment.where(theme_id: params[:id_tema])
+      		emails = @comments.map { |comments| User.find(comments.user_id).email}
+      		Notifier.commentNotify(emails.uniq, @theme, params[:contenido]).deliver_now
+
 			render json: {
 				outcome: "Comentario publicado"
 			}
