@@ -52,23 +52,23 @@ User.create(name: "Carolina Vásquez ", rut: "17.958.228-7", email: "caro.vh@liv
 
 #15
 User.create(name: "Vasco Vergara", rut: "18.210.538-4", email: "vasco_esteban@hotmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
-#15
-User.create(name: "daniel brown", rut: "16.925.057-k", email: "daniel1108@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
 #16
+User.create(name: "daniel brown", rut: "16.925.057-k", email: "daniel1108@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
+#17
 User.create(name: "felipe rivera", rut: "11.348.401-2", email: "felipe.rm64@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Alumno")
-
+#18
 User.create(name: "Edmundo Leiva", rut: "13.148.932-3", email: "epleiva@gmail.com", password: "entrar00", password_confirmation: "entrar00", admin: false, user_type: "Profesor")
-
+#19
 User.create(name: "PROFESOR", rut: "19.432.923-7", email: "profesormanuelapp@gmail.com", password: "manprofesor", password_confirmation: "manprofesor", admin: false, user_type: "Profesor")
-
+#20
 User.create(name: "ALUMNO", rut: "12.459.199-6", email: "alumnomanuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
-
+#21
 User.create(name: "ADMINISTRADOR", rut: "23.365.908-8", email: "directormanuelapp@gmail.com", password: "mandirector", password_confirmation: "mandirector", admin: true, user_type: "Administrador")
-
+#22
 User.create(name: "AYUDANTE", rut: "22.741.568-1", email: "ayudantemanuelapp@gmail.com", password: "manayudante", password_confirmation: "manayudante", admin: false, user_type: "Ayudante")
-
+#23
 User.create(name: "ALUMNO2", rut: "14.566.776-3", email: "alumno2manuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
-
+#24
 User.create(name: "ALUMNO3", rut: "12.891.168-5", email: "alumno3manuelapp@gmail.com", password: "manalumno", password_confirmation: "manalumno", admin: false, user_type: "Alumno")
 
 
@@ -668,3 +668,7 @@ Comment.create(user_id: User.find(6).id, theme_id: Theme.find(1).id,
 	   Sed eget lectus blandit, efficitur enim feugiat, rutrum lacus. Morbi convallis diam turpis,
 	   vel efficitur arcu ullamcorper id. Donec congue et purus a pellentesque.
 	    Quisque eu felis sem.")
+
+BankAccount.create(balance: 0, user_id: 19, status: "Activa")
+BankAccount.create(balance: 0, user_id: 22, status: "Activa")
+BankAccount.create(balance: 0, user_id: 23, status: "Activa")
